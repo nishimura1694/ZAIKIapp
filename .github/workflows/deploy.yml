@@ -16,7 +16,7 @@ jobs:
           
       - run: flutter pub get
       
-      # Flutterのルールに従い、前後をスラッシュで囲った絶対パスを指定します
+      # スクリーンショット(20)の指示通り、前後をスラッシュで囲みます
       - run: flutter build web --release --base-href "/ZAIKlapp/"
       
       - name: Deploy
