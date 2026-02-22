@@ -14,7 +14,7 @@ jobs:
           channel: 'stable'
       - run: flutter pub get
       # 重要：自分のリポジトリ名を指定
-      - run: flutter build web --release --base-href "/ZAIKlapp/"
+      - run: flutter build web --release --base-href "./"
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
