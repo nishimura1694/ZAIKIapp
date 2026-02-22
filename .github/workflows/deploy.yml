@@ -16,7 +16,7 @@ jobs:
           
       - run: flutter pub get
       
-      # スクリーンショット(20)の指示通り、前後をスラッシュで囲みます
+      # 前後を必ずスラッシュで囲む（これがエラー20の正解です）
       - run: flutter build web --release --base-href "/ZAIKlapp/"
       
       - name: Deploy
