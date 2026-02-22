@@ -4,7 +4,32 @@ on:
   push:
     branches: [ main ] # mainブランチにpushした時に実行
 
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          
+      - run: flutter pub get
+      
+      # ここが重要：相対パス設定
+      - run: flutter build web --release --base-href "./"
+      
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web
   build:
     runs-on: ubuntu-latest
     steps:
