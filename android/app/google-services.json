@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "247917390246",
+    "project_id": "coffee-spark-ai-barista-844b4",
+    "storage_bucket": "coffee-spark-ai-barista-844b4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:247917390246:android:9b95fae562048013380767",
+        "android_client_info": {
+          "package_name": "com.example.zaiki_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATd_L83kwDd57xNdrWBrBjcnXA6ye7muM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
