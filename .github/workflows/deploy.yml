@@ -1,4 +1,3 @@
-jobs:
 name: Deploy to GitHub Pages
 
 on:
@@ -10,22 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          
       - run: flutter pub get
-      
-      # 相対パス設定でビルド
-      - run: flutter build web --release --base-href "./"
-      
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/web
-      # 重要：自分のリポジトリ名を指定
       - run: flutter build web --release --base-href "./"
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
