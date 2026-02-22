@@ -16,8 +16,8 @@ jobs:
           
       - run: flutter pub get
       
-      # 相対パス（./）にすることで、リポジトリ名に関わらずファイルを読み込めるようにします
-      - run: flutter build web --release --base-href "./"
+      # Flutterのルールに従い、前後をスラッシュで囲った絶対パスを指定します
+      - run: flutter build web --release --base-href "/ZAIKlapp/"
       
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
