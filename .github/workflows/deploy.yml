@@ -9,11 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
+          
       - run: flutter pub get
-      - run: flutter build web --release --base-href "/ZAIKlapp/"
+      
+      # 相対パス（./）にすることで、リポジトリ名に関わらずファイルを読み込めるようにします
+      - run: flutter build web --release --base-href "./"
+      
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
