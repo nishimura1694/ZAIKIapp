@@ -313,7 +313,7 @@ class _VenueListScreenState extends State<VenueListScreen> {
                       style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                     subtitle: Text(
-                      "${data['block'] ?? '-'} / ${data['shopAndRoom'] ?? '-'}",
+                      "エリア: ${data['block'] ?? '-'} / ${data['shopAndRoom'] ?? '-'}",
                     ),
                     trailing: SizedBox(
                       width: 48,
@@ -400,8 +400,11 @@ class _BookingListScreenState extends State<BookingListScreen> {
   String _extractMonthKey(String? bookingDate) {
     if (bookingDate == null) return '';
     final normalized = bookingDate.trim().replaceAll('-', '/');
-    final match = RegExp(r'^(\d{4}/\d{2})').firstMatch(normalized);
-    return match?.group(1) ?? '';
+    final match = RegExp(r'^(\d{4})/(\d{1,2})').firstMatch(normalized);
+    if (match == null) return '';
+    final year = match.group(1)!;
+    final month = match.group(2)!.padLeft(2, '0');
+    return '$year/$month';
   }
 
   String _formatMonthChipLabel(String monthKey) {
@@ -427,20 +430,96 @@ class _BookingListScreenState extends State<BookingListScreen> {
       appBar: AppBar(
         title: const Text('予約履歴'),
         bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(58), // 会場一覧の検索バー高さ50+上下padding8
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            child: SizedBox(
-              height: 50,
-              child: TextField(
-                decoration: const InputDecoration(
-                  hintText: '顧客・会場名で検索...',
-                  prefixIcon: Icon(Icons.search),
-                  contentPadding: EdgeInsets.zero,
+          preferredSize: const Size.fromHeight(110),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 8,
                 ),
-                onChanged: (v) => setState(() => _searchQuery = v),
+                child: SizedBox(
+                  height: 50,
+                  child: TextField(
+                    decoration: const InputDecoration(
+                      hintText: '顧客・会場名で検索...',
+                      prefixIcon: Icon(Icons.search),
+                      contentPadding: EdgeInsets.zero,
+                    ),
+                    onChanged: (v) => setState(() => _searchQuery = v),
+                  ),
+                ),
               ),
-            ),
+              SizedBox(
+                height: 45,
+                child: StreamBuilder<QuerySnapshot>(
+                  stream: FirebaseFirestore.instance
+                      .collection('bookings')
+                      .orderBy('bookingDate', descending: true)
+                      .snapshots(),
+                  builder: (context, snapshot) {
+                    final searchedDocs =
+                        snapshot.data?.docs.where((doc) {
+                          final data = doc.data() as Map<String, dynamic>;
+                          final customer = (data['customerName'] ?? '')
+                              .toString()
+                              .toLowerCase();
+                          final venue = (data['venueName'] ?? '')
+                              .toString()
+                              .toLowerCase();
+                          return customer.contains(
+                                _searchQuery.toLowerCase(),
+                              ) ||
+                              venue.contains(_searchQuery.toLowerCase());
+                        }).toList() ??
+                        [];
+
+                    final monthKeys =
+                        searchedDocs
+                            .map((doc) {
+                              final data = doc.data() as Map<String, dynamic>;
+                              return _extractMonthKey(
+                                data['bookingDate']?.toString(),
+                              );
+                            })
+                            .where((key) => key.isNotEmpty)
+                            .toSet()
+                            .toList()
+                          ..sort((a, b) => b.compareTo(a));
+
+                    final selectedMonth = monthKeys.contains(_selectedMonthKey)
+                        ? _selectedMonthKey
+                        : null;
+
+                    return ListView(
+                      scrollDirection: Axis.horizontal,
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      children: [
+                        ChoiceChip(
+                          label: const Text('すべて'),
+                          selected: selectedMonth == null,
+                          onSelected: (_) {
+                            setState(() => _selectedMonthKey = null);
+                          },
+                        ),
+                        ...monthKeys.map(
+                          (monthKey) => Padding(
+                            padding: const EdgeInsets.only(left: 8),
+                            child: ChoiceChip(
+                              label: Text(_formatMonthChipLabel(monthKey)),
+                              selected: selectedMonth == monthKey,
+                              onSelected: (_) {
+                                setState(() => _selectedMonthKey = monthKey);
+                              },
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -493,39 +572,10 @@ class _BookingListScreenState extends State<BookingListScreen> {
             child: ListView.separated(
               physics: const AlwaysScrollableScrollPhysics(),
               padding: const EdgeInsets.fromLTRB(16, 16, 16, 100),
-              itemCount: docs.length + 1,
+              itemCount: docs.length,
               separatorBuilder: (_, index) => const SizedBox(height: 12),
               itemBuilder: (context, index) {
-                if (index == 0) {
-                  return SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        ChoiceChip(
-                          label: const Text('すべて'),
-                          selected: selectedMonth == null,
-                          onSelected: (_) {
-                            setState(() => _selectedMonthKey = null);
-                          },
-                        ),
-                        ...monthKeys.map(
-                          (monthKey) => Padding(
-                            padding: const EdgeInsets.only(left: 8),
-                            child: ChoiceChip(
-                              label: Text(_formatMonthChipLabel(monthKey)),
-                              selected: selectedMonth == monthKey,
-                              onSelected: (_) {
-                                setState(() => _selectedMonthKey = monthKey);
-                              },
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
-                }
-
-                final booking = docs[index - 1];
+                final booking = docs[index];
                 final data = booking.data() as Map<String, dynamic>;
                 final List urls = data['imageUrls'] ?? [];
 
@@ -947,7 +997,7 @@ class VenueDetailSheet extends StatelessWidget {
                     style: TextStyle(fontSize: 16, color: Colors.grey[600]),
                   ),
                   const SizedBox(height: 32),
-                  _detailRow(Icons.grid_view, 'ブロック', data['block']),
+                  _detailRow(Icons.grid_view, 'エリア', data['block']),
                   _detailRow(Icons.category, 'カテゴリ', data['category']),
                   _detailRow(Icons.power, '電源仕様', data['power']),
                   _detailRow(
@@ -1494,7 +1544,7 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
             ),
             const SizedBox(height: 15),
             _buildDropdown(
-              'ブロック',
+              'エリア',
               'blocks',
               _selectedBlock,
               (v) => setState(() => _selectedBlock = v),
