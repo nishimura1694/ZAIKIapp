@@ -11,7 +11,6 @@ import 'package:intl/intl.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:image/image.dart' as img;
-import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:http/http.dart' as http;
@@ -187,48 +186,6 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   }
 }
 
-// --- タブボタンウィジェット ---
-class _TabButton extends StatelessWidget {
-  final String label;
-  final bool selected;
-  final VoidCallback onTap;
-  const _TabButton({
-    required this.label,
-    required this.selected,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-        decoration: BoxDecoration(
-          border: Border(
-            bottom: BorderSide(
-              color: selected
-                  ? Theme.of(context).colorScheme.primary
-                  : Colors.transparent,
-              width: 3,
-            ),
-          ),
-        ),
-        child: Text(
-          label,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: selected
-                ? Theme.of(context).colorScheme.primary
-                : Colors.black54,
-            fontSize: 16,
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 // --- 会場一覧 ---
 class VenueListScreen extends StatefulWidget {
   const VenueListScreen({super.key});
@@ -341,7 +298,9 @@ class _VenueListScreenState extends State<VenueListScreen> {
               separatorBuilder: (_, index) => const SizedBox(height: 12),
               itemBuilder: (context, index) {
                 final data = docs[index].data() as Map<String, dynamic>;
-                final hasAddress = (data['address'] ?? '').toString().isNotEmpty;
+                final hasAddress = (data['address'] ?? '')
+                    .toString()
+                    .isNotEmpty;
                 return Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -374,7 +333,9 @@ class _VenueListScreenState extends State<VenueListScreen> {
                                     );
                                   } else {
                                     if (context.mounted) {
-                                      ScaffoldMessenger.of(context).showSnackBar(
+                                      ScaffoldMessenger.of(
+                                        context,
+                                      ).showSnackBar(
                                         const SnackBar(
                                           content: Text('地図アプリを開けませんでした'),
                                         ),
@@ -434,6 +395,20 @@ class BookingListScreen extends StatefulWidget {
 
 class _BookingListScreenState extends State<BookingListScreen> {
   String _searchQuery = "";
+  String? _selectedMonthKey;
+
+  String _extractMonthKey(String? bookingDate) {
+    if (bookingDate == null) return '';
+    final normalized = bookingDate.trim().replaceAll('-', '/');
+    final match = RegExp(r'^(\d{4}/\d{2})').firstMatch(normalized);
+    return match?.group(1) ?? '';
+  }
+
+  String _formatMonthChipLabel(String monthKey) {
+    final parts = monthKey.split('/');
+    if (parts.length != 2) return monthKey;
+    return '${parts[0]}年${parts[1]}月';
+  }
 
   Future<void> _refreshBookings() async {
     await FirebaseFirestore.instance
@@ -477,7 +452,7 @@ class _BookingListScreenState extends State<BookingListScreen> {
         builder: (context, snapshot) {
           if (!snapshot.hasData)
             return const Center(child: CircularProgressIndicator());
-          final docs = snapshot.data!.docs.where((doc) {
+          final searchedDocs = snapshot.data!.docs.where((doc) {
             final data = doc.data() as Map<String, dynamic>;
             final customer = (data['customerName'] ?? '')
                 .toString()
@@ -486,24 +461,73 @@ class _BookingListScreenState extends State<BookingListScreen> {
             return customer.contains(_searchQuery.toLowerCase()) ||
                 venue.contains(_searchQuery.toLowerCase());
           }).toList();
+
+          final monthKeys =
+              searchedDocs
+                  .map((doc) {
+                    final data = doc.data() as Map<String, dynamic>;
+                    return _extractMonthKey(data['bookingDate']?.toString());
+                  })
+                  .where((key) => key.isNotEmpty)
+                  .toSet()
+                  .toList()
+                ..sort((a, b) => b.compareTo(a));
+
+          final selectedMonth = monthKeys.contains(_selectedMonthKey)
+              ? _selectedMonthKey
+              : null;
+
+          final docs = selectedMonth == null
+              ? searchedDocs
+              : searchedDocs.where((doc) {
+                  final data = doc.data() as Map<String, dynamic>;
+                  final month = _extractMonthKey(
+                    data['bookingDate']?.toString(),
+                  );
+                  return month == selectedMonth;
+                }).toList();
+
           return RefreshIndicator(
             onRefresh: _refreshBookings,
             triggerMode: RefreshIndicatorTriggerMode.anywhere,
             child: ListView.separated(
               physics: const AlwaysScrollableScrollPhysics(),
               padding: const EdgeInsets.fromLTRB(16, 16, 16, 100),
-              itemCount: docs.length,
+              itemCount: docs.length + 1,
               separatorBuilder: (_, index) => const SizedBox(height: 12),
               itemBuilder: (context, index) {
-                final data = docs[index].data() as Map<String, dynamic>;
-                final List urls = data['imageUrls'] ?? [];
-
-                // デバッグ用: 画像URLを出力
-                if (urls.isNotEmpty) {
-                  debugPrint('サムネイル画像URL: \\${urls[0]}');
-                } else {
-                  debugPrint('サムネイル画像なし');
+                if (index == 0) {
+                  return SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        ChoiceChip(
+                          label: const Text('すべて'),
+                          selected: selectedMonth == null,
+                          onSelected: (_) {
+                            setState(() => _selectedMonthKey = null);
+                          },
+                        ),
+                        ...monthKeys.map(
+                          (monthKey) => Padding(
+                            padding: const EdgeInsets.only(left: 8),
+                            child: ChoiceChip(
+                              label: Text(_formatMonthChipLabel(monthKey)),
+                              selected: selectedMonth == monthKey,
+                              onSelected: (_) {
+                                setState(() => _selectedMonthKey = monthKey);
+                              },
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
                 }
+
+                final booking = docs[index - 1];
+                final data = booking.data() as Map<String, dynamic>;
+                final List urls = data['imageUrls'] ?? [];
 
                 return Container(
                   decoration: BoxDecoration(
@@ -552,7 +576,7 @@ class _BookingListScreenState extends State<BookingListScreen> {
                         ),
                       ),
                       builder: (_) =>
-                          BookingDetailSheet(data: data, docId: docs[index].id),
+                          BookingDetailSheet(data: data, docId: booking.id),
                     ),
                   ),
                 );
@@ -1119,10 +1143,6 @@ class _MapPickerScreenState extends State<MapPickerScreen> {
 }
 
 class _AddVenueScreenState extends State<AddVenueScreen> {
-  // Google Geocoding API Key - ユーザーがGoogle Cloud Projectで設定する必要があります
-  // https://console.cloud.google.com で Geocoding API を有効化して取得してください
-  // static const String _googleMapsApiKey = 'AIzaSyCSfPC2LfzFf-7iav6ghQddG2IG3XCGFS0'; // 未使用のためコメントアウト
-
   final Map<String, TextEditingController> _controllers = {
     'name': TextEditingController(),
     'address': TextEditingController(), // 住所追加
@@ -1133,6 +1153,7 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
     'remarks': TextEditingController(),
   };
   String? _selectedBlock, _selectedCategory, _selectedPower;
+  bool _isSaving = false;
   // 位置情報関連変数・タイマー・フラグ削除
 
   @override
@@ -1148,14 +1169,60 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
       _selectedPower = widget.initialData!['power'];
       // 位置情報の初期化削除
     }
-
-    // 建物名フィールドの変更リスナーは削除（確定時のみ取得）
   }
 
   @override
   void dispose() {
     _controllers.forEach((_, controller) => controller.dispose());
     super.dispose();
+  }
+
+  void _showSnackBar(String message) {
+    if (!mounted) return;
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text(message)));
+  }
+
+  Future<void> _saveVenue() async {
+    if (_isSaving) return;
+
+    final name = _controllers['name']?.text.trim() ?? '';
+    if (name.isEmpty) {
+      _showSnackBar('建物名を入力してください');
+      return;
+    }
+
+    setState(() => _isSaving = true);
+    try {
+      final data = {
+        for (var e in _controllers.entries) e.key: e.value.text.trim(),
+        'block': _selectedBlock,
+        'category': _selectedCategory,
+        'power': _selectedPower,
+        'updatedAt': FieldValue.serverTimestamp(),
+      };
+
+      if (widget.docId == null) {
+        data['createdAt'] = FieldValue.serverTimestamp();
+        await FirebaseFirestore.instance.collection('venues').add(data);
+      } else {
+        final originalCreatedAt = widget.initialData?['createdAt'];
+        if (originalCreatedAt is Timestamp) {
+          data['createdAt'] = originalCreatedAt;
+        }
+        await FirebaseFirestore.instance
+            .collection('venues')
+            .doc(widget.docId)
+            .set(data);
+      }
+
+      if (!mounted) return;
+      Navigator.pop(context);
+    } catch (e) {
+      _showSnackBar('会場情報の保存に失敗しました: $e');
+      if (mounted) setState(() => _isSaving = false);
+    }
   }
 
   // ドロップダウン管理用メソッド追加
@@ -1355,7 +1422,9 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
         return;
       }
       final position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high,
+        locationSettings: const LocationSettings(
+          accuracy: LocationAccuracy.high,
+        ),
       );
       final lat = position.latitude;
       final lng = position.longitude;
@@ -1366,8 +1435,20 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
         headers: {'User-Agent': 'zaiki_app/1.0'},
       );
       if (response.statusCode == 200) {
-        final data = json.decode(response.body);
-        final address = data['display_name'] ?? '';
+        final rawBody = utf8.decode(response.bodyBytes, allowMalformed: true);
+        dynamic data;
+        try {
+          data = json.decode(rawBody);
+        } on FormatException {
+          final sanitized = rawBody.replaceAllMapped(
+            RegExp(r'\\u(?![0-9a-fA-F]{4})'),
+            (_) => r'\\u',
+          );
+          data = json.decode(sanitized);
+        }
+        final address = (data is Map<String, dynamic>)
+            ? (data['display_name'] ?? '').toString()
+            : '';
         setState(() {
           _controllers['address']?.text = address;
         });
@@ -1381,6 +1462,11 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
           context,
         ).showSnackBar(const SnackBar(content: Text('住所の取得に失敗しました')));
       }
+    } on FormatException {
+      if (!mounted) return;
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('住所データの形式が不正でした')));
     } catch (e) {
       if (!mounted) return;
       ScaffoldMessenger.of(
@@ -1473,29 +1559,7 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
               width: double.infinity,
               height: 54,
               child: ElevatedButton(
-                onPressed: () async {
-                  final data = {
-                    for (var e in _controllers.entries) e.key: e.value.text,
-                    'block': _selectedBlock,
-                    'category': _selectedCategory,
-                    'power': _selectedPower,
-                    'updatedAt': FieldValue.serverTimestamp(),
-                  };
-                  String? docId = widget.docId;
-                  if (docId == null) {
-                    final docRef = await FirebaseFirestore.instance
-                        .collection('venues')
-                        .add(data);
-                    docId = docRef.id;
-                  } else {
-                    await FirebaseFirestore.instance
-                        .collection('venues')
-                        .doc(docId)
-                        .update(data);
-                  }
-                  if (!context.mounted) return;
-                  Navigator.pop(context);
-                },
+                onPressed: _isSaving ? null : _saveVenue,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromARGB(255, 255, 102, 0),
                   foregroundColor: Colors.white,
@@ -1503,10 +1567,24 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),
-                child: const Text(
-                  '会場情報を保存',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                ),
+                child: _isSaving
+                    ? const SizedBox(
+                        width: 20,
+                        height: 20,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 2.5,
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            Colors.white,
+                          ),
+                        ),
+                      )
+                    : const Text(
+                        '会場情報を保存',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
               ),
             ),
           ],
@@ -1530,13 +1608,14 @@ Future<Uint8List> _processImageIsolate(Map<String, dynamic> params) async {
 
   // 圧縮 (Quality 75)
   var result = Uint8List.fromList(img.encodeJpg(image, quality: 75));
-  
+
   // 200KB超えるならさらに落とす
   if (result.lengthInBytes > 200 * 1024) {
     result = Uint8List.fromList(img.encodeJpg(image, quality: 50));
   }
   return result;
 }
+
 // --- 予約登録画面 ---
 class AddBookingScreen extends StatefulWidget {
   final String? docId;
@@ -1593,6 +1672,16 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
     try {
       final docRef = await FirebaseFirestore.instance.collection('venues').add({
         'name': name,
+        'address': '',
+        'shopAndRoom': '',
+        'loadingPort': '',
+        'parking': '',
+        'capacity': '',
+        'remarks': '',
+        'block': null,
+        'category': null,
+        'power': null,
+        'updatedAt': FieldValue.serverTimestamp(),
         'createdAt': FieldValue.serverTimestamp(),
       });
       setState(() {
@@ -1601,6 +1690,8 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
         _showVenueList = false;
       });
       _showSnackBar('新規会場として登録しました');
+    } catch (e) {
+      _showSnackBar('会場登録に失敗しました: $e');
     } finally {
       setState(() => _isUploading = false);
     }
@@ -1614,40 +1705,40 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
       setState(() => _newFiles.addAll(picked));
     }
   }
-  
+
   // --- Logic: Save ---
 
   Future<void> _save() async {
-  // 1. 最初に即座にフラグを立ててボタンを無効化
-  setState(() {
-    _isUploading = true;
-  });
+    // 1. 最初に即座にフラグを立ててボタンを無効化
+    setState(() {
+      _isUploading = true;
+    });
 
-  // 2. 必須チェック
-  if (_selectedVenueId == null || _customerController.text.isEmpty) {
-    _showSnackBar('会場と顧客名を入力してください');
-    setState(() => _isUploading = false);
-    return;
+    // 2. 必須チェック
+    if (_selectedVenueId == null || _customerController.text.isEmpty) {
+      _showSnackBar('会場と顧客名を入力してください');
+      setState(() => _isUploading = false);
+      return;
+    }
+
+    // 3. 描画を1フレーム待機（これで確実にぐるぐるが表示される）
+    await Future.delayed(const Duration(milliseconds: 50));
+
+    try {
+      // 4. 画像の圧縮とアップロード
+      // _uploadImagesの中で compute を使うよう修正
+      final List<String> newUrls = await _uploadImages();
+
+      // 5. Firestoreへの保存
+      await _saveToFirestore(newUrls);
+
+      if (mounted) Navigator.pop(context);
+    } catch (e) {
+      debugPrint('Error during save: $e');
+      _showSnackBar('保存失敗: $e');
+      if (mounted) setState(() => _isUploading = false);
+    }
   }
-
-  // 3. 描画を1フレーム待機（これで確実にぐるぐるが表示される）
-  await Future.delayed(const Duration(milliseconds: 50));
-
-  try {
-    // 4. 画像の圧縮とアップロード
-    // _uploadImagesの中で compute を使うよう修正
-    final List<String> newUrls = await _uploadImages();
-
-    // 5. Firestoreへの保存
-    await _saveToFirestore(newUrls);
-
-    if (mounted) Navigator.pop(context);
-  } catch (e) {
-    debugPrint('Error during save: $e');
-    _showSnackBar('保存失敗: $e');
-    if (mounted) setState(() => _isUploading = false);
-  }
-}
 
   Future<List<String>> _uploadImages() async {
     if (_newFiles.isEmpty) return [];
@@ -1678,6 +1769,7 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
   Future<void> _saveToFirestore(List<String> newUrls) async {
     final venueNameFromInput = _venueSearchController.text.trim();
     var venueName = (_selectedVenueName ?? venueNameFromInput).trim();
+    final dropboxUrl = _dropboxController.text.trim();
 
     if (venueName.isEmpty && _selectedVenueId != null) {
       final venueDoc = await FirebaseFirestore.instance
@@ -1693,7 +1785,7 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
       'bookingDate': _dateController.text.trim(),
       'remarks': _remarksController.text.trim(),
       'handover': _handoverController.text.trim(),
-      'dropboxUrl': _dropboxController.text.trim(),
+      'dropboxUrl': dropboxUrl.isEmpty ? null : dropboxUrl,
       'venueId': _selectedVenueId,
       'venueName': venueName,
       'imageUrls': [..._existingUrls, ...newUrls],
@@ -1743,7 +1835,12 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
                 _buildImageSection(),
                 const SizedBox(height: 24),
                 _buildTextField(_remarksController, '備考', maxLines: 3),
-                _buildTextField(_handoverController, '引継ぎ事項', maxLines: 3, isUrgent: true),
+                _buildTextField(
+                  _handoverController,
+                  '引継ぎ事項',
+                  maxLines: 3,
+                  isUrgent: true,
+                ),
                 const SizedBox(height: 40),
                 _buildSaveButton(),
                 const SizedBox(height: 100),
@@ -1766,14 +1863,26 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
           decoration: InputDecoration(
             labelText: '会場・部屋/店名',
             prefixIcon: const Icon(Icons.search),
-            suffixIcon: _selectedVenueId == null && _venueSearchController.text.isNotEmpty
+            suffixIcon:
+                _selectedVenueId == null &&
+                    _venueSearchController.text.isNotEmpty
                 ? IconButton(
                     icon: const Icon(Icons.add_circle, color: Colors.orange),
                     onPressed: _quickRegisterVenue,
                   )
                 : null,
           ),
-          onChanged: (v) => setState(() => _showVenueList = true),
+          onChanged: (v) {
+            setState(() {
+              _showVenueList = true;
+              final normalizedInput = v.trim();
+              final normalizedSelected = (_selectedVenueName ?? '').trim();
+              if (normalizedInput != normalizedSelected) {
+                _selectedVenueId = null;
+                _selectedVenueName = null;
+              }
+            });
+          },
         ),
         if (_showVenueList)
           Container(
@@ -1786,27 +1895,39 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
               boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 4)],
             ),
             child: StreamBuilder<QuerySnapshot>(
-              stream: FirebaseFirestore.instance.collection('venues').snapshots(),
+              stream: FirebaseFirestore.instance
+                  .collection('venues')
+                  .snapshots(),
               builder: (context, snap) {
                 if (!snap.hasData) return const LinearProgressIndicator();
                 final query = _venueSearchController.text.toLowerCase();
                 final filtered = snap.data!.docs.where((d) {
-                  final name = d['name']?.toString().toLowerCase() ?? '';
-                  return name.contains(query);
+                  final data = d.data() as Map<String, dynamic>;
+                  final name = (data['name'] ?? '').toString().toLowerCase();
+                  final shopAndRoom = (data['shopAndRoom'] ?? '')
+                      .toString()
+                      .toLowerCase();
+                  return name.contains(query) || shopAndRoom.contains(query);
                 }).toList();
 
                 return ListView.builder(
                   shrinkWrap: true,
                   itemCount: filtered.length,
-                  itemBuilder: (ctx, i) => ListTile(
-                    title: Text(filtered[i]['name']),
-                    onTap: () => setState(() {
-                      _selectedVenueId = filtered[i].id;
-                      _selectedVenueName = filtered[i]['name'];
-                      _venueSearchController.text = filtered[i]['name'];
-                      _showVenueList = false;
-                    }),
-                  ),
+                  itemBuilder: (ctx, i) {
+                    final data = filtered[i].data() as Map<String, dynamic>;
+                    final venueName = (data['name'] ?? '').toString();
+                    final shopAndRoom = (data['shopAndRoom'] ?? '').toString();
+                    return ListTile(
+                      title: Text(venueName),
+                      subtitle: Text(shopAndRoom.isEmpty ? '-' : shopAndRoom),
+                      onTap: () => setState(() {
+                        _selectedVenueId = filtered[i].id;
+                        _selectedVenueName = venueName;
+                        _venueSearchController.text = venueName;
+                        _showVenueList = false;
+                      }),
+                    );
+                  },
                 );
               },
             ),
@@ -1815,7 +1936,12 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
     );
   }
 
-  Widget _buildTextField(TextEditingController controller, String label, {int maxLines = 1, bool isUrgent = false}) {
+  Widget _buildTextField(
+    TextEditingController controller,
+    String label, {
+    int maxLines = 1,
+    bool isUrgent = false,
+  }) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 15),
       child: TextField(
@@ -1823,7 +1949,9 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
         maxLines: maxLines,
         decoration: InputDecoration(
           labelText: label,
-          labelStyle: isUrgent ? const TextStyle(color: Colors.redAccent) : null,
+          labelStyle: isUrgent
+              ? const TextStyle(color: Colors.redAccent)
+              : null,
         ),
       ),
     );
@@ -1847,7 +1975,9 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
             lastDate: DateTime(2030),
           );
           if (d != null) {
-            setState(() => _dateController.text = DateFormat('yyyy/MM/dd').format(d));
+            setState(
+              () => _dateController.text = DateFormat('yyyy/MM/dd').format(d),
+            );
           }
         },
       ),
@@ -1865,13 +1995,23 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
           runSpacing: 8,
           children: [
             // 既存画像
-            ..._existingUrls.map((url) => _buildImageTile(url: url, onRemove: () {
+            ..._existingUrls.map(
+              (url) => _buildImageTile(
+                url: url,
+                onRemove: () {
                   setState(() => _existingUrls.remove(url));
-                })),
+                },
+              ),
+            ),
             // 新規画像
-            ..._newFiles.map((file) => _buildImageTile(file: file, onRemove: () {
+            ..._newFiles.map(
+              (file) => _buildImageTile(
+                file: file,
+                onRemove: () {
                   setState(() => _newFiles.remove(file));
-                })),
+                },
+              ),
+            ),
             // 追加ボタン
             _buildAddImageButton(),
           ],
@@ -1880,7 +2020,11 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
     );
   }
 
-  Widget _buildImageTile({String? url, XFile? file, required VoidCallback onRemove}) {
+  Widget _buildImageTile({
+    String? url,
+    XFile? file,
+    required VoidCallback onRemove,
+  }) {
     return Stack(
       children: [
         ClipRRect(
@@ -1891,13 +2035,13 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
             child: url != null
                 ? Image.network(url, fit: BoxFit.cover)
                 : kIsWeb
-                    ? FutureBuilder<Uint8List>(
-                        future: file!.readAsBytes(),
-                        builder: (ctx, snap) => snap.hasData 
-                          ? Image.memory(snap.data!, fit: BoxFit.cover) 
-                          : const Center(child: CircularProgressIndicator()),
-                      )
-                    : Image.file(File(file!.path), fit: BoxFit.cover),
+                ? FutureBuilder<Uint8List>(
+                    future: file!.readAsBytes(),
+                    builder: (ctx, snap) => snap.hasData
+                        ? Image.memory(snap.data!, fit: BoxFit.cover)
+                        : const Center(child: CircularProgressIndicator()),
+                  )
+                : Image.file(File(file!.path), fit: BoxFit.cover),
           ),
         ),
         Positioned(
@@ -1928,29 +2072,32 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
   }
 
   Widget _buildSaveButton() {
-  return SizedBox(
-    width: double.infinity,
-    height: 54,
-    child: ElevatedButton(
-      // アップロード中はボタン自体を無効化（連打防止）
-      onPressed: _isUploading ? null : _save, 
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.orange[800],
-        disabledBackgroundColor: Colors.orange[200], // 無効化時の色
-      ),
-      child: _isUploading
-          ? const SizedBox(
-              height: 24,
-              width: 24,
-              child: CircularProgressIndicator(
-                color: Colors.white,
-                strokeWidth: 3,
+    return SizedBox(
+      width: double.infinity,
+      height: 54,
+      child: ElevatedButton(
+        // アップロード中はボタン自体を無効化（連打防止）
+        onPressed: _isUploading ? null : _save,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.orange[800],
+          disabledBackgroundColor: Colors.orange[200], // 無効化時の色
+        ),
+        child: _isUploading
+            ? const SizedBox(
+                height: 24,
+                width: 24,
+                child: CircularProgressIndicator(
+                  color: Colors.white,
+                  strokeWidth: 3,
+                ),
+              )
+            : const Text(
+                '予約内容を保存',
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
-            )
-          : const Text('予約内容を保存', style: TextStyle(fontWeight: FontWeight.bold)),
-    ),
-  );
-}
+      ),
+    );
+  }
 
   Widget _buildLoadingOverlay() {
     return Container(

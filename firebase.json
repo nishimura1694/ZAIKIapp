@@ -1,1 +1,83 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"coffee-spark-ai-barista-844b4","appId":"1:247917390246:android:9b95fae562048013380767","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"coffee-spark-ai-barista-844b4","configurations":{"android":"1:247917390246:android:9b95fae562048013380767","ios":"1:247917390246:ios:c9683688222cc6be380767","macos":"1:247917390246:ios:c9683688222cc6be380767","web":"1:247917390246:web:16fdc8c2352fb2ca380767","windows":"1:247917390246:web:cb36a5ed4d67e746380767"}}}}}}
+{
+	"flutter": {
+		"platforms": {
+			"android": {
+				"default": {
+					"projectId": "coffee-spark-ai-barista-844b4",
+					"appId": "1:247917390246:android:9b95fae562048013380767",
+					"fileOutput": "android/app/google-services.json"
+				}
+			},
+			"dart": {
+				"lib/firebase_options.dart": {
+					"projectId": "coffee-spark-ai-barista-844b4",
+					"configurations": {
+						"android": "1:247917390246:android:9b95fae562048013380767",
+						"ios": "1:247917390246:ios:c9683688222cc6be380767",
+						"macos": "1:247917390246:ios:c9683688222cc6be380767",
+						"web": "1:247917390246:web:16fdc8c2352fb2ca380767",
+						"windows": "1:247917390246:web:cb36a5ed4d67e746380767"
+					}
+				}
+			}
+		}
+	},
+	"hosting": {
+		"public": "build/web",
+		"ignore": [
+			"firebase.json",
+			"**/.*",
+			"**/node_modules/**"
+		],
+		"headers": [
+			{
+				"source": "/index.html",
+				"headers": [
+					{
+						"key": "Cache-Control",
+						"value": "no-cache, no-store, must-revalidate"
+					}
+				]
+			},
+			{
+				"source": "/flutter_service_worker.js",
+				"headers": [
+					{
+						"key": "Cache-Control",
+						"value": "no-cache, no-store, must-revalidate"
+					}
+				]
+			},
+			{
+				"source": "/version.json",
+				"headers": [
+					{
+						"key": "Cache-Control",
+						"value": "no-cache, no-store, must-revalidate"
+					}
+				]
+			},
+			{
+				"source": "/manifest.json",
+				"headers": [
+					{
+						"key": "Cache-Control",
+						"value": "no-cache, no-store, must-revalidate"
+					}
+				]
+			}
+		],
+		"rewrites": [
+			{
+				"source": "**",
+				"destination": "/index.html"
+			}
+		]
+	},
+	"firestore": {
+		"rules": "firestore.rules"
+	},
+	"storage": {
+		"rules": "storage.rules"
+	}
+}

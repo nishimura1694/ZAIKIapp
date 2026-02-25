@@ -15,4 +15,23 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Security Rules Deployment
+
+This project uses local Firebase Security Rules files:
+
+- Firestore: `firestore.rules`
+- Storage: `storage.rules`
+
+Deploy rules with:
+
+```bash
+firebase deploy --only firestore:rules,storage
+```
+
+If you deploy Hosting too, use:
+
+```bash
+firebase deploy
+```
 　

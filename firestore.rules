@@ -1,0 +1,120 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isStringOrEmpty(v) {
+      return v == null || v is string;
+    }
+
+    function isTimestampOrNull(v) {
+      return v == null || v is timestamp;
+    }
+
+    function hasSafeImageUrls(v) {
+      return (v is list) &&
+        v.size() <= 30;
+    }
+
+    function isMasterPayload() {
+      return request.resource.data.keys().hasOnly(['name']) &&
+        request.resource.data.name is string &&
+        request.resource.data.name.size() > 0 &&
+        request.resource.data.name.size() <= 100;
+    }
+
+    function isVenuePayload() {
+      return request.resource.data.keys().hasOnly([
+        'name',
+        'address',
+        'shopAndRoom',
+        'loadingPort',
+        'parking',
+        'capacity',
+        'remarks',
+        'block',
+        'category',
+        'power',
+        'updatedAt',
+        'createdAt'
+      ]) &&
+      request.resource.data.name is string &&
+      request.resource.data.name.size() > 0 &&
+      request.resource.data.name.size() <= 120 &&
+      isStringOrEmpty(request.resource.data.address) &&
+      isStringOrEmpty(request.resource.data.shopAndRoom) &&
+      isStringOrEmpty(request.resource.data.loadingPort) &&
+      isStringOrEmpty(request.resource.data.parking) &&
+      isStringOrEmpty(request.resource.data.capacity) &&
+      isStringOrEmpty(request.resource.data.remarks) &&
+      isStringOrEmpty(request.resource.data.block) &&
+      isStringOrEmpty(request.resource.data.category) &&
+      isStringOrEmpty(request.resource.data.power) &&
+      isTimestampOrNull(request.resource.data.updatedAt) &&
+      isTimestampOrNull(request.resource.data.createdAt);
+    }
+
+    function isBookingPayload() {
+      return request.resource.data.keys().hasOnly([
+        'customerName',
+        'staffName',
+        'bookingDate',
+        'remarks',
+        'handover',
+        'dropboxUrl',
+        'venueId',
+        'venueName',
+        'imageUrls',
+        'updatedAt',
+        'createdAt'
+      ]) &&
+      request.resource.data.customerName is string &&
+      request.resource.data.customerName.size() > 0 &&
+      request.resource.data.customerName.size() <= 120 &&
+      isStringOrEmpty(request.resource.data.staffName) &&
+      isStringOrEmpty(request.resource.data.bookingDate) &&
+      isStringOrEmpty(request.resource.data.remarks) &&
+      isStringOrEmpty(request.resource.data.handover) &&
+      isStringOrEmpty(request.resource.data.dropboxUrl) &&
+      (request.resource.data.dropboxUrl == null ||
+        request.resource.data.dropboxUrl.matches('^https://.*')) &&
+      isStringOrEmpty(request.resource.data.venueId) &&
+      isStringOrEmpty(request.resource.data.venueName) &&
+      hasSafeImageUrls(request.resource.data.imageUrls) &&
+      isTimestampOrNull(request.resource.data.updatedAt) &&
+      isTimestampOrNull(request.resource.data.createdAt);
+    }
+
+    match /venues/{docId} {
+      allow read: if true;
+      allow create, update: if true;
+      allow delete: if true;
+    }
+
+    match /bookings/{docId} {
+      allow read: if true;
+      allow create, update: if isBookingPayload();
+      allow delete: if true;
+    }
+
+    match /blocks/{docId} {
+      allow read: if true;
+      allow create, update: if isMasterPayload();
+      allow delete: if true;
+    }
+
+    match /categories/{docId} {
+      allow read: if true;
+      allow create, update: if isMasterPayload();
+      allow delete: if true;
+    }
+
+    match /powers/{docId} {
+      allow read: if true;
+      allow create, update: if isMasterPayload();
+      allow delete: if true;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
