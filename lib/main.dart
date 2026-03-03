@@ -1,9 +1,9 @@
-import 'dart:io';
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -41,6 +41,13 @@ class VenueApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'ZAIKIナビ',
+      locale: const Locale('ja'),
+      supportedLocales: const [Locale('ja')],
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
       scrollBehavior: MaterialScrollBehavior().copyWith(
         dragDevices: {
           PointerDeviceKind.touch,
@@ -67,6 +74,14 @@ class VenueApp extends StatelessWidget {
             fontSize: 18,
           ),
           iconTheme: IconThemeData(color: Colors.black),
+        ),
+        dialogTheme: const DialogThemeData(
+          backgroundColor: Colors.white,
+          surfaceTintColor: Colors.transparent,
+        ),
+        datePickerTheme: const DatePickerThemeData(
+          backgroundColor: Colors.white,
+          surfaceTintColor: Colors.transparent,
         ),
         inputDecorationTheme: InputDecorationTheme(
           filled: true,
@@ -397,6 +412,66 @@ class _BookingListScreenState extends State<BookingListScreen> {
   String _searchQuery = "";
   String? _selectedMonthKey;
 
+  Future<void> _openMapForAddress(String address) async {
+    final String uri =
+        'https://maps.google.com/?q=${Uri.encodeComponent(address)}';
+    try {
+      if (await canLaunchUrl(Uri.parse(uri))) {
+        await launchUrl(Uri.parse(uri), mode: LaunchMode.externalApplication);
+      } else {
+        if (!mounted) return;
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text('地図アプリを開けませんでした')));
+      }
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('エラー: $e')));
+    }
+  }
+
+  Widget _buildBookingLocationButton(Map<String, dynamic> data) {
+    final directAddress = (data['venueAddress'] ?? data['address'] ?? '')
+        .toString()
+        .trim();
+    if (directAddress.isNotEmpty) {
+      return IconButton(
+        icon: const Icon(Icons.location_on),
+        color: const Color.fromARGB(255, 255, 102, 0),
+        onPressed: () => _openMapForAddress(directAddress),
+      );
+    }
+
+    final venueId = (data['venueId'] ?? '').toString().trim();
+    if (venueId.isEmpty) {
+      return const Icon(Icons.location_on, color: Colors.grey);
+    }
+
+    return FutureBuilder<DocumentSnapshot>(
+      future: FirebaseFirestore.instance
+          .collection('venues')
+          .doc(venueId)
+          .get(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) {
+          return const Icon(Icons.location_on, color: Colors.grey);
+        }
+        final venueData = snapshot.data!.data() as Map<String, dynamic>?;
+        final address = (venueData?['address'] ?? '').toString().trim();
+        if (address.isEmpty) {
+          return const Icon(Icons.location_on, color: Colors.grey);
+        }
+        return IconButton(
+          icon: const Icon(Icons.location_on),
+          color: const Color.fromARGB(255, 255, 102, 0),
+          onPressed: () => _openMapForAddress(address),
+        );
+      },
+    );
+  }
+
   String _extractMonthKey(String? bookingDate) {
     if (bookingDate == null) return '';
     final normalized = bookingDate.trim().replaceAll('-', '/');
@@ -615,7 +690,10 @@ class _BookingListScreenState extends State<BookingListScreen> {
                     subtitle: Text(
                       "${data['bookingDate']} / ${data['venueName']}",
                     ),
-                    // trailingアイコンを削除
+                    trailing: SizedBox(
+                      width: 48,
+                      child: _buildBookingLocationButton(data),
+                    ),
                     onTap: () => showModalBottomSheet(
                       context: context,
                       isScrollControlled: true,
@@ -666,6 +744,8 @@ class BookingDetailSheet extends StatelessWidget {
     showDialog(
       context: context,
       builder: (ctx) => Dialog(
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.transparent,
         insetPadding: const EdgeInsets.all(16),
         child: Container(
           constraints: BoxConstraints(
@@ -715,6 +795,8 @@ class BookingDetailSheet extends StatelessWidget {
     final confirm = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.transparent,
         title: const Text('削除の確認'),
         content: const Text('この予約履歴を削除しますか？'),
         actions: [
@@ -908,6 +990,8 @@ class VenueDetailSheet extends StatelessWidget {
     final confirm = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.transparent,
         title: const Text('会場の削除'),
         content: const Text('この会場情報を削除しますか？'),
         actions: [
@@ -1280,6 +1364,8 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.transparent,
         title: Text('$labelの管理'),
         content: SizedBox(
           width: 300,
@@ -1341,6 +1427,8 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.transparent,
         title: Text('$labelの追加'),
         content: TextField(
           controller: c,
@@ -1373,6 +1461,8 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.transparent,
         title: Text('$labelの編集'),
         content: TextField(
           controller: c,
@@ -1677,6 +1767,12 @@ class AddBookingScreen extends StatefulWidget {
   State<AddBookingScreen> createState() => _AddBookingScreenState();
 }
 
+class _PendingImage {
+  final Uint8List bytes;
+
+  const _PendingImage({required this.bytes});
+}
+
 class _AddBookingScreenState extends State<AddBookingScreen> {
   // --- Controllers ---
   final _customerController = TextEditingController();
@@ -1689,7 +1785,7 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
 
   // --- State Variables ---
   String? _selectedVenueId, _selectedVenueName;
-  final List<XFile> _newFiles = []; // 新しく選択された画像
+  final List<_PendingImage> _newImages = []; // 新しく選択された画像
   List<String> _existingUrls = []; // すでにFirestoreにある画像
   bool _isUploading = false;
   bool _showVenueList = false;
@@ -1751,9 +1847,24 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
 
   Future<void> _pickImages() async {
     final picked = await ImagePicker().pickMultiImage();
-    if (picked.isNotEmpty) {
-      setState(() => _newFiles.addAll(picked));
+    if (picked.isEmpty) return;
+
+    final pendingImages = <_PendingImage>[];
+    for (final file in picked) {
+      try {
+        final bytes = await file.readAsBytes();
+        pendingImages.add(_PendingImage(bytes: bytes));
+      } catch (e) {
+        debugPrint('Failed to read picked image: $e');
+      }
     }
+
+    if (pendingImages.isEmpty) {
+      _showSnackBar('画像の読み込みに失敗しました');
+      return;
+    }
+
+    setState(() => _newImages.addAll(pendingImages));
   }
 
   // --- Logic: Save ---
@@ -1791,13 +1902,13 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
   }
 
   Future<List<String>> _uploadImages() async {
-    if (_newFiles.isEmpty) return [];
+    if (_newImages.isEmpty) return [];
 
     final storage = FirebaseStorage.instance;
     final List<String> uploadedUrls = [];
 
-    for (final file in _newFiles) {
-      final originalBytes = await file.readAsBytes();
+    for (final image in _newImages) {
+      final originalBytes = image.bytes;
       final compressedBytes = await compute(_processImageIsolate, {
         'bytes': originalBytes,
       });
@@ -2018,11 +2129,85 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
           prefixIcon: Icon(Icons.calendar_today),
         ),
         onTap: () async {
-          final d = await showDatePicker(
+          DateTime? initialDate;
+          final currentValue = _dateController.text.trim();
+          if (currentValue.isNotEmpty) {
+            try {
+              initialDate = DateFormat('yyyy/MM/dd').parseStrict(currentValue);
+            } catch (_) {}
+          }
+          initialDate ??= DateTime.now();
+
+          DateTime tempSelectedDate = initialDate;
+          DateTime? lastTappedDate;
+          DateTime? lastTappedAt;
+
+          final d = await showDialog<DateTime>(
             context: context,
-            initialDate: DateTime.now(),
-            firstDate: DateTime(2020),
-            lastDate: DateTime(2030),
+            builder: (dialogContext) {
+              return Dialog(
+                backgroundColor: Colors.white,
+                surfaceTintColor: Colors.transparent,
+                insetPadding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 24,
+                ),
+                child: SizedBox(
+                  width: 280,
+                  child: StatefulBuilder(
+                    builder: (context, setDialogState) {
+                      return Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          CalendarDatePicker(
+                            initialDate: tempSelectedDate,
+                            firstDate: DateTime(2020),
+                            lastDate: DateTime(2030),
+                            currentDate: DateTime.now(),
+                            onDateChanged: (value) {
+                              final now = DateTime.now();
+                              final isDoubleTap =
+                                  lastTappedDate != null &&
+                                  lastTappedAt != null &&
+                                  DateUtils.isSameDay(lastTappedDate, value) &&
+                                  now
+                                          .difference(lastTappedAt!)
+                                          .inMilliseconds <=
+                                      500;
+
+                              setDialogState(() => tempSelectedDate = value);
+                              lastTappedDate = value;
+                              lastTappedAt = now;
+
+                              if (isDoubleTap) {
+                                Navigator.pop(dialogContext, value);
+                              }
+                            },
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              TextButton(
+                                onPressed: () => Navigator.pop(dialogContext),
+                                child: const Text('キャンセル'),
+                              ),
+                              TextButton(
+                                onPressed: () => Navigator.pop(
+                                  dialogContext,
+                                  tempSelectedDate,
+                                ),
+                                child: const Text('決定'),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 4),
+                        ],
+                      );
+                    },
+                  ),
+                ),
+              );
+            },
           );
           if (d != null) {
             setState(
@@ -2054,11 +2239,11 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
               ),
             ),
             // 新規画像
-            ..._newFiles.map(
-              (file) => _buildImageTile(
-                file: file,
+            ..._newImages.map(
+              (image) => _buildImageTile(
+                bytes: image.bytes,
                 onRemove: () {
-                  setState(() => _newFiles.remove(file));
+                  setState(() => _newImages.remove(image));
                 },
               ),
             ),
@@ -2072,7 +2257,7 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
 
   Widget _buildImageTile({
     String? url,
-    XFile? file,
+    Uint8List? bytes,
     required VoidCallback onRemove,
   }) {
     return Stack(
@@ -2084,14 +2269,9 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
             height: 80,
             child: url != null
                 ? Image.network(url, fit: BoxFit.cover)
-                : kIsWeb
-                ? FutureBuilder<Uint8List>(
-                    future: file!.readAsBytes(),
-                    builder: (ctx, snap) => snap.hasData
-                        ? Image.memory(snap.data!, fit: BoxFit.cover)
-                        : const Center(child: CircularProgressIndicator()),
-                  )
-                : Image.file(File(file!.path), fit: BoxFit.cover),
+                : bytes != null
+                ? Image.memory(bytes, fit: BoxFit.cover)
+                : const SizedBox.shrink(),
           ),
         ),
         Positioned(
@@ -2143,7 +2323,10 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
               )
             : const Text(
                 '予約内容を保存',
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
       ),
     );
