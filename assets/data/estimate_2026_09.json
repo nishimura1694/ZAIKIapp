@@ -724,33 +724,6 @@
       ]
     },
     {
-      "folder": "0905関根さま（246KYOTO）",
-      "clientName": "せきね",
-      "deliveryAddress": "246KYOTO",
-      "deliveryDate": "2026-09-05",
-      "items": [
-        {
-          "category": "パーカッション",
-          "name": "コンガ",
-          "memo": "PEARL WHITEWOODCONGAS",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "パーカッション",
-          "name": "運搬手数料",
-          "qty": 1
-        },
-        {
-          "category": "運搬サービス",
-          "name": "トランスポート＿エリア4",
-          "memo": "運搬・設営・撤収_4",
-          "qty": 1,
-          "duration": "12h"
-        }
-      ]
-    },
-    {
       "folder": "0911-13四天王寺（学際　体育館）（四天王寺高等学校中学校　体育館）",
       "clientName": "学校法人四天王寺学園",
       "deliveryAddress": "四天王寺高等学校中学校　体育館",
