@@ -24,7 +24,7 @@ import sys
 import tempfile
 import urllib.error
 import urllib.request
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 
 try:
@@ -185,6 +185,20 @@ def _fallback_date_from_folder(folder, year):
     if not m:
         return None
     month, day = int(m.group(1)), int(m.group(2))
+    return _safe_date(year, month, day)
+
+
+def _normalize_ship_date(ship_date, folder, year):
+    """サマリーシートの日付欄を正規化する。日付型ならそのまま使い、
+    空欄または「2026-09-12〜09/13」のような自由記述で日付として解釈できない
+    場合は、案件名先頭の日付表記から補完する（補完できなければ元の値のまま）。"""
+    if isinstance(ship_date, (date, datetime)):
+        return ship_date
+    fallback = _fallback_date_from_folder(folder, year)
+    return fallback or ship_date
+
+
+def _safe_date(year, month, day):
     if not (1 <= month <= 12):
         return None
     try:
@@ -300,8 +314,7 @@ def parse_estimate_workbook(xlsx_path, year):
             entry["deliveryAddress"] = address
         if address_detail and address_detail != "-":
             entry["deliveryAddressDetail"] = address_detail
-        if not ship_date:
-            ship_date = _fallback_date_from_folder(folder, year)
+        ship_date = _normalize_ship_date(ship_date, folder, year)
         if ship_date:
             entry["deliveryDate"] = str(ship_date)
         if ship_time and ship_time != "-":

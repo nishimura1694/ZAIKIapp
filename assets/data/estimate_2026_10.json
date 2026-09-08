@@ -312,7 +312,7 @@
       "folder": "1010-11木村さん案件（泉大津）（泉大津フェニックス）",
       "clientName": "木村 尚矢",
       "deliveryAddress": "泉大津フェニックス",
-      "deliveryDate": "2026-10-09",
+      "deliveryDate": "2026-10-10",
       "time": "午後",
       "returnTime": "16:00",
       "items": [
@@ -1088,7 +1088,7 @@
       "clientName": "学校法人　西伊丹学園",
       "deliveryAddress": "クボタ伊丹総合グラウンド",
       "deliveryAddressDetail": "〒664-0025 兵庫県伊丹市奥畑５丁目１０",
-      "deliveryDate": "2026/10/11(日)",
+      "deliveryDate": "2026-10-11",
       "time": "07:00",
       "returnTime": "12:00以降",
       "items": [
@@ -1252,7 +1252,7 @@
       "clientName": "木嶋　麟太郎",
       "deliveryAddress": "MiaVia イザベラ邸",
       "deliveryAddressDetail": "〒564-0054 大阪府吹田市芳野町１３−８",
-      "deliveryDate": "2026-10-10",
+      "deliveryDate": "2026-10-11",
       "time": "暫定18:00",
       "items": [
         {
@@ -1402,7 +1402,7 @@
       "clientName": "Gravity　Park Ibaraki 株式会社",
       "deliveryAddress": "グラビテート大阪",
       "deliveryAddressDetail": "〒568-0092 大阪府茨木市生保５３−１",
-      "deliveryDate": "2026-10-10",
+      "deliveryDate": "2026-10-12",
       "time": "09:00",
       "returnTime": "16:30以降or翌日",
       "items": [
@@ -2075,7 +2075,7 @@
     },
     {
       "folder": "1017-18瀬島さまウォンバット（五月山動物園）",
-      "deliveryDate": "2026-10-17〜10/18",
+      "deliveryDate": "2026-10-17",
       "note": "見積ファイルはあるが同期未完了のため未読込（後日再取得が必要）",
       "items": []
     },
@@ -2084,7 +2084,7 @@
       "clientName": "株式会社プロケア\nちゃいれっく東天満保育園",
       "deliveryAddress": "与力町公園",
       "deliveryAddressDetail": "〒530-0036 大阪府大阪市北区与力町５",
-      "deliveryDate": "2026-10-21",
+      "deliveryDate": "2026-10-17",
       "time": "07:00",
       "returnTime": "12:00",
       "items": [
@@ -3130,7 +3130,7 @@
       "clientName": "福間　博義",
       "deliveryAddress": "キャッスルホテル大阪 1Fルポール",
       "deliveryAddressDetail": "〒540-0032 大阪市中央区天満橋京町１−１",
-      "deliveryDate": "2025-11-02",
+      "deliveryDate": "2026-10-25",
       "time": "15:00",
       "returnTime": "20:30",
       "items": [

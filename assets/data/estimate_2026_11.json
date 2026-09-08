@@ -735,7 +735,7 @@
       "folder": "1113-15浅岡さま（和歌山片男波）",
       "clientName": "浅岡　寛之",
       "deliveryAddress": "和歌山県　片男波海水浴場",
-      "deliveryDate": "2026-11-14",
+      "deliveryDate": "2026-11-13",
       "time": "未定",
       "returnTime": "未定",
       "note": "見積ファイル同期未完了のため今回は再取得できず、前回取得データを表示（要確認）",
@@ -1197,7 +1197,7 @@
     },
     {
       "folder": "1119-20阪急メンズ（阪急メンズ）",
-      "deliveryDate": "2026-11-19〜11/20",
+      "deliveryDate": "2026-11-19",
       "note": "見積ファイルなし（資料のみ）",
       "items": []
     },
@@ -1357,7 +1357,7 @@
       "clientName": "永池　朱音",
       "deliveryAddress": "NEEDS心斎橋 by T&G WEDDING",
       "deliveryAddressDetail": "〒542-0081 大阪府大阪市中央区南船場１丁目１８−８",
-      "deliveryDate": "2026-11-20",
+      "deliveryDate": "2026-11-21",
       "time": "19:00",
       "returnTime": "13:30-15:00",
       "items": [
