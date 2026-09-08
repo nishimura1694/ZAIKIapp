@@ -1167,9 +1167,23 @@
           "duration": "1日"
         },
         {
+          "category": "スタンド類",
+          "name": "マイクスタンド",
+          "memo": "ショートブーム<259>",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
           "category": "運搬サービス",
-          "name": "トランスポート＿エリア1",
-          "memo": "運搬・設営・撤収",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
           "qty": 1,
           "duration": "1日"
         }
@@ -1181,8 +1195,8 @@
       "deliveryAddress": "摂津市立第四中学校",
       "deliveryAddressDetail": "〒566-0042 大阪府摂津市東別府４丁目６−１",
       "deliveryDate": "2026-09-15",
-      "time": "16:00",
-      "returnTime": "夕方ごろ",
+      "time": "16:30",
+      "returnTime": "15:00",
       "items": [
         {
           "category": "セットプラン",
