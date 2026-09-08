@@ -255,9 +255,8 @@ def parse_estimate_workbook(xlsx_path, year):
     ]
 
     result = []
-    for j, s in zip(jobs, summary_rows):
-        if _is_cancelled(j["folder"]):
-            continue
+    job_idx = 0
+    for s in summary_rows:
         (
             _,
             folder_sum,
@@ -277,8 +276,24 @@ def parse_estimate_workbook(xlsx_path, year):
             s[6],
             s[7],
         )
+        folder_sum_text = str(folder_sum).strip() if folder_sum else ""
+
+        # 見積シートとサマリーシートは基本的に同じ順番で並んでいるはずだが、
+        # 「見積ファイルなし（資料のみ）」のようにサマリーシートにしか存在しない
+        # 行があると、位置だけでの対応付け(zip)はそこから先が全てずれてしまう。
+        # そのため、サマリー側の案件名が見積シート側の案件名の先頭と一致するかで
+        # 対応付け、一致しない場合は「見積側に対応ブロックなし」として扱う。
+        matched_job = None
+        if job_idx < len(jobs) and jobs[job_idx]["folder"].startswith(folder_sum_text):
+            matched_job = jobs[job_idx]
+            job_idx += 1
+
+        folder = matched_job["folder"] if matched_job else folder_sum_text
+        if _is_cancelled(folder):
+            continue
+
         note = _filter_note(s[12] if len(s) > 12 else None)
-        entry = {"folder": j["folder"]}
+        entry = {"folder": folder}
         if oname:
             entry["clientName"] = oname
         if address and address != "-":
@@ -286,7 +301,7 @@ def parse_estimate_workbook(xlsx_path, year):
         if address_detail and address_detail != "-":
             entry["deliveryAddressDetail"] = address_detail
         if not ship_date:
-            ship_date = _fallback_date_from_folder(j["folder"], year)
+            ship_date = _fallback_date_from_folder(folder, year)
         if ship_date:
             entry["deliveryDate"] = str(ship_date)
         if ship_time and ship_time != "-":
@@ -295,7 +310,7 @@ def parse_estimate_workbook(xlsx_path, year):
             entry["returnTime"] = return_time
         if note:
             entry["note"] = note
-        entry["items"] = j["items"]
+        entry["items"] = matched_job["items"] if matched_job else []
         result.append(entry)
 
     return result
