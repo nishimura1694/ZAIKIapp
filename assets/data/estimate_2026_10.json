@@ -62,7 +62,7 @@
       "deliveryAddressDetail": "〒550-0013 大阪府大阪市西区新町１丁目１−１８",
       "deliveryDate": "2026-10-04",
       "time": "11:30",
-      "returnTime": "17:00",
+      "returnTime": "17:30",
       "items": [
         {
           "category": "セットプラン",
@@ -1389,7 +1389,12 @@
     },
     {
       "folder": "1011田中さま（アートグレイスウエディングコースト大阪）",
+      "clientName": "田中　拓磨",
+      "deliveryAddress": "アートグレイスウエディングコースト大阪",
+      "deliveryAddressDetail": "〒559-0034 大阪府大阪市住之江区南港北２丁目８−１",
       "deliveryDate": "2026-10-11",
+      "time": "未定",
+      "returnTime": "未定",
       "items": [
         {
           "category": "セットプラン",
@@ -1441,16 +1446,6 @@
           "duration": "12h"
         }
       ]
-    },
-    {
-      "folder": "1011田中さま",
-      "clientName": "田中　拓磨",
-      "deliveryAddress": "アートグレイスウエディングコースト大阪",
-      "deliveryAddressDetail": "〒559-0034 大阪府大阪市住之江区南港北２丁目８−１",
-      "deliveryDate": "2026-10-11",
-      "time": "未定",
-      "returnTime": "未定",
-      "items": []
     },
     {
       "folder": "1012井元さま（グラビテート大阪）（グラビテート大阪）",
