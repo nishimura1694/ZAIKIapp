@@ -1069,6 +1069,45 @@
       ]
     },
     {
+      "folder": "0912川谷様(BEAMS)キャン（タイムアウトマーケット大阪）",
+      "clientName": "株式会社BEAMS",
+      "deliveryAddress": "タイムアウトマーケット大阪",
+      "deliveryAddressDetail": "〒530-0011 大阪府大阪市北区大深町５−５４\nGrand Green Osaka South Building B1F",
+      "deliveryDate": "2026-09-12",
+      "time": "13:00-15:00",
+      "returnTime": "23:00",
+      "items": [
+        {
+          "category": "DJ",
+          "name": "DJプレイヤー",
+          "memo": "AlphaTheta CDJ-3000X",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "DJ",
+          "name": "DJプレイヤー",
+          "memo": "Pioneer CDJ-2000nxs",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "DJ",
+          "name": "DJミキサー",
+          "memo": "Pioneer DJM-900nxs2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
       "folder": "0912番匠谷様（中鴻池リージョンセンター）",
       "clientName": "バンジョウヤ ナオヤ",
       "deliveryAddress": "中鴻池リージョンセンター",
@@ -1396,6 +1435,79 @@
           "memo": "運搬・設営・撤収_2",
           "qty": 1,
           "duration": "24h"
+        }
+      ]
+    },
+    {
+      "folder": "0918-19服部さま(吹田市)（N高等学校　江坂キャンパス）",
+      "clientName": "服部　加奈",
+      "deliveryAddress": "N高等学校　江坂キャンパス",
+      "deliveryDate": "2026-09-18",
+      "time": "13:00",
+      "returnTime": "16:30",
+      "items": [
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "Ampeg BA115-V2",
+          "qty": 1,
+          "duration": "1.5日"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 3,
+          "duration": "1.5日"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "アンプ台数分サービス",
+          "qty": 4,
+          "duration": "1.5日"
+        },
+        {
+          "category": "ミキサー",
+          "name": "ミニミキサー",
+          "memo": "YAMAHA MG10XU",
+          "qty": 1,
+          "duration": "1.5日"
+        },
+        {
+          "category": "ケーブル類",
+          "name": "マイクケーブル",
+          "memo": "5m",
+          "qty": 1,
+          "duration": "1.5日"
+        },
+        {
+          "category": "ケーブル類",
+          "name": "シールド",
+          "memo": "・5m×8本\n・10m×1本",
+          "qty": 9,
+          "duration": "1.5日"
+        },
+        {
+          "category": "カラオケ・簡易ステージ",
+          "name": "簡易ステージ",
+          "memo": "INTELLI STAGE\nサイズ：幅100cm×長さ100cm\nライザー：高さ20cm",
+          "qty": 18,
+          "duration": "1.5日"
+        },
+        {
+          "category": "前面スカート付属",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "1.5日"
+        },
+        {
+          "category": "前面スカート付属",
+          "name": "搬入出追加人員",
+          "memo": "作業費含む",
+          "qty": 1,
+          "duration": "1.5日"
         }
       ]
     },

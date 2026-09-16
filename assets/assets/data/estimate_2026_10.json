@@ -945,6 +945,120 @@
       ]
     },
     {
+      "folder": "1011中島さま(箕面市)キャン（箕面市立かやの広場）",
+      "clientName": "中島 和恵",
+      "deliveryAddress": "箕面市立かやの広場",
+      "deliveryAddressDetail": "〒562-0034 大阪府箕面市西宿１丁目１５−３０",
+      "deliveryDate": "2026-10-11",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット〔LL〕",
+          "memo": "・YAMAHA EMX5016CF×1\n・Martin AUDIO X15B×2\n・SPケーブル20m×2\n・スピーカースタンド×2\n・SM58×4\n・マイクケーブル10m×4\n・マイクスタンド×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "EV SX300(スタンド付属)",
+          "qty": 4,
+          "duration": "12h"
+        },
+        {
+          "category": "マイク",
+          "name": "コンデンサーマイク",
+          "memo": "SHURE BETA91A ",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "マイク",
+          "name": "ダイナミックマイク",
+          "memo": "SHURE SM57 ",
+          "qty": 3,
+          "duration": "12h"
+        },
+        {
+          "category": "スタンド類",
+          "name": "マイクスタンド",
+          "memo": "ショートブーム<259>",
+          "qty": 3,
+          "duration": "12h"
+        },
+        {
+          "category": "マイク",
+          "name": "ダイナミックマイク",
+          "memo": "SHURE SM57　",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スタンド類",
+          "name": "マイクスタンド",
+          "memo": "ロングブーム<210>",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ダイレクトボックス",
+          "name": "D.I.",
+          "memo": "RADIAL J48 MK2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ダイレクトボックス",
+          "name": "線材費",
+          "memo": "電源\nマイクケーブル \nスピーカーケーブル",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット小口径",
+          "memo": "DW Collector's Maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "Ampeg BA115-V2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Marshall DSL100H + 1960A",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "アンプ台数分サービス",
+          "qty": 3,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
       "folder": "1011久保さま(日本なにわ民謡会)（立花南生涯学習プラザ 3階ホール）",
       "clientName": "久保 名津絵",
       "deliveryAddress": "立花南生涯学習プラザ 3階ホール",
@@ -3673,6 +3787,72 @@
           "memo": "1P_A",
           "qty": 2,
           "duration": "1.5日"
+        }
+      ]
+    },
+    {
+      "folder": "1031-1102伊部さま(近畿大学)（近畿大学 東大阪キャンパス 記念会館）",
+      "clientName": "近畿大学文化祭実行委員会",
+      "deliveryAddress": "近畿大学 東大阪キャンパス 記念会館",
+      "deliveryDate": "2026-10-31",
+      "time": "09:00",
+      "returnTime": "21:00",
+      "items": [
+        {
+          "category": "カラオケ・簡易ステージ",
+          "name": "カラオケ",
+          "memo": "本体：CyberDAM-HD　G100X\nデンモク×2\nワイヤレスマイク：2本\nケーブル一式",
+          "qty": 1,
+          "duration": "3日"
+        },
+        {
+          "category": "カラオケ・簡易ステージ",
+          "name": "ディスプレイ",
+          "memo": "28インチ 液晶ディスプレイ\nフィリップス 288P6LJEB1/11",
+          "qty": 1,
+          "duration": "3日"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "3日"
+        }
+      ]
+    },
+    {
+      "folder": "1031-1103岩永さま（摂南大学）（摂南大学寝屋川キャンパス\n13号館3階多目的ホール）",
+      "clientName": "摂南大学軽音楽部",
+      "deliveryAddress": "摂南大学寝屋川キャンパス\n13号館3階多目的ホール",
+      "deliveryDate": "2026-10-31",
+      "items": [
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "パワーアンプ込み",
+          "qty": 1,
+          "duration": "4日"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "4日"
+        },
+        {
+          "category": "オペレート",
+          "name": "PAエンジニア派遣",
+          "qty": 1,
+          "duration": 4
+        },
+        {
+          "category": "オペレート",
+          "name": "移動費・延長費",
+          "memo": "サービス",
+          "qty": 1,
+          "duration": "4日"
         }
       ]
     },
