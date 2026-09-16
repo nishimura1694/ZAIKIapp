@@ -162,9 +162,14 @@ def _is_discount_row(kind, name):
     return ("割引" in text) or ("値引" in text) or ("協力金" in text)
 
 
+CANCELLED_RE = re.compile(r"[（(]\s*キャン(?:セル)?\s*[）)]")
+
+
 def _is_cancelled(folder):
+    """案件名の「(キャン)」「（キャンセル）」等の括弧付き表記のみをキャンセル扱いにする。
+    単純な「キャン」部分一致だと、会場名の「〜キャンパス」等を誤検出してしまうため。"""
     text = folder or ""
-    return "キャン" in text
+    return bool(CANCELLED_RE.search(text))
 
 
 def _fallback_date_from_folder(folder, year):
