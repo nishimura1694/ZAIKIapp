@@ -29,12 +29,20 @@ if ($changed) {
 
 # ローカルにコミット済みで未pushの分（このタスク以外での手動コミット分も含む）を
 # まとめてpushし、GitHub Pages(Web版)にも自動反映する。
-$ahead = git rev-list --count '@{u}..HEAD' 2>$null
-if ($LASTEXITCODE -eq 0 -and [int]$ahead -gt 0) {
-    "$ahead commit(s) ahead of upstream, pushing" | Tee-Object -FilePath $logFile -Append
-    git push *>&1 | Tee-Object -FilePath $logFile -Append | Out-Null
+# Web版は upstream(nishimura1694/ZAIKIapp) 側のリポジトリで配信されているため、
+# origin ではなく upstream に直接pushする。
+git fetch upstream main *>&1 | Tee-Object -FilePath $logFile -Append | Out-Null
+$ahead = git rev-list --count 'upstream/main..HEAD' 2>$null
+$behind = git rev-list --count 'HEAD..upstream/main' 2>$null
+if ([int]$behind -gt 0) {
+    "local main is $behind commit(s) behind upstream/main, merging" | Tee-Object -FilePath $logFile -Append
+    git merge upstream/main -m "Merge upstream/main" *>&1 | Tee-Object -FilePath $logFile -Append | Out-Null
+}
+if ([int]$ahead -gt 0 -or [int]$behind -gt 0) {
+    "pushing to upstream" | Tee-Object -FilePath $logFile -Append
+    git push upstream main *>&1 | Tee-Object -FilePath $logFile -Append | Out-Null
     if ($LASTEXITCODE -ne 0) {
-        "git push failed (exit $LASTEXITCODE)" | Tee-Object -FilePath $logFile -Append
+        "git push to upstream failed (exit $LASTEXITCODE)" | Tee-Object -FilePath $logFile -Append
     }
 } else {
     "nothing to push" | Tee-Object -FilePath $logFile -Append
