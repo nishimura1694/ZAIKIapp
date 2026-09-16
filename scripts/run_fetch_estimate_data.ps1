@@ -27,4 +27,17 @@ if ($changed) {
     "assets/data unchanged, skipping commit" | Tee-Object -FilePath $logFile -Append
 }
 
+# ローカルにコミット済みで未pushの分（このタスク以外での手動コミット分も含む）を
+# まとめてpushし、GitHub Pages(Web版)にも自動反映する。
+$ahead = git rev-list --count '@{u}..HEAD' 2>$null
+if ($LASTEXITCODE -eq 0 -and [int]$ahead -gt 0) {
+    "$ahead commit(s) ahead of upstream, pushing" | Tee-Object -FilePath $logFile -Append
+    git push *>&1 | Tee-Object -FilePath $logFile -Append | Out-Null
+    if ($LASTEXITCODE -ne 0) {
+        "git push failed (exit $LASTEXITCODE)" | Tee-Object -FilePath $logFile -Append
+    }
+} else {
+    "nothing to push" | Tee-Object -FilePath $logFile -Append
+}
+
 exit $fetchExitCode
