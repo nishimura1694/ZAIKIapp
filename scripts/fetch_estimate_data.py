@@ -24,6 +24,7 @@ import sys
 import tempfile
 import urllib.error
 import urllib.request
+from datetime import date, datetime
 from pathlib import Path
 
 try:
@@ -136,6 +137,20 @@ def _resolve_entries(token, root_path):
 
 
 MONTH_RE = re.compile(r"(\d{4})年(\d{1,2})月")
+FILENAME_MONTH_RE = re.compile(r"estimate_(\d{4})_(\d{2})\.json")
+FOLDER_DATE_FULL_RE = re.compile(r"^(\d{4})(\d{2})(\d{2})")  # 例: 20260905エアコン
+FOLDER_DATE_RE = re.compile(r"^(\d{2})(\d{2})")  # 例: 0905エアコン（旧形式・後方互換）
+
+
+def _month_window(months_ahead, today=None):
+    """今月を含めて months_ahead か月先までの (year, month) の集合を返す。"""
+    today = today or date.today()
+    window = set()
+    y, m = today.year, today.month
+    for i in range(months_ahead + 1):
+        total = (y * 12 + (m - 1)) + i
+        window.add((total // 12, total % 12 + 1))
+    return window
 
 
 def _is_blank(row):
@@ -147,7 +162,66 @@ def _is_discount_row(kind, name):
     return ("割引" in text) or ("値引" in text) or ("協力金" in text)
 
 
-def parse_estimate_workbook(xlsx_path):
+def _is_cancelled(folder):
+    text = folder or ""
+    return "キャン" in text
+
+
+def _fallback_date_from_folder(folder, year):
+    """サマリーシートの日付欄が空の場合に、案件名先頭の日付表記から日付を推測する。
+    「20260905エアコン」のようなYYYYMMDD形式を優先し、見つからなければ
+    従来の「0905エアコン」形式（MMDD、ファイルの年を使用）にフォールバックする。"""
+    text = folder or ""
+    m_full = FOLDER_DATE_FULL_RE.match(text)
+    if m_full:
+        y, month, day = int(m_full.group(1)), int(m_full.group(2)), int(m_full.group(3))
+        if 1 <= month <= 12:
+            try:
+                return date(y, month, day)
+            except ValueError:
+                pass
+
+    m = FOLDER_DATE_RE.match(text)
+    if not m:
+        return None
+    month, day = int(m.group(1)), int(m.group(2))
+    return _safe_date(year, month, day)
+
+
+def _normalize_ship_date(ship_date, folder, year):
+    """サマリーシートの日付欄を正規化する。日付型ならそのまま使い、
+    空欄または「2026-09-12〜09/13」のような自由記述で日付として解釈できない
+    場合は、案件名先頭の日付表記から補完する（補完できなければ元の値のまま）。"""
+    if isinstance(ship_date, (date, datetime)):
+        return ship_date
+    fallback = _fallback_date_from_folder(folder, year)
+    return fallback or ship_date
+
+
+def _safe_date(year, month, day):
+    if not (1 <= month <= 12):
+        return None
+    try:
+        return date(year, month, day)
+    except ValueError:
+        return None
+
+
+def _filter_note(note):
+    """サマリーシートの備考欄から「協力金」「旧版/別プラン」に関する断片
+    （金額情報を含む）を除去する。全て除去されて空になった場合はNoneを返す。"""
+    if not note:
+        return None
+    parts = re.split(r"[；;]\s*", str(note))
+    kept = [
+        p
+        for p in parts
+        if p.strip() and "協力金" not in p and "旧版/別プラン" not in p
+    ]
+    return "；".join(kept) if kept else None
+
+
+def parse_estimate_workbook(xlsx_path, year):
     """見積データ抽出.xlsx（見積シート＋サマリーシート）を金額を除いて構造化する。"""
     wb = openpyxl.load_workbook(xlsx_path, data_only=True)
     ws = wb["見積"]
@@ -195,8 +269,18 @@ def parse_estimate_workbook(xlsx_path):
     ]
 
     result = []
-    for j, s in zip(jobs, summary_rows):
-        _, folder_sum, oname, address, ship_date, ship_time, return_time = (
+    job_idx = 0
+    for s in summary_rows:
+        (
+            _,
+            folder_sum,
+            oname,
+            address,
+            address_detail,
+            ship_date,
+            ship_time,
+            return_time,
+        ) = (
             s[0],
             s[1],
             s[2],
@@ -204,13 +288,33 @@ def parse_estimate_workbook(xlsx_path):
             s[4],
             s[5],
             s[6],
+            s[7],
         )
-        note = s[11] if len(s) > 11 else None
-        entry = {"folder": j["folder"]}
+        folder_sum_text = str(folder_sum).strip() if folder_sum else ""
+
+        # 見積シートとサマリーシートは基本的に同じ順番で並んでいるはずだが、
+        # 「見積ファイルなし（資料のみ）」のようにサマリーシートにしか存在しない
+        # 行があると、位置だけでの対応付け(zip)はそこから先が全てずれてしまう。
+        # そのため、サマリー側の案件名が見積シート側の案件名の先頭と一致するかで
+        # 対応付け、一致しない場合は「見積側に対応ブロックなし」として扱う。
+        matched_job = None
+        if job_idx < len(jobs) and jobs[job_idx]["folder"].startswith(folder_sum_text):
+            matched_job = jobs[job_idx]
+            job_idx += 1
+
+        folder = matched_job["folder"] if matched_job else folder_sum_text
+        if _is_cancelled(folder):
+            continue
+
+        note = _filter_note(s[12] if len(s) > 12 else None)
+        entry = {"folder": folder}
         if oname:
             entry["clientName"] = oname
         if address and address != "-":
             entry["deliveryAddress"] = address
+        if address_detail and address_detail != "-":
+            entry["deliveryAddressDetail"] = address_detail
+        ship_date = _normalize_ship_date(ship_date, folder, year)
         if ship_date:
             entry["deliveryDate"] = str(ship_date)
         if ship_time and ship_time != "-":
@@ -219,41 +323,70 @@ def parse_estimate_workbook(xlsx_path):
             entry["returnTime"] = return_time
         if note:
             entry["note"] = note
-        entry["items"] = j["items"]
+        entry["items"] = matched_job["items"] if matched_job else []
         result.append(entry)
 
     return result
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "--token",
-        default=os.getenv("DROPBOX_ACCESS_TOKEN", ""),
-        help="Dropboxアクセストークン。省略時は環境変数 DROPBOX_ACCESS_TOKEN を使用",
-    )
-    parser.add_argument(
-        "--root",
-        default="/野添/機材レンタル",
-        help="見積データ抽出.xlsxを探すDropbox上のルートフォルダ（デフォルト: /野添/機材レンタル）",
-    )
-    parser.add_argument(
-        "--out",
-        default=str(Path(__file__).resolve().parent.parent / "assets" / "data"),
-        help="出力先ディレクトリ（デフォルト: ../assets/data）",
-    )
-    args = parser.parse_args()
+def _write_outputs(files, out_dir):
+    """files: (year, month, name, xlsx_path, source_label) のリスト。戻り値: 生成したファイル名のリスト。"""
+    generated = []
+    for year, month, name, xlsx_path, source_label in files:
+        month_key = f"{year:04d}_{month:02d}"
+        try:
+            jobs = parse_estimate_workbook(xlsx_path, year)
+        except Exception as e:
+            print(f"解析に失敗しました({source_label}): {e}", file=sys.stderr)
+            continue
 
-    token = args.token.strip()
-    if not token:
-        print("Dropboxアクセストークンが指定されていません。--token または環境変数 DROPBOX_ACCESS_TOKEN で指定してください。", file=sys.stderr)
-        return 1
+        out = {
+            "month": f"{year:04d}-{month:02d}",
+            "source": f"{source_label}（{name}）",
+            "note": "金額・単価・小計等の金銭情報は含みません",
+            "jobs": jobs,
+        }
+        out_file = out_dir / f"estimate_{month_key}.json"
+        out_file.write_text(
+            json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
+        print(f"書き出し: {out_file} ({len(jobs)}件)")
+        generated.append(out_file.name)
+    return generated
 
-    out_dir = Path(args.out)
-    out_dir.mkdir(parents=True, exist_ok=True)
 
-    print(f"Dropboxフォルダを検索中: {args.root}")
-    entries, headers = _resolve_entries(token, args.root)
+def _fetch_local(local_root):
+    """Dropboxデスクトップアプリの同期フォルダから直接読み込む。"""
+    root = Path(local_root)
+    if not root.exists():
+        print(f"ローカルフォルダが見つかりません: {root}", file=sys.stderr)
+        return []
+
+    candidates = [
+        p
+        for p in root.rglob("*")
+        if p.is_file()
+        and "見積データ抽出" in p.name
+        and not p.name.startswith("~$")
+        and p.suffix.lower() in (".xlsx", ".xlsm")
+    ]
+    print(f"対象ファイル数: {len(candidates)}")
+
+    files = []
+    for p in candidates:
+        print(f"  - {p}")
+        m = MONTH_RE.search(p.name) or MONTH_RE.search(str(p))
+        if not m:
+            print(f"月が判定できずスキップ: {p}")
+            continue
+        year, month = int(m.group(1)), int(m.group(2))
+        files.append((year, month, p.name, p, "Dropbox見積データ抽出（ローカル同期）"))
+    return files
+
+
+def _fetch_dropbox_api(token, dropbox_root):
+    print(f"Dropboxフォルダを検索中: {dropbox_root}")
+    entries, headers = _resolve_entries(token, dropbox_root)
     print(f"エントリ数: {len(entries)}")
 
     target_files = [
@@ -267,43 +400,84 @@ def main():
     for f in target_files:
         print(f"  - {f.get('path_display')}")
 
-    generated = []
-    with tempfile.TemporaryDirectory() as tmp:
-        for f in target_files:
-            path_display = f.get("path_display") or ""
-            name = f.get("name") or ""
-            m = MONTH_RE.search(name) or MONTH_RE.search(path_display)
-            if not m:
-                print(f"月が判定できずスキップ: {path_display}")
-                continue
-            year, month = int(m.group(1)), int(m.group(2))
-            month_key = f"{year:04d}_{month:02d}"
+    files = []
+    tmp_dir = tempfile.mkdtemp()
+    for f in target_files:
+        path_display = f.get("path_display") or ""
+        name = f.get("name") or ""
+        m = MONTH_RE.search(name) or MONTH_RE.search(path_display)
+        if not m:
+            print(f"月が判定できずスキップ: {path_display}")
+            continue
+        year, month = int(m.group(1)), int(m.group(2))
 
-            print(f"ダウンロード中: {path_display}")
-            data = _download(token, path_display, headers)
-            tmp_path = Path(tmp) / name
-            tmp_path.write_bytes(data)
+        print(f"ダウンロード中: {path_display}")
+        data = _download(token, path_display, headers)
+        tmp_path = Path(tmp_dir) / name
+        tmp_path.write_bytes(data)
+        files.append((year, month, name, tmp_path, "Dropbox見積データ抽出"))
+    return files
 
-            try:
-                jobs = parse_estimate_workbook(tmp_path)
-            except Exception as e:
-                print(f"解析に失敗しました({path_display}): {e}", file=sys.stderr)
-                continue
 
-            out = {
-                "month": f"{year:04d}-{month:02d}",
-                "source": f"Dropbox見積データ抽出（{name}）",
-                "note": "金額・単価・小計等の金銭情報は含みません",
-                "jobs": jobs,
-            }
-            out_file = out_dir / f"estimate_{month_key}.json"
-            out_file.write_text(
-                json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8"
-            )
-            print(f"書き出し: {out_file} ({len(jobs)}件)")
-            generated.append(out_file.name)
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--token",
+        default=os.getenv("DROPBOX_ACCESS_TOKEN", ""),
+        help="Dropboxアクセストークン。省略時は環境変数 DROPBOX_ACCESS_TOKEN を使用（--local-root指定時は不要）",
+    )
+    parser.add_argument(
+        "--root",
+        default="/野添/機材レンタル",
+        help="見積データ抽出.xlsxを探すDropbox上のルートフォルダ（デフォルト: /野添/機材レンタル）",
+    )
+    parser.add_argument(
+        "--local-root",
+        default=os.getenv(
+            "ESTIMATE_LOCAL_ROOT",
+            r"C:\Users\246pa\246GROUP Dropbox\246 dropbox\野添\機材レンタル",
+        ),
+        help="Dropboxデスクトップアプリの同期フォルダから直接読み込む場合のパス。"
+        "指定時はDropbox APIを使わない。空文字を指定するとこの機能を無効化する。",
+    )
+    parser.add_argument(
+        "--out",
+        default=str(Path(__file__).resolve().parent.parent / "assets" / "data"),
+        help="出力先ディレクトリ（デフォルト: ../assets/data）",
+    )
+    parser.add_argument(
+        "--months-ahead",
+        type=int,
+        default=3,
+        help="今月を含めて何か月先までのxlsxを新規取得・再生成の対象にするか"
+        "（デフォルト: 3＝今月+3か月先の計4か月分。過去に生成済みのJSONはこの範囲外でもindex.jsonから除外されない）",
+    )
+    args = parser.parse_args()
 
-    # index.json を更新（既存の月は残しつつ、今回生成した分を反映）
+    out_dir = Path(args.out)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    window = _month_window(args.months_ahead)
+
+    if args.local_root:
+        print(f"ローカル同期フォルダを検索中: {args.local_root}")
+        files = _fetch_local(args.local_root)
+    else:
+        token = args.token.strip()
+        if not token:
+            print("Dropboxアクセストークンが指定されていません。--token または環境変数 DROPBOX_ACCESS_TOKEN で指定してください。", file=sys.stderr)
+            return 1
+        files = _fetch_dropbox_api(token, args.root)
+
+    skipped = [f for f in files if (f[0], f[1]) not in window]
+    for year, month, name, _path, _label in skipped:
+        print(f"対象期間外のためスキップ: {year:04d}年{month:02d}月 ({name})")
+    files = [f for f in files if (f[0], f[1]) in window]
+
+    generated = _write_outputs(files, out_dir)
+
+    # index.json には、実体ファイルが残っている月をすべて含める（過去分の検索・閲覧を可能にするため、
+    # --months-ahead による対象期間の絞り込みは新規取得するxlsxの範囲にのみ適用し、index.jsonからは除外しない）。
     index_path = out_dir / "index.json"
     existing = []
     if index_path.exists():
@@ -311,7 +485,14 @@ def main():
             existing = json.loads(index_path.read_text(encoding="utf-8")).get("files", [])
         except Exception:
             existing = []
-    all_files = sorted(set(existing) | set(generated))
+
+    def _file_exists(filename):
+        m = FILENAME_MONTH_RE.match(filename)
+        return bool(m) and (out_dir / filename).exists()
+
+    all_files = sorted(
+        f for f in (set(existing) | set(generated)) if _file_exists(f)
+    )
     index_path.write_text(
         json.dumps({"files": all_files}, ensure_ascii=False, indent=2),
         encoding="utf-8",
