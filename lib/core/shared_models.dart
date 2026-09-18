@@ -103,6 +103,38 @@ String _normalizeSearchTextCached(String input) {
   return normalized;
 }
 
+/// 「株式会社トラスト」のように区切り文字なしで単語が連結されている
+/// 場合でも、後半の単語（トラスト）で前方一致検索できるように、
+/// 漢字/かな/英数字の切り替わり目でも追加のサブトークンを作る。
+int _scriptClassOf(int codeUnit) {
+  if (codeUnit >= 0x4e00 && codeUnit <= 0x9fff) return 0; // 漢字
+  if ((codeUnit >= 0x30 && codeUnit <= 0x39) ||
+      (codeUnit >= 0x61 && codeUnit <= 0x7a) ||
+      (codeUnit >= 0x41 && codeUnit <= 0x5a)) {
+    return 1; // 英数字
+  }
+  return 2; // かな・その他
+}
+
+Set<String> _splitByScript(String token) {
+  if (token.length <= 1) return {token};
+
+  final runs = <String>{};
+  final buffer = StringBuffer();
+  int? currentClass;
+  for (var i = 0; i < token.length; i++) {
+    final cls = _scriptClassOf(token.codeUnitAt(i));
+    if (currentClass != null && cls != currentClass && buffer.isNotEmpty) {
+      runs.add(buffer.toString());
+      buffer.clear();
+    }
+    buffer.write(token[i]);
+    currentClass = cls;
+  }
+  if (buffer.isNotEmpty) runs.add(buffer.toString());
+  return runs;
+}
+
 List<String> _buildSearchPrefixes(String input) {
   final normalized = _normalizeSearchText(input);
   if (normalized.isEmpty) return const [];
@@ -114,6 +146,7 @@ List<String> _buildSearchPrefixes(String input) {
         .map((e) => e.trim())
         .where((e) => e.isNotEmpty),
   );
+  tokens.addAll(tokens.toList().expand(_splitByScript));
 
   final prefixes = <String>{};
   for (final token in tokens) {
