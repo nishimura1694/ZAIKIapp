@@ -539,6 +539,37 @@
       ]
     },
     {
+      "folder": "1010-11木村様(pangea)（Live House Pangea）",
+      "clientName": "木村",
+      "deliveryAddress": "Live House Pangea",
+      "deliveryDate": "2026-10-10",
+      "time": "11:00",
+      "returnTime": "21:00",
+      "items": [
+        {
+          "category": "ワイヤレス",
+          "name": "ワイヤレスイヤモニ送信機〔B帯〕",
+          "memo": "SHURE PSM300 P3T",
+          "qty": 3,
+          "duration": "1.5日"
+        },
+        {
+          "category": "ワイヤレス",
+          "name": "ワイヤレスイヤモニ受信機〔B帯〕",
+          "memo": "SHURE PSM300 P3R",
+          "qty": 5,
+          "duration": "1.5日"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "車上渡しプラン",
+          "qty": 1,
+          "duration": "1.5日"
+        }
+      ]
+    },
+    {
       "folder": "1010-12木村さん（金沢案件）（金沢　赤羽ホール）",
       "clientName": "木村　尚矢",
       "deliveryAddress": "金沢　赤羽ホール",
@@ -1499,8 +1530,6 @@
       "deliveryAddress": "もりのみやキューズモール　1階BASEパーク",
       "deliveryAddressDetail": "〒540-0003 大阪府大阪市中央区森ノ宮中央２丁目１−７０",
       "deliveryDate": "2026-10-11",
-      "time": "09:30",
-      "returnTime": "16:30",
       "items": [
         {
           "category": "セットプラン",
@@ -1795,6 +1824,38 @@
           "category": "オペレート",
           "name": "搬入出増員",
           "memo": "1P",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "1012藤安さま（株トッパンメディアプリンテック）（株式会社トッパンメディアプリンテック関西）",
+      "clientName": " 株式会社トッパンメディアプリンテック関西",
+      "deliveryAddress": "株式会社トッパンメディアプリンテック関西",
+      "deliveryAddressDetail": "〒553-0001 大阪府大阪市福島区海老江３丁目２２−６１",
+      "deliveryDate": "2026-10-12",
+      "time": "12:00",
+      "returnTime": "16:00",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "お手軽スピーカーセット",
+          "memo": "・EV ZLX-12P\n・SM58\n・マイクケーブル10m\n・マイクスタンド\n・スピーカースタンド",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット",
+          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "車上渡しプラン",
           "qty": 1,
           "duration": "12h"
         }
@@ -3613,6 +3674,7 @@
       "deliveryAddressDetail": "〒532-0004 大阪府大阪市淀川区西宮原１丁目３−３５",
       "deliveryDate": "2026-10-29",
       "time": "12:00",
+      "returnTime": "18:00",
       "items": [
         {
           "category": "ドラムset",
@@ -3631,7 +3693,14 @@
         {
           "category": "ベースアンプ系",
           "name": "ベースアンプ",
-          "memo": "Ampeg SVT-3pro + SVT-810E",
+          "memo": "Hartke HA3500",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプキャビネット",
+          "memo": "Ampeg SVT-810E",
           "qty": 1,
           "duration": "12h"
         },
@@ -3682,6 +3751,13 @@
           "name": "パワードスピーカー",
           "memo": "EV ZLX-12P(スタンド付属)",
           "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "ミキサー",
+          "name": "ミニミキサー",
+          "memo": "YAMAHA MG10XU",
+          "qty": 1,
           "duration": "12h"
         },
         {
