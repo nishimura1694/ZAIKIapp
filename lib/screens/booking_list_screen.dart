@@ -499,71 +499,67 @@ class _BookingListScreenState extends State<BookingListScreen>
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              IntrinsicHeight(
-                                child: Row(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
-                                  children: [
-                                    AspectRatio(
-                                      aspectRatio: 1,
-                                      child: urls.isNotEmpty
-                                          ? ClipRRect(
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  SizedBox(
+                                    width: 56,
+                                    height: 56,
+                                    child: urls.isNotEmpty
+                                        ? ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                            child: Image.network(
+                                              urls[0],
+                                              fit: BoxFit.cover,
+                                              cacheWidth: 112,
+                                              cacheHeight: 112,
+                                              filterQuality:
+                                                  FilterQuality.medium,
+                                            ),
+                                          )
+                                        : Container(
+                                            decoration: BoxDecoration(
+                                              color: AppColors.subtleFill,
                                               borderRadius:
                                                   BorderRadius.circular(8),
-                                              child: Image.network(
-                                                urls[0],
-                                                fit: BoxFit.cover,
-                                                cacheWidth: 128,
-                                                cacheHeight: 128,
-                                                filterQuality:
-                                                    FilterQuality.medium,
-                                              ),
-                                            )
-                                          : Container(
-                                              decoration: BoxDecoration(
-                                                color: AppColors.subtleFill,
-                                                borderRadius:
-                                                    BorderRadius.circular(8),
-                                              ),
-                                              child: const Icon(
-                                                Icons.image_outlined,
-                                                color: Colors.grey,
-                                                size: 22,
-                                              ),
                                             ),
-                                    ),
-                                    const SizedBox(width: 12),
-                                    Expanded(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          Text(
-                                            data['customerName'] ?? '',
-                                            style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 17,
-                                            ),
-                                            maxLines: 2,
-                                            overflow: TextOverflow.ellipsis,
-                                          ),
-                                          const SizedBox(height: 2),
-                                          Text(
-                                            "${data['bookingDate']} / ${data['venueName']}",
-                                            maxLines: 2,
-                                            overflow: TextOverflow.ellipsis,
-                                            style: const TextStyle(
-                                              fontSize: 17,
+                                            child: const Icon(
+                                              Icons.image_outlined,
+                                              color: Colors.grey,
+                                              size: 22,
                                             ),
                                           ),
-                                        ],
-                                      ),
+                                  ),
+                                  const SizedBox(width: 12),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Text(
+                                          data['customerName'] ?? '',
+                                          style: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 17,
+                                          ),
+                                          maxLines: 2,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                        const SizedBox(height: 2),
+                                        Text(
+                                          "${data['bookingDate']} / ${data['venueName']}",
+                                          maxLines: 2,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: const TextStyle(
+                                            fontSize: 17,
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                               const SizedBox(height: 6),
                               Row(
@@ -615,15 +611,15 @@ class _BookingListScreenState extends State<BookingListScreen>
           );
         },
       ),
-      floatingActionButton: FloatingActionButton.extended(
+      floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.push(
           context,
           MaterialPageRoute(builder: (_) => const AddBookingScreen()),
         ),
         backgroundColor: AppColors.brandOrange,
         foregroundColor: Colors.white,
-        icon: const Icon(Icons.post_add),
-        label: const Text('予約を登録'),
+        tooltip: '予約を登録',
+        child: const Icon(Icons.post_add),
       ),
     );
   }
