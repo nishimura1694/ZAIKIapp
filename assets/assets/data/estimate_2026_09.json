@@ -1850,6 +1850,7 @@
       "deliveryAddressDetail": "〒531-0076 大阪府大阪市北区大淀中１丁目８−３０",
       "deliveryDate": "2026-09-20",
       "time": "18:00",
+      "returnTime": "18:00",
       "items": [
         {
           "category": "セットプラン",
@@ -1963,7 +1964,7 @@
       "deliveryAddress": "兵庫県加古川市尾上町今福49-1",
       "deliveryAddressDetail": "兵庫県加古川市尾上町今福49-1",
       "deliveryDate": "2026-09-20",
-      "time": "09:00",
+      "time": "09:20",
       "returnTime": "15:20",
       "items": [
         {
@@ -2117,7 +2118,7 @@
       "deliveryAddress": "滋賀県彦根市高宮町1410",
       "deliveryAddressDetail": "滋賀県彦根市高宮町1410",
       "deliveryDate": "2026-09-21",
-      "time": "09:00",
+      "time": "09:20",
       "returnTime": "15:20",
       "items": [
         {
