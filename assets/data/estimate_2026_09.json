@@ -1849,7 +1849,7 @@
       "deliveryAddress": "Park Side House Osaka",
       "deliveryAddressDetail": "〒531-0076 大阪府大阪市北区大淀中１丁目８−３０",
       "deliveryDate": "2026-09-20",
-      "time": "18:00",
+      "time": "18:30",
       "returnTime": "18:00",
       "items": [
         {
@@ -1888,6 +1888,13 @@
           "duration": "24h"
         },
         {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "アンプ台数分サービス",
+          "qty": 3,
+          "duration": "24h"
+        },
+        {
           "category": "キーボード関連",
           "name": "キーボードスタンド",
           "memo": "X型",
@@ -1911,7 +1918,7 @@
       ]
     },
     {
-      "folder": "0920服部さま",
+      "folder": "0920服部さま(FunPlanning株式会社)",
       "deliveryDate": "2026-09-20",
       "items": [
         {
@@ -1959,7 +1966,7 @@
       ]
     },
     {
-      "folder": "0920服部さま（兵庫県加古川市尾上町今福49-1）",
+      "folder": "0920服部さま(FunPlanning株式会社)（兵庫県加古川市尾上町今福49-1）",
       "clientName": "服部　凌矢",
       "deliveryAddress": "兵庫県加古川市尾上町今福49-1",
       "deliveryAddressDetail": "兵庫県加古川市尾上町今福49-1",
@@ -2113,7 +2120,7 @@
       ]
     },
     {
-      "folder": "0921服部さま（滋賀県彦根市高宮町1410）",
+      "folder": "0921服部さま(FunPlanning株式会社)（滋賀県彦根市高宮町1410）",
       "clientName": "服部　凌矢",
       "deliveryAddress": "滋賀県彦根市高宮町1410",
       "deliveryAddressDetail": "滋賀県彦根市高宮町1410",
