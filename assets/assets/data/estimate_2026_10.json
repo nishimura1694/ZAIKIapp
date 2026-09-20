@@ -1262,24 +1262,17 @@
     },
     {
       "folder": "1011坂口さま(旧桜宮公会堂)（旧桜宮公会堂）",
-      "clientName": "坂口　純",
+      "clientName": "坂口 純",
       "deliveryAddress": "旧桜宮公会堂",
-      "deliveryAddressDetail": "〒530-0042　大阪市北区天満橋1丁目1-1",
+      "deliveryAddressDetail": "〒530-0042 大阪市北区天満橋1丁目1-1",
       "deliveryDate": "2026-10-11",
       "time": "14:40",
       "returnTime": "19:30",
       "items": [
         {
-          "category": "ドラムset",
-          "name": "ドラムセット小口径",
-          "memo": "CANOPUS NV60-M1EX\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "運搬サービス",
-          "name": "トランスポート＿エリア1",
-          "memo": "運搬・設営・撤収",
+          "category": "ドラム関連",
+          "name": "シンバルセット",
+          "memo": "K Zildjian Constantinople",
           "qty": 1,
           "duration": "12h"
         }
