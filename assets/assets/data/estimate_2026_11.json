@@ -839,20 +839,25 @@
           "category": "セットプラン",
           "name": "楽々PAセット",
           "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
-          "qty": 1,
           "duration": "12h"
         },
         {
           "category": "スピーカー類",
           "name": "モニタースピーカー",
           "memo": "パワーアンプ込み",
-          "qty": 2,
           "duration": "12h"
         },
         {
           "category": "ドラムset",
           "name": "電子ドラム",
           "memo": "ROLAND TD-1KPX2 V-Drums\nペダル、スローン、マット付属",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "パワードスピーカー",
+          "memo": "EV ZLX-12P(スタンド付属)",
           "qty": 1,
           "duration": "12h"
         },
@@ -888,6 +893,13 @@
           "category": "キーボード関連",
           "name": "スローン",
           "memo": "キーボード用椅子",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "キーボードモニター",
+          "memo": "Roland KC-350",
           "qty": 1,
           "duration": "12h"
         },
