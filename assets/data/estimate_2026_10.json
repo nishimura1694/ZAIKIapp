@@ -3862,6 +3862,45 @@
       ]
     },
     {
+      "folder": "1030木村さん案件（安川電機株式会社）（安川電機株式会社）",
+      "clientName": "木村　尚矢",
+      "deliveryAddress": "安川電機株式会社",
+      "deliveryAddressDetail": "〒660-0805 兵庫県尼崎市西長洲町１丁目１−１５",
+      "deliveryDate": "2026-10-30",
+      "time": "13:30",
+      "returnTime": "20:00",
+      "items": [
+        {
+          "category": "マイク",
+          "name": "コンデンサーマイク",
+          "memo": "［漫才マイク］SONY C-38B",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スタンド類",
+          "name": "マイクスタンド",
+          "memo": "C-38B用ストレートマイクスタンド",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "カラオケ・簡易ステージ",
+          "name": "簡易ステージ",
+          "memo": "INTELLI STAGE\nサイズ：幅100cm×長さ100cm\nライザー：高さ20cm",
+          "qty": 10,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
       "folder": "1031-1101たけだ様（羽衣国際大学）",
       "clientName": "CASTIA",
       "deliveryAddress": "羽衣国際大学",

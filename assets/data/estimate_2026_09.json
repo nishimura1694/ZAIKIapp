@@ -2018,7 +2018,7 @@
       "deliveryAddressDetail": "〒559-0034 大阪市住之江区南港北2-8-1",
       "deliveryDate": "2026-09-20",
       "time": "12:30",
-      "returnTime": "19:40",
+      "returnTime": "17:40",
       "items": [
         {
           "category": "セットプラン",
@@ -2442,7 +2442,7 @@
           "category": "音響",
           "name": "ステージボックス",
           "memo": "YAMAHA Rio3224-D2",
-          "qty": 1,
+          "qty": 2,
           "duration": "1日"
         },
         {
@@ -2491,14 +2491,14 @@
           "category": "音響",
           "name": "ステージボックス",
           "memo": "YAMAHA Rio3224-D2",
-          "qty": 1,
+          "qty": 2,
           "duration": "1日"
         },
         {
           "category": "音響",
           "name": "モニタースピーカー",
           "memo": "d&b M4",
-          "qty": 8,
+          "qty": 5,
           "duration": "1日"
         },
         {
@@ -2574,43 +2574,23 @@
         },
         {
           "category": "その他",
-          "name": "DJプレイヤー",
-          "memo": "Pioneer CDJ-2000nxs",
+          "name": "録音機",
+          "memo": "TASCAM SS-R250N",
+          "qty": 1,
           "duration": "1日"
         },
         {
           "category": "その他",
-          "name": "DJミキサー",
-          "memo": "Pioneer DJM-900nxs2",
+          "name": "仕込み用マイクケーブル",
+          "memo": "【サービス】50m",
+          "qty": 1,
           "duration": "1日"
         },
         {
           "category": "その他",
-          "name": "ターンテーブル",
-          "memo": "Technics SL-1200MK7",
-          "duration": "1日"
-        },
-        {
-          "category": "その他",
-          "name": "DJミキサー",
-          "memo": "Pioneer DJM-250MK2",
-          "duration": "1日"
-        },
-        {
-          "category": "その他",
-          "name": "カートリッジ",
-          "memo": "ORTOFON Concorde Mk2",
-          "duration": "1日"
-        },
-        {
-          "category": "その他",
-          "name": "ラップトップPCスタンド",
-          "duration": "1日"
-        },
-        {
-          "category": "その他",
-          "name": "ワイヤレスマイク〔B帯〕",
-          "memo": "SHENNHEISER EW500 G4-935-JB",
+          "name": "映像用ケーブル、スタンド",
+          "memo": "【サービス】\nマイクケーブル20m　*2\nマイクスタンド　*2",
+          "qty": 1,
           "duration": "1日"
         },
         {
@@ -2622,7 +2602,7 @@
         },
         {
           "category": "人件費・運搬費・諸経費",
-          "name": "FBオペレーター",
+          "name": "FB管理",
           "memo": "1P",
           "qty": 1,
           "duration": 1
@@ -2636,9 +2616,9 @@
         },
         {
           "category": "人件費・運搬費・諸経費",
-          "name": "アシスタント人員A",
-          "memo": "1P_A",
-          "qty": 2,
+          "name": "ステージ",
+          "memo": "1P",
+          "qty": 1,
           "duration": 1
         },
         {
