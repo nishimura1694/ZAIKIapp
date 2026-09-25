@@ -2791,6 +2791,12 @@
       ]
     },
     {
+      "folder": "0926-27レインボーヒル（緑地野音）",
+      "deliveryDate": "2026-09-26",
+      "note": "見積ファイルなし（資料のみ）",
+      "items": []
+    },
+    {
       "folder": "0926-27加集さま（sasa）",
       "clientName": "加集　広樹",
       "deliveryAddress": "sasa",
@@ -3053,6 +3059,70 @@
           "category": "＜1日程あたりの内訳＞",
           "name": "トランスポート＿エリア2",
           "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0926永野さま（大阪MUSE BOX）",
+      "clientName": "永野　悠太",
+      "deliveryAddress": "大阪MUSE BOX",
+      "deliveryAddressDetail": "〒542-0085 大阪府大阪市中央区心斎橋筋１丁目５−６ \nミューズ389ビル",
+      "deliveryDate": "2026-09-26",
+      "time": "11:00",
+      "returnTime": "21:00",
+      "items": [
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット小口径",
+          "memo": "CANOPUS NV60-M1EX\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "パーカッション",
+          "name": "ウィンドチャイム",
+          "memo": "ラテンパーカッション LP511",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ドラム関連",
+          "name": "シンバルスタンド",
+          "memo": "空白6",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "車上渡しプラン",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0926片山様（株式会社そばに）（大阪市中央区）",
+      "clientName": "株式会社そばに ",
+      "deliveryAddress": "大阪市中央区",
+      "deliveryAddressDetail": "〒541-0053 大阪府大阪市中央区本町３丁目３−５ つるや本社ビル",
+      "deliveryDate": "2026-09-26",
+      "time": "11:30",
+      "returnTime": "15:00",
+      "items": [
+        {
+          "category": "カラオケ・簡易ステージ",
+          "name": "簡易ステージ",
+          "memo": "INTELLI STAGE\nサイズ：幅100cm×長さ100cm\nライザー：高さ20cm",
+          "qty": 6,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
           "qty": 1,
           "duration": "12h"
         }
@@ -3405,6 +3475,11 @@
     },
     {
       "folder": "_scripts",
+      "note": "見積ファイルなし（資料のみ）",
+      "items": []
+    },
+    {
+      "folder": "新しいフォルダー",
       "note": "見積ファイルなし（資料のみ）",
       "items": []
     },
