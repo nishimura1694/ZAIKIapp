@@ -2703,65 +2703,6 @@
       ]
     },
     {
-      "folder": "0925-26さかもと様（Farm Cafe mothers 堀江店）",
-      "clientName": "坂本　覇樹",
-      "deliveryAddress": "Farm Cafe mothers 堀江店",
-      "deliveryAddressDetail": "〒550-0014 大阪府大阪市西区北堀江２丁目１７−７",
-      "deliveryDate": "2026-09-25",
-      "time": "08:45",
-      "returnTime": "15:00",
-      "items": [
-        {
-          "category": "セットプラン",
-          "name": "楽々PAセット",
-          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "スピーカー類",
-          "name": "モニタースピーカー",
-          "memo": "[Foot]EV SX300(パワーアンプ込み)",
-          "qty": 2,
-          "duration": "12h"
-        },
-        {
-          "category": "ドラムset",
-          "name": "ドラムセット小口径",
-          "memo": "CANOPUS NV60-M1EX\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
-          "duration": "12h"
-        },
-        {
-          "category": "ベースアンプ系",
-          "name": "ベースアンプコンボ",
-          "memo": "MARKBASS MB58R CMD102PUR",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "ギターアンプ系",
-          "name": "ギターアンプ",
-          "memo": "Roland JC-120",
-          "qty": 2,
-          "duration": "12h"
-        },
-        {
-          "category": "ギターアンプ系",
-          "name": "ギタースタンド",
-          "memo": "アンプ台数分サービス",
-          "qty": 3,
-          "duration": "12h"
-        },
-        {
-          "category": "運搬サービス",
-          "name": "トランスポート＿エリア1",
-          "memo": "運搬・設営・撤収",
-          "qty": 1,
-          "duration": "12h"
-        }
-      ]
-    },
-    {
       "folder": "0925-27吉良さま（電音エンジニアリング）（ヒルトン大阪）",
       "clientName": "電音エンジニアリング株式会社",
       "deliveryAddress": "ヒルトン大阪",
@@ -2843,6 +2784,65 @@
       ]
     },
     {
+      "folder": "0926さかもと様（Farm Cafe mothers 堀江店）",
+      "clientName": "坂本　覇樹",
+      "deliveryAddress": "Farm Cafe mothers 堀江店",
+      "deliveryAddressDetail": "〒550-0014 大阪府大阪市西区北堀江２丁目１７−７",
+      "deliveryDate": "2026-09-26",
+      "time": "08:45",
+      "returnTime": "15:00",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "[Foot]EV SX300(パワーアンプ込み)",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット小口径",
+          "memo": "CANOPUS NV60-M1EX\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "MARKBASS MB58R CMD102PUR",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "アンプ台数分サービス",
+          "qty": 3,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
       "folder": "0926チェさま（ヒルトン大阪）（ヒルトン大阪）",
       "clientName": "チェ　ミンウン",
       "deliveryAddress": "ヒルトン大阪",
@@ -2874,8 +2874,8 @@
         {
           "category": "ギターアンプ系",
           "name": "ギタースタンド",
-          "memo": "空白",
-          "qty": 1,
+          "memo": "アンプ台数分サービス",
+          "qty": 3,
           "duration": "12h"
         },
         {
@@ -3309,15 +3309,29 @@
       ]
     },
     {
-      "folder": "0927広報部案件（十三）",
+      "folder": "0927広報部案件（ジオタワー大阪十三）",
       "clientName": "広報部案件",
-      "deliveryAddress": "十三",
+      "deliveryAddress": "ジオタワー大阪十三",
       "deliveryDate": "2026-09-27",
       "items": [
         {
           "category": "セットプラン",
           "name": "楽々PAセット",
           "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "スピーカー",
+          "memo": "EV SX300",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "CDプレーヤー ",
+          "memo": "TASCAM CD-500B",
           "qty": 1,
           "duration": "12h"
         },
@@ -3331,7 +3345,14 @@
         {
           "category": "その他",
           "name": "タープテント",
-          "memo": "FIELDOOR Steel Strong",
+          "memo": "横幕",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "オペレーター人員",
+          "memo": "1P",
           "qty": 1,
           "duration": "12h"
         },
