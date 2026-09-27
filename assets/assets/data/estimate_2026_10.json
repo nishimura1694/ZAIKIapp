@@ -3246,11 +3246,13 @@
       "deliveryAddress": "オ・セイリュウ 　O SEIRYU",
       "deliveryAddressDetail": "大阪府大阪市中央区東心斎橋1-7-12",
       "deliveryDate": "2026-10-24",
+      "time": "14:30",
+      "returnTime": "17:30",
       "items": [
         {
           "category": "ドラムset",
           "name": "ドラムセット",
-          "memo": "DW Collector's Maple standard\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
           "qty": 1,
           "duration": "12h"
         },
@@ -3283,9 +3285,16 @@
           "duration": "12h"
         },
         {
-          "category": "キーボード関連",
-          "name": "キーボードモニター",
-          "memo": "Roland KC-350",
+          "category": "スピーカー類",
+          "name": "パワードスピーカー",
+          "memo": "EV ZLX-12P(スタンド付属)",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "譜面台",
+          "memo": "空白",
           "qty": 1,
           "duration": "12h"
         },
