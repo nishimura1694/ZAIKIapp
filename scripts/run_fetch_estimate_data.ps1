@@ -1,9 +1,12 @@
-# 毎日10時のタスクスケジューラから呼び出され、Dropboxデスクトップアプリの同期フォルダ
+﻿# 毎日10時のタスクスケジューラから呼び出され、Dropboxデスクトップアプリの同期フォルダ
 # （既定パスは fetch_estimate_data.py の --local-root 既定値）から見積データ抽出.xlsxを
 # 読み込んで assets/data/estimate_YYYY_MM.json / index.json を更新するラッパー。
 # Dropbox APIトークンは不要（ローカル同期フォルダを直接読むため）。
 
-$ErrorActionPreference = "Stop"
+# "Stop" にすると、gitの通常の進捗メッセージ(stderr出力)まで終了エラー扱いになり
+# スクリプトが途中で止まってしまうため、"Continue" にして各コマンドの $LASTEXITCODE を
+# 個別にチェックする方式にする。
+$ErrorActionPreference = "Continue"
 
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $logDir = Join-Path $PSScriptRoot "logs"
@@ -25,6 +28,21 @@ if ($changed) {
     git commit -m $commitMessage *>&1 | Tee-Object -FilePath $logFile -Append | Out-Null
 } else {
     "assets/data unchanged, skipping commit" | Tee-Object -FilePath $logFile -Append
+}
+
+# データに変更があった場合のみ、Web版(Firebase Hosting)もビルド・デプロイして自動反映する。
+if ($changed) {
+    "building web app" | Tee-Object -FilePath $logFile -Append
+    flutter build web --release *>&1 | Tee-Object -FilePath $logFile -Append | Out-Null
+    if ($LASTEXITCODE -eq 0) {
+        "deploying to Firebase Hosting" | Tee-Object -FilePath $logFile -Append
+        firebase deploy --only hosting *>&1 | Tee-Object -FilePath $logFile -Append | Out-Null
+        if ($LASTEXITCODE -ne 0) {
+            "firebase deploy failed (exit $LASTEXITCODE)" | Tee-Object -FilePath $logFile -Append
+        }
+    } else {
+        "flutter build web failed (exit $LASTEXITCODE), skipping deploy" | Tee-Object -FilePath $logFile -Append
+    }
 }
 
 # ローカルにコミット済みで未pushの分（このタスク以外での手動コミット分も含む）を
