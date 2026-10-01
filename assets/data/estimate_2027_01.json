@@ -1,0 +1,223 @@
+{
+  "month": "2027-01",
+  "source": "Dropbox見積データ抽出（ローカル同期）（2027年1月_見積データ抽出.xlsx）",
+  "note": "金額・単価・小計等の金銭情報は含みません",
+  "jobs": [
+    {
+      "folder": "0117六感音祭増田さま（十三グランドサロン）（十三グランドサロン）",
+      "clientName": "六感音祭",
+      "deliveryAddress": "十三グランドサロン",
+      "deliveryDate": "2027-01-17",
+      "time": "未定",
+      "returnTime": "未定",
+      "items": [
+        {
+          "category": "音響",
+          "name": "デジタルミキサー",
+          "memo": "YAMAHA CL3",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "ステージボックス",
+          "memo": "YAMAHA Rio3224-D2",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "スピーカー",
+          "memo": "MARTIN AUDIO X15B",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "サブウーハー",
+          "memo": "Martin AUDIO X118",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "チャンネルディバイダー",
+          "memo": "dbx 223xs",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "パワーアンプ〔4ch〕",
+          "memo": "QSC PLD4.5",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "モニタースピーカー",
+          "memo": "d&b　M4",
+          "qty": 6,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "ディレイスピーカー",
+          "memo": "EV SX300",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "パワーアンプ〔4ch〕",
+          "memo": "d&b D40",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "CDプレーヤー ",
+          "memo": "TASCAM CD-500B",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "マイク・DI",
+          "memo": "基本セット（有線）",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "スタンド",
+          "memo": "一式",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "線材費",
+          "memo": "電源/スピーカー/マイク\n上記ケーブルを含む",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "ドラムセット",
+          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "ベースアンプコンボ",
+          "memo": "MARKBASS MB58R CMD102PUR",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "ギタースタンド",
+          "memo": "サービス",
+          "qty": 3,
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "キーボードスタンド",
+          "memo": "X型",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "天板",
+          "memo": "w1200×D450mm",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "ターンテーブル",
+          "memo": "Technics SL-1200MK5",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "DJミキサー",
+          "memo": "Pioneer DJM-250MK2",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "DJプレイヤー",
+          "memo": "Pioneer CDJ-2000nxs",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "DJミキサー",
+          "memo": "Pioneer DJM-900nxs2",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "DJテーブル",
+          "memo": "QUIK LOK DJ233\nサイズ：高さ64～97cm 幅100cm 奥行き49cm",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "オペレーター人員",
+          "memo": "1P",
+          "qty": 1,
+          "duration": 1
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "アシスタント人員A",
+          "memo": "1P_A",
+          "qty": 2,
+          "duration": 1
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "搬入搬出アシスタント",
+          "memo": "1P",
+          "qty": 2,
+          "duration": 1
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "トランスポート＿エリア1",
+          "memo": "オペレーター併用プラン",
+          "qty": 2,
+          "duration": 1
+        }
+      ]
+    },
+    {
+      "folder": "2027年1月_見積データ抽出.xlsx",
+      "note": "見積ファイルなし（資料のみ）",
+      "items": []
+    },
+    {
+      "folder": "_scripts",
+      "note": "見積ファイルなし（資料のみ）",
+      "items": []
+    }
+  ]
+}

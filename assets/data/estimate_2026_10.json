@@ -42,6 +42,66 @@
       "items": []
     },
     {
+      "folder": "1003じょうとく様(宗右衛門町)（Nightclub GALA RESORT）",
+      "clientName": "じょうとく",
+      "deliveryAddress": "Nightclub GALA RESORT",
+      "deliveryAddressDetail": "〒542-0084 大阪府大阪市中央区宗右衛門町７−９",
+      "deliveryDate": "2026-10-03",
+      "time": "17:40",
+      "returnTime": "21:00",
+      "items": [
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット",
+          "memo": "DW Collector's Maple standard\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Marshall DSL100H + 1960A",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "Ampeg BA115-V2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "アンプ台数分サービス",
+          "qty": 3,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "電源ケーブル・楽器用シールド等",
+          "memo": "サービス",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
       "folder": "1003中谷さま（ノア・フットサルステージ天下茶屋）",
       "clientName": "なかたに　てつや",
       "deliveryAddress": "ノア・フットサルステージ天下茶屋",
@@ -88,7 +148,7 @@
       ]
     },
     {
-      "folder": "1003久保さま(JR奈良駅)（JR奈良駅）",
+      "folder": "1003久保さま(JR奈良駅)キャン（JR奈良駅）",
       "clientName": "久保　龍馬",
       "deliveryAddress": "JR奈良駅",
       "deliveryAddressDetail": "〒630-8122 奈良県奈良市三条本町１",
@@ -469,6 +529,63 @@
           "memo": "運搬・設営・撤収_2",
           "qty": 1,
           "duration": "1.5日"
+        }
+      ]
+    },
+    {
+      "folder": "1009ヨウジヤマモト（東京　配送）（LIMI Feu 青山店）",
+      "clientName": "株式会社ヨウジヤマモト",
+      "deliveryAddress": "LIMI Feu 青山店",
+      "deliveryDate": "2026-10-09",
+      "items": [
+        {
+          "category": "照明",
+          "name": "LEDパーライト",
+          "memo": "SilverStar CAM3/EMZ",
+          "qty": 8,
+          "duration": "1日"
+        },
+        {
+          "category": "照明",
+          "name": "照明スタンド",
+          "memo": "SHB-10(床置きスタンド)",
+          "qty": 8,
+          "duration": "1日"
+        },
+        {
+          "category": "照明",
+          "name": "延長電源ケーブル",
+          "memo": "10m",
+          "qty": 8,
+          "duration": "1日"
+        },
+        {
+          "category": "照明",
+          "name": "配送費往復",
+          "memo": "大阪⇔東京　梱包費・手数料含む",
+          "qty": 3,
+          "duration": 2
+        },
+        {
+          "category": "照明",
+          "name": "諸経費",
+          "memo": "0.1",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "照明",
+          "name": "設営人件費",
+          "memo": "1P",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "照明",
+          "name": "移動費",
+          "memo": "新幹線往復含む",
+          "qty": 1,
+          "duration": "1日"
         }
       ]
     },
@@ -1467,6 +1584,13 @@
           "duration": "12h"
         },
         {
+          "category": "キーボード関連",
+          "name": "キーボードスタンド",
+          "memo": "X型",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
           "category": "オペレート",
           "name": "オペレーター人員",
           "memo": "1P",
@@ -1477,20 +1601,6 @@
           "category": "運搬サービス",
           "name": "トランスポート＿エリア1",
           "memo": "オペレーター併用プラン",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "ケーブル類",
-          "name": "シールド",
-          "memo": "サービス（シールド）5m",
-          "qty": 3,
-          "duration": "12h"
-        },
-        {
-          "category": "キーボード関連",
-          "name": "キーボードスタンド",
-          "memo": "X型",
           "qty": 1,
           "duration": "12h"
         }
@@ -3025,6 +3135,52 @@
       ]
     },
     {
+      "folder": "1021久保さま(JR奈良駅)（JR奈良駅）",
+      "clientName": "久保　龍馬",
+      "deliveryAddress": "JR奈良駅",
+      "deliveryAddressDetail": "〒630-8122 奈良県奈良市三条本町１",
+      "deliveryDate": "2026-10-21",
+      "time": "13:00",
+      "returnTime": "14:30",
+      "items": [
+        {
+          "category": "ギターアンプ系",
+          "name": "電池駆動アンプ",
+          "memo": "Roland cube street EX",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "マイク",
+          "name": "ダイナミックマイク",
+          "memo": "SHURE SM58\n[付属：マイクホルダー、マイクケーブル10ｍ]",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スタンド類",
+          "name": "マイクスタンド",
+          "memo": "ロングブーム<210>",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア3",
+          "memo": "運搬・設営・撤収_3",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "2026/10/03(土)分キャンセル料金",
+          "memo": "総額の20％",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
       "folder": "1022-26佐々木様（大阪市北区茶屋町5-2）",
       "clientName": "佐々木　翼",
       "deliveryAddress": "大阪市北区茶屋町5-2",
@@ -3708,7 +3864,6 @@
           "category": "DJ・カラオケ・簡易ステージ",
           "name": "カラオケ",
           "memo": "本体：CyberDAM-HD　G100X\nデンモク×2\nワイヤレスマイク：2本\nケーブル一式",
-          "qty": 1,
           "duration": "12h"
         },
         {
@@ -3795,40 +3950,73 @@
       ]
     },
     {
-      "folder": "1025福間さま（キャッスルホテル大阪 1Fルポール）",
-      "clientName": "福間　博義",
-      "deliveryAddress": "キャッスルホテル大阪 1Fルポール",
-      "deliveryAddressDetail": "〒540-0032 大阪市中央区天満橋京町１−１",
+      "folder": "1025福間さま（キャスルホテル7階宴会場）",
+      "clientName": "福間 博義",
+      "deliveryAddress": "キャスルホテル7階宴会場",
+      "deliveryAddressDetail": "大阪市中央区天満橋京町1-1",
       "deliveryDate": "2026-10-25",
-      "time": "15:00",
-      "returnTime": "20:30",
+      "time": "14:00",
+      "returnTime": "19:30",
       "items": [
         {
-          "category": "ドラムset",
-          "name": "ドラムセット",
-          "memo": "PEARL masters custom maple\nハードウェア一式\nスネア、ペダル、マット付属",
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
           "qty": 1,
           "duration": "12h"
         },
         {
           "category": "ドラムset",
-          "name": "ピアノ用,ボーカル用マイク",
-          "memo": "SHURE SM58\nXLRケーブル10ｍ 1本付属",
-          "qty": 3,
-          "duration": "12h"
-        },
-        {
-          "category": "スタンド類",
-          "name": "マイクスタンド",
-          "memo": "ロングブーム<210>",
-          "qty": 3,
-          "duration": "12h"
-        },
-        {
-          "category": "スタンド類",
-          "name": "立ち合い料金",
-          "memo": "会場卓操作含む",
+          "name": "ドラムセット小口径",
+          "memo": "CANOPUS NV60-M1EX             (JAZZ仕様：バスドラのフロントヘッドを穴無しに変更)\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
           "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "MARKBASS MB58R CMD102PUR",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "竿もの",
+          "name": "エレキベース",
+          "memo": "SEYMOUR DUNCAN DJ-200R       Candy Apple Red\n[付属：シールド5ｍ、\nチューナー、ピック]",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "電子ピアノ",
+          "memo": "YAMAHA CP-40\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "スローン",
+          "memo": "キーボード用椅子",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "キーボードスタンド",
+          "memo": "コの字型",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "オペレーター人員",
+          "memo": "1P",
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "アシスタント人員A",
+          "memo": "1P_A",
           "duration": "12h"
         },
         {
@@ -4056,6 +4244,35 @@
           "memo": "運搬・設営・撤収_2",
           "qty": 1,
           "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "1030石崎さま(ヒルトン大阪)（ヒルトン大阪）",
+      "clientName": "電音エンジニアリング株式会社",
+      "deliveryAddress": "ヒルトン大阪",
+      "deliveryDate": "2026-10-30",
+      "items": [
+        {
+          "category": "キーボード関連",
+          "name": "電子ピアノ",
+          "memo": "YAMAHA CP-40\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
+          "qty": 1,
+          "duration": "4日"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "スローン",
+          "memo": "キーボード用椅子",
+          "qty": 1,
+          "duration": "4日"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "車上渡しプラン",
+          "qty": 1,
+          "duration": "4日"
         }
       ]
     },

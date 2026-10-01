@@ -197,9 +197,10 @@
       ]
     },
     {
-      "folder": "1206あん奈（アンスティム）（北新地）",
+      "folder": "1206あん奈様（アンスティム）（ラウンジなかた）",
       "clientName": "あん奈",
-      "deliveryAddress": "北新地",
+      "deliveryAddress": "ラウンジなかた",
+      "deliveryAddressDetail": "〒530-0002 大阪府大阪市北区曾根崎新地１丁目６−８\n平川ビル１Ｆ",
       "deliveryDate": "2026-12-06",
       "time": "11:30",
       "returnTime": "17:00",
