@@ -102,6 +102,31 @@
       ]
     },
     {
+      "folder": "1003ふじわら様（名村造船所）",
+      "clientName": "ふじわら　はじめ",
+      "deliveryAddress": "名村造船所",
+      "deliveryAddressDetail": "〒559-0011 大阪府大阪市住之江区北加賀屋４丁目１−５５",
+      "deliveryDate": "2026-10-03",
+      "time": "10:00",
+      "returnTime": "19:00",
+      "items": [
+        {
+          "category": "キーボード関連",
+          "name": "電子ピアノ",
+          "memo": "YAMAHA CP-40\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "車上渡しプラン",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
       "folder": "1003中谷さま（ノア・フットサルステージ天下茶屋）",
       "clientName": "なかたに　てつや",
       "deliveryAddress": "ノア・フットサルステージ天下茶屋",
@@ -187,30 +212,17 @@
       ]
     },
     {
-      "folder": "1003手塚さま",
+      "folder": "1003手塚さま（箕面キューズモール）",
       "clientName": "手塚 秀法",
+      "deliveryAddress": "箕面キューズモール",
       "deliveryAddressDetail": "〒531-0061 大阪市北区長柄西2丁目10-9",
       "deliveryDate": "2026-10-03",
       "items": [
         {
           "category": "セットプラン",
-          "name": "スタンダードPAセット",
-          "memo": "・デジタルミキサー16ch\n・パワーアンプ2ch分\n・Martin AUDIO X15B*2\n・マイク*4\n必要スタンド、ケーブル付属",
+          "name": "楽々PAセット〔LL〕",
+          "memo": "・パワードミキサー\n・Martin AUDIO X15B×2\n・SPケーブル20m×2\n・スピーカースタンド×2\n・SM58×4\n・マイクケーブル10m×4\n・マイクスタンド×4",
           "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "セットプラン",
-          "name": "ステージボックス",
-          "memo": "MIDAS　DL32",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "スピーカー類",
-          "name": "モニタースピーカー",
-          "memo": "パワーアンプ込み",
-          "qty": 2,
           "duration": "12h"
         },
         {
@@ -235,35 +247,35 @@
           "duration": "12h"
         },
         {
-          "category": "会場詳細",
+          "category": "その他",
+          "name": "電源タップ",
+          "memo": "10m",
+          "qty": 5,
+          "duration": "12h"
+        },
+        {
+          "category": "DJ",
           "name": "DJテーブル",
           "memo": "QUIK LOK DJ233\nサイズ：高さ64～97cm 幅100cm 奥行き49cm",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "会場詳細",
+          "category": "その他",
           "name": "折り畳み式丸椅子",
           "qty": 3,
           "duration": "12h"
         },
         {
-          "category": "会場詳細",
-          "name": "機材管理人員",
-          "memo": "1P　",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "会場詳細",
+          "category": "オペレート",
           "name": "アシスタント人員A",
           "memo": "1P_A",
           "duration": "12h"
         },
         {
-          "category": "会場詳細",
-          "name": "トランスポート＿エリア1",
-          "memo": "運搬・設営・撤収",
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "車上渡しプラン_2",
           "qty": 1,
           "duration": "12h"
         }
