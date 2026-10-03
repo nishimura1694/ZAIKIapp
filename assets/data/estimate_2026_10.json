@@ -118,6 +118,13 @@
           "duration": "12h"
         },
         {
+          "category": "キーボード関連",
+          "name": "スローン",
+          "memo": "キーボード用椅子",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
           "category": "運搬サービス",
           "name": "トランスポート＿エリア1",
           "memo": "車上渡しプラン",
@@ -213,7 +220,12 @@
     },
     {
       "folder": "1003手塚さま（箕面キューズモール）",
+      "clientName": "手塚 秀法",
+      "deliveryAddress": "箕面キューズモール",
+      "deliveryAddressDetail": "〒531-0061 大阪市北区長柄西2丁目10-9",
       "deliveryDate": "2026-10-03",
+      "time": "09:00",
+      "returnTime": "15:45",
       "items": [
         {
           "category": "セットプラン",
@@ -244,49 +256,39 @@
           "duration": "12h"
         },
         {
-          "category": "その他",
+          "category": "↑在庫なく照明用電源ケーブル10ｍ*6で対応",
           "name": "電源タップ",
           "memo": "10m",
           "qty": 5,
           "duration": "12h"
         },
         {
-          "category": "DJ",
+          "category": "↑在庫なく照明用電源ケーブル10ｍ*6で対応",
           "name": "DJテーブル",
           "memo": "QUIK LOK DJ233\nサイズ：高さ64～97cm 幅100cm 奥行き49cm",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "その他",
+          "category": "↑在庫なく照明用電源ケーブル10ｍ*6で対応",
           "name": "折り畳み式丸椅子",
           "qty": 3,
           "duration": "12h"
         },
         {
-          "category": "オペレート",
+          "category": "↑在庫なく照明用電源ケーブル10ｍ*6で対応",
           "name": "アシスタント人員A",
           "memo": "1P_A",
           "duration": "12h"
         },
         {
-          "category": "運搬サービス",
+          "category": "↑在庫なく照明用電源ケーブル10ｍ*6で対応",
           "name": "トランスポート＿エリア2",
           "memo": "車上渡しプラン_2",
           "qty": 1,
           "duration": "12h"
         }
       ]
-    },
-    {
-      "folder": "1003手塚さま",
-      "clientName": "手塚 秀法",
-      "deliveryAddress": "箕面キューズモール",
-      "deliveryAddressDetail": "〒531-0061 大阪市北区長柄西2丁目10-9",
-      "deliveryDate": "2026-10-03",
-      "time": "09:00",
-      "returnTime": "15:45",
-      "items": []
     },
     {
       "folder": "1004はら様(HEP HALL車上)（HEP HALL）",
@@ -482,6 +484,45 @@
           "memo": "運搬・設営・撤収",
           "qty": 1,
           "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "1008-09前田さま（株式会社ウィゴー）（くずはモール南館2F\nWEGO.JP OSAKA くすはモール店）",
+      "clientName": "株式会社ウィゴー",
+      "deliveryAddress": "くずはモール南館2F\nWEGO.JP OSAKA くすはモール店",
+      "deliveryAddressDetail": "〒573-1121 大阪府枚方市楠葉花園町10-85",
+      "deliveryDate": "2026-10-08",
+      "time": "12:00",
+      "returnTime": "10:00",
+      "items": [
+        {
+          "category": "スピーカー類",
+          "name": "パワードスピーカー",
+          "memo": "JBL EON712(スタンド付属)",
+          "qty": 4,
+          "duration": "1日"
+        },
+        {
+          "category": "ミキサー",
+          "name": "ミニミキサー",
+          "memo": "YAMAHA MG10XU",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "ミキサー",
+          "name": "必要ケーブル一式",
+          "memo": "サービス",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "1日"
         }
       ]
     },
@@ -2767,6 +2808,58 @@
       ]
     },
     {
+      "folder": "1017-18清水さま（クリエイティブセンター大阪 赤鉄骨エリア）",
+      "clientName": "株式会社LYFT",
+      "deliveryAddress": "クリエイティブセンター大阪 赤鉄骨エリア",
+      "deliveryDate": "2026-10-17",
+      "time": "08:00",
+      "returnTime": "20:00",
+      "items": [
+        {
+          "category": "DJ",
+          "name": "DJプレイヤー",
+          "memo": "Pioneer CDJ-2000nxs",
+          "qty": 2,
+          "duration": "1.5日"
+        },
+        {
+          "category": "DJ",
+          "name": "DJミキサー",
+          "memo": "Pioneer DJM-900nxs2",
+          "qty": 1,
+          "duration": "1.5日"
+        },
+        {
+          "category": "DJ",
+          "name": "DJテーブル",
+          "memo": "SEELETON SDJT \nサイズ：高さ96cm 幅149cm 奥行き50cm",
+          "qty": 1,
+          "duration": "1.5日"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "パワードスピーカー",
+          "memo": "JBL EON712(スタンド付属)",
+          "qty": 4,
+          "duration": "1.5日"
+        },
+        {
+          "category": "ケーブル類",
+          "name": "マイクケーブル",
+          "memo": "5m",
+          "qty": 2,
+          "duration": "1.5日"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "1.5日"
+        }
+      ]
+    },
+    {
       "folder": "1017-18瀬島さまウォンバット（五月山動物園）（池田市五月山体育館）",
       "clientName": "一般財団法人　池田みどりスポーツ財団",
       "deliveryAddress": "池田市五月山体育館",
@@ -3177,7 +3270,7 @@
       ]
     },
     {
-      "folder": "1021久保さま(JR奈良駅)（JR奈良駅）",
+      "folder": "1021久保さま(JR奈良駅)キャン（JR奈良駅）",
       "clientName": "久保　龍馬",
       "deliveryAddress": "JR奈良駅",
       "deliveryAddressDetail": "〒630-8122 奈良県奈良市三条本町１",
