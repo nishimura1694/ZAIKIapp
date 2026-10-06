@@ -4,6 +4,50 @@
   "note": "金額・単価・小計等の金銭情報は含みません",
   "jobs": [
     {
+      "folder": "1205がん様（万博迎賓館　レセプションホール）",
+      "clientName": "鳫　知也",
+      "deliveryAddress": "万博迎賓館　レセプションホール",
+      "deliveryAddressDetail": "〒565-0826 大阪府吹田市千里万博公園９−１",
+      "deliveryDate": "2026-12-05",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "パワーアンプ込み",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "マイク",
+          "name": "ダイナミックマイク",
+          "memo": "SHURE SM58\n[付属：マイクホルダー、マイクケーブル10ｍ]",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "スタンド類",
+          "name": "マイクスタンド",
+          "memo": "ロングブーム<210>(ホルダー付属)",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
       "folder": "1205東さま(リーガロイヤルホテル大阪)（リーガロイヤルホテル大阪）",
       "clientName": "株式会社日本経営LINK",
       "deliveryAddress": "リーガロイヤルホテル大阪",
@@ -620,6 +664,20 @@
           "category": "音響",
           "name": "線材費",
           "memo": "電源/スピーカー/マイク\n上記ケーブルを含む",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "ワイヤレスハンドマイク〔B帯〕",
+          "memo": "SHENNHEISER EW500 G4-935-JB",
+          "qty": 5,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "ワイヤレス用アンテナ（サービス）",
+          "memo": "・ADP UHF　*2\n・A1031-U　*2\n・210　*4\n・BNCケーブル10m　*4\n",
           "qty": 1,
           "duration": "1日"
         },
