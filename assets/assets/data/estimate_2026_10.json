@@ -36,10 +36,214 @@
       ]
     },
     {
-      "folder": "1003-04清水音泉（城野音）",
+      "folder": "1003-04清水音泉（城野音）（大阪城野外音楽堂）",
+      "clientName": "株式会社清水音泉",
+      "deliveryAddress": "大阪城野外音楽堂",
       "deliveryDate": "2026-10-03",
-      "note": "見積ファイルなし（資料のみ）",
-      "items": []
+      "items": [
+        {
+          "category": "音響",
+          "name": "デジタルミキサー",
+          "memo": "YAMAHA CL5",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "ステージボックス",
+          "memo": "YAMAHA Rio3224-D2",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "スピーカー",
+          "memo": "d&b KSL8",
+          "qty": 8,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "サブウーハー",
+          "memo": "d&b KSL-GSUB",
+          "qty": 4,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "パワーアンプ〔4ch〕",
+          "memo": "d&b D40",
+          "qty": 4,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "追加スピーカー",
+          "memo": "MARTIN AUDIO X15B",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "追加スピーカー",
+          "memo": "L-ACO ARCS Focus",
+          "qty": 4,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "パワーアンプ〔4ch〕",
+          "memo": "L-ACO LA4X",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "デジタルミキサー",
+          "memo": "YAMAHA CL3",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "ステージボックス",
+          "memo": "YAMAHA Rio3224-D2",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "モニタースピーカー",
+          "memo": "d&b M4",
+          "qty": 6,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "パワーアンプ〔4ch〕",
+          "memo": "d&b D40",
+          "qty": 3,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "進行卓",
+          "memo": "YAMAHA　MG10XU",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "CDプレーヤー ",
+          "memo": "TASCAM CD-500B",
+          "qty": 3,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "マイク・DI",
+          "memo": "基本セット（有線）",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "スタンド",
+          "memo": "一式",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "線材費",
+          "memo": "電源/スピーカー/マイク\n上記ケーブルを含む",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "ドラムセット",
+          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "ティンバレス",
+          "memo": "LP　LP812-BN",
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "ベースアンプ",
+          "memo": "Aguilar DB751",
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "ベースアンプキャビネット",
+          "memo": "Aguilar DB410",
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "ギタースタンド",
+          "memo": "TAMA 839",
+          "duration": "1日"
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "FOH管理",
+          "memo": "1P",
+          "qty": 1,
+          "duration": 1
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "FB管理",
+          "memo": "1P",
+          "qty": 1,
+          "duration": 1
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "ステージチーフ",
+          "memo": "1P",
+          "qty": 1,
+          "duration": 1
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "ステージ",
+          "memo": "1P",
+          "qty": 1,
+          "duration": 1
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "運搬費",
+          "memo": "3ｔトラック",
+          "qty": 1,
+          "duration": 1
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "バン",
+          "qty": 1,
+          "duration": 1
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "前日仕込み費用",
+          "qty": 1,
+          "duration": 1
+        }
+      ]
     },
     {
       "folder": "1003じょうとく様(宗右衛門町)（Nightclub GALA RESORT）",
@@ -493,7 +697,7 @@
       "deliveryAddress": "くずはモール南館2F\nWEGO.JP OSAKA くすはモール店",
       "deliveryAddressDetail": "〒573-1121 大阪府枚方市楠葉花園町10-85",
       "deliveryDate": "2026-10-08",
-      "time": "12:00",
+      "time": "10:00",
       "returnTime": "10:00",
       "items": [
         {
@@ -623,27 +827,13 @@
           "category": "照明",
           "name": "配送費往復",
           "memo": "大阪⇔東京　梱包費・手数料含む",
-          "qty": 3,
+          "qty": 2,
           "duration": 2
         },
         {
           "category": "照明",
           "name": "諸経費",
           "memo": "0.1",
-          "qty": 1,
-          "duration": "1日"
-        },
-        {
-          "category": "照明",
-          "name": "設営人件費",
-          "memo": "1P",
-          "qty": 1,
-          "duration": "1日"
-        },
-        {
-          "category": "照明",
-          "name": "移動費",
-          "memo": "新幹線往復含む",
           "qty": 1,
           "duration": "1日"
         }
@@ -1171,13 +1361,6 @@
           "name": "ギタースタンド",
           "memo": "アンプ台数分サービス",
           "qty": 3,
-          "duration": "12h"
-        },
-        {
-          "category": "キーボード関連",
-          "name": "電子ピアノ",
-          "memo": "YAMAHA CP-40",
-          "qty": 1,
           "duration": "12h"
         },
         {
@@ -2823,34 +3006,6 @@
           "duration": "1.5日"
         },
         {
-          "category": "DJ",
-          "name": "DJミキサー",
-          "memo": "Pioneer DJM-900nxs2",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "DJ",
-          "name": "DJテーブル",
-          "memo": "SEELETON SDJT \nサイズ：高さ96cm 幅149cm 奥行き50cm",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "スピーカー類",
-          "name": "パワードスピーカー",
-          "memo": "JBL EON712(スタンド付属)",
-          "qty": 4,
-          "duration": "1.5日"
-        },
-        {
-          "category": "ケーブル類",
-          "name": "マイクケーブル",
-          "memo": "5m",
-          "qty": 2,
-          "duration": "1.5日"
-        },
-        {
           "category": "運搬サービス",
           "name": "トランスポート＿エリア1",
           "memo": "運搬・設営・撤収",
@@ -3725,6 +3880,19 @@
           "duration": "12h"
         },
         {
+          "category": "その他",
+          "name": "タープテント",
+          "memo": "FIELDOOR Steel Strong",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "タープテント用ウェイト",
+          "memo": "サービス",
+          "duration": "12h"
+        },
+        {
           "category": "オペレート",
           "name": "オペレーター人員",
           "memo": "1P",
@@ -3753,7 +3921,7 @@
       "deliveryAddress": "オ・セイリュウ 　O SEIRYU",
       "deliveryAddressDetail": "大阪府大阪市中央区東心斎橋1-7-12",
       "deliveryDate": "2026-10-24",
-      "time": "14:30",
+      "time": "14:15",
       "returnTime": "17:30",
       "items": [
         {
@@ -4163,12 +4331,12 @@
       ]
     },
     {
-      "folder": "1025福間さま（キャスルホテル7階宴会場）",
+      "folder": "1025福間さま（キャッスルホテル7階宴会場）",
       "clientName": "福間 博義",
-      "deliveryAddress": "キャスルホテル7階宴会場",
+      "deliveryAddress": "キャッスルホテル7階宴会場",
       "deliveryAddressDetail": "大阪市中央区天満橋京町1-1",
       "deliveryDate": "2026-10-25",
-      "time": "14:00",
+      "time": "13:30",
       "returnTime": "19:30",
       "items": [
         {
@@ -4218,6 +4386,13 @@
           "name": "キーボードスタンド",
           "memo": "コの字型",
           "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "譜面台",
+          "memo": "空白",
+          "qty": 4,
           "duration": "12h"
         },
         {
@@ -5160,6 +5335,28 @@
       "folder": "新しいフォルダー",
       "note": "見積ファイルなし（資料のみ）",
       "items": []
+    },
+    {
+      "folder": "菅波さま（音蔵カンサイ）（神戸市内）",
+      "clientName": "菅波　実",
+      "deliveryAddress": "神戸市内",
+      "deliveryDate": "未定",
+      "items": [
+        {
+          "category": "ドラムset",
+          "name": "電子ドラム",
+          "memo": "ROLAND TD-1KPX2 V-Drums\nペダル、スローン、マット付属",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア3",
+          "memo": "車上渡しプラン_3",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
     }
   ]
 }
