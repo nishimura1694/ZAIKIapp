@@ -453,9 +453,10 @@ def main():
     parser.add_argument(
         "--months-ahead",
         type=int,
-        default=3,
+        default=5,
         help="今月を含めて何か月先までのxlsxを新規取得・再生成の対象にするか"
-        "（デフォルト: 3＝今月+3か月先の計4か月分。過去に生成済みのJSONはこの範囲外でもindex.jsonから除外されない）",
+        "（デフォルト: 5＝今月+5か月先の計6か月分。アプリ側の表示範囲と合わせている。"
+        "過去に生成済みのJSONはこの範囲外でもindex.jsonから除外されない）",
     )
     args = parser.parse_args()
 

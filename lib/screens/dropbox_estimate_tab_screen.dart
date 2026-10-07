@@ -205,6 +205,7 @@ Future<EstimateBookingCreationResult> _createBookingFromEstimateJob(
     'customerTags': <String>[],
     'isTra': false,
     'isOpe': false,
+    'isShajo': false,
     'staffName': '',
     'bookingDate': bookingDate,
     'remarks': '',
@@ -291,6 +292,9 @@ Future<List<_MonthlyEstimateJob>> _loadBundledEstimateJobsFromIndex() async {
 /// 表示上限(「2か月先」の月末)までの範囲に入るデータだけを残す。
 /// includePastがfalseの場合は本日より前の日付を除外し、trueの場合は
 /// 「先月」の月初まで遡って表示する。
+/// 見積データの表示範囲(今月を含めて何か月先まで表示するか)。
+const int _estimateDisplayMonthsAhead = 6;
+
 /// 日付が解釈できない(例:「秋ごろ」)場合は範囲外として非表示にする。
 List<_MonthlyEstimateJob> _filterJobsWithinDisplayRange(
   List<_MonthlyEstimateJob> jobs,
@@ -300,7 +304,11 @@ List<_MonthlyEstimateJob> _filterJobsWithinDisplayRange(
   final rangeStart = includePast
       ? DateTime(now.year, now.month - 1, 1)
       : DateTime(now.year, now.month, now.day);
-  final rangeEndExclusive = DateTime(now.year, now.month + 3, 1);
+  final rangeEndExclusive = DateTime(
+    now.year,
+    now.month + _estimateDisplayMonthsAhead,
+    1,
+  );
   return jobs
       .where((job) {
         final d = job.parsedDeliveryDate;
@@ -312,7 +320,11 @@ List<_MonthlyEstimateJob> _filterJobsWithinDisplayRange(
 
 /// 表示範囲のラベル(例:「2026年7月〜2026年10月」「2026年8月27日〜2026年10月」)を組み立てる。
 String _buildDisplayRangeLabel(DateTime now, {required bool includePast}) {
-  final endMonth = DateTime(now.year, now.month + 2, 1);
+  final endMonth = DateTime(
+    now.year,
+    now.month + _estimateDisplayMonthsAhead - 1,
+    1,
+  );
   final endLabel = DateFormat('yyyy年M月').format(endMonth);
   if (includePast) {
     final startMonth = DateTime(now.year, now.month - 1, 1);
