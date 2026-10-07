@@ -36628,6 +36628,7 @@ h=t.s
 p.l(0,"customerTags",A.b([],h))
 p.l(0,"isTra",!1)
 p.l(0,"isOpe",!1)
+p.l(0,"isShajo",!1)
 p.l(0,"staffName","")
 p.l(0,"bookingDate",j)
 p.l(0,"remarks","")
@@ -36742,11 +36743,11 @@ break
 case 6:case 1:return A.v(q,r)
 case 2:return A.u(o.at(-1),r)}})
 return A.w($async$Sj,r)},
-bwj(a,b,c){var s=c?A.bD(A.aT(b),A.b6(b)-1,1,0,0,0,0):A.bD(A.aT(b),A.b6(b),A.bW(b),0,0,0,0),r=J.SN(a,new A.b_D(s,A.bD(A.aT(b),A.b6(b)+3,1,0,0,0,0)))
+bwj(a,b,c){var s=c?A.bD(A.aT(b),A.b6(b)-1,1,0,0,0,0):A.bD(A.aT(b),A.b6(b),A.bW(b),0,0,0,0),r=J.SN(a,new A.b_D(s,A.bD(A.aT(b),A.b6(b)+6,1,0,0,0,0)))
 r=A.H(r,r.$ti.i("m.E"))
 r.$flags=1
 return r},
-bvs(a,b){var s,r=A.bD(A.aT(a),A.b6(a)+2,1,0,0,0,0),q=A.hH("yyyy\u5e74M\u6708",null).h9(r)
+bvs(a,b){var s,r=A.bD(A.aT(a),A.b6(a)+6-1,1,0,0,0,0),q=A.hH("yyyy\u5e74M\u6708",null).h9(r)
 if(b){s=A.bD(A.aT(a),A.b6(a)-1,1,0,0,0,0)
 return A.hH("yyyy\u5e74M\u6708",null).h9(s)+"\u301c"+q}return A.hH("yyyy\u5e74M\u6708d\u65e5",null).h9(a)+"\u301c"+q},
 b4a(a){return new A.qQ(a,"\u5199\u771f\u306b\u66f8\u304d\u8fbc\u307f",B.r,null)},
