@@ -4331,6 +4331,38 @@
       ]
     },
     {
+      "folder": "1025村井さま(大阪故鉄株式会社)（大阪故鉄株式会社 諸福営業所・工場）",
+      "clientName": "村井　雄介",
+      "deliveryAddress": "大阪故鉄株式会社 諸福営業所・工場",
+      "deliveryAddressDetail": "大阪府大東市諸福7-4-38",
+      "deliveryDate": "2026-10-25",
+      "time": "8:30-9:00",
+      "returnTime": "15:00-17:00",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "お手軽スピーカーセット",
+          "memo": "・EV ZLX-12P　G2\n・SM58s\n・マイクケーブル10m\n・マイクスタンド\n・スピーカースタンド",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "ワイヤレス",
+          "name": "ワイヤレスハンドマイク〔B帯〕",
+          "memo": "SHURE BLX24/BETA58\n◆付属物\n・マイクケーブル5ｍ×1\n・ホルダー×1\n・専用ACケーブル×1、単三電池",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
       "folder": "1025福間さま（キャッスルホテル7階宴会場）",
       "clientName": "福間 博義",
       "deliveryAddress": "キャッスルホテル7階宴会場",
@@ -4884,13 +4916,20 @@
           "category": "音響",
           "name": "モニタースピーカー",
           "memo": "YAMAHA CHR12M",
-          "qty": 4,
+          "qty": 5,
           "duration": "12h"
         },
         {
           "category": "音響",
           "name": "パワーアンプ〔4ch〕",
           "memo": "QSC PLD4.5",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "音響",
+          "name": "ミニミキサー",
+          "memo": "YAMAHA MG10XU",
           "qty": 1,
           "duration": "12h"
         },
@@ -4981,6 +5020,13 @@
           "name": "スローン",
           "memo": "キーボード用椅子",
           "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "楽器",
+          "name": "譜面台",
+          "memo": "空白",
+          "qty": 6,
           "duration": "12h"
         },
         {

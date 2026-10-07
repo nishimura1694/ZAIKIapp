@@ -976,14 +976,12 @@
           "category": "ワイヤレス",
           "name": "ワイヤレスハンドマイク〔B帯〕",
           "memo": "SHENNHEISER EW500 G4-935-JB",
-          "qty": 3,
           "duration": "12h"
         },
         {
           "category": "ワイヤレス",
           "name": "指向性アンテナ",
           "memo": "SENNHEISER　ADP-UHF\n◆付属物\n・BNCケーブル10m×1\n・マイクスタンド×1",
-          "qty": 2,
           "duration": "12h"
         },
         {
@@ -996,7 +994,7 @@
           "category": "カラオケ・簡易ステージ",
           "name": "簡易ステージ",
           "memo": "INTELLI STAGE\nサイズ：幅100cm×長さ100cm\nライザー：高さ20cm",
-          "qty": 35,
+          "qty": 16,
           "duration": "12h"
         },
         {
@@ -1031,6 +1029,12 @@
           "category": "オペレート",
           "name": "4WD車手配料金",
           "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "10/17現調 4WD車手配料金",
+          "qty": 1,
           "duration": "12h"
         }
       ]
@@ -1186,9 +1190,9 @@
       ]
     },
     {
-      "folder": "1108新村さま（サンスタジオ）",
+      "folder": "1108新村さま（サンスタジオ 別館）",
       "clientName": "新村　和輝",
-      "deliveryAddress": "サンスタジオ",
+      "deliveryAddress": "サンスタジオ 別館",
       "deliveryAddressDetail": "大阪市天王寺区上汐6丁目4-20",
       "deliveryDate": "2026-11-08",
       "time": "15:00",

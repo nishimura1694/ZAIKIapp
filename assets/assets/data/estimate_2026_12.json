@@ -465,6 +465,51 @@
       ]
     },
     {
+      "folder": "1206池川様（リストランテ翔21）",
+      "clientName": "池川  弘一",
+      "deliveryAddress": "リストランテ翔21",
+      "deliveryAddressDetail": "〒530-8568 大阪府大阪市北区茶屋町１−４５\nOIT梅田タワ- 21F",
+      "deliveryDate": "2026-12-06",
+      "time": "未定",
+      "items": [
+        {
+          "category": "スピーカー類",
+          "name": "パワードスピーカー",
+          "memo": "EV ZLX-12P(スタンド付属)",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "電子ピアノ",
+          "memo": "YAMAHA CP-40\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "スローン",
+          "memo": "キーボード用椅子",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "譜面台",
+          "memo": "空白",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
       "folder": "1210岩佐さま（カンデオホテル）（カンデオホテルズ大阪ザ・タワー）",
       "clientName": "岩佐　秀孝",
       "deliveryAddress": "カンデオホテルズ大阪ザ・タワー",
