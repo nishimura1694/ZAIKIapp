@@ -4,6 +4,79 @@
   "note": "金額・単価・小計等の金銭情報は含みません",
   "jobs": [
     {
+      "folder": "0115伊藤さま（JACリクルートメント）（ヒルトン大阪）",
+      "clientName": "伊藤　香純",
+      "deliveryAddress": "ヒルトン大阪",
+      "deliveryDate": "2027-01-15",
+      "time": "未定",
+      "returnTime": "未定",
+      "items": [
+        {
+          "category": "マイク",
+          "name": "ダイナミックマイク",
+          "memo": "SHURE SM58\n[付属：マイクホルダー、マイクケーブル10ｍ]",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Marshall DSL100H",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "Ampeg BA115-V2",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "電子ピアノ",
+          "memo": "YAMAHA CP-40\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "スローン",
+          "memo": "キーボード用椅子",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット",
+          "memo": "PEARL vision\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "ダイレクトボックス",
+          "name": "D.I.",
+          "memo": "Boss DI-1",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "EV TX1122FM",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "車上渡しプラン",
+          "qty": 1,
+          "duration": "24h"
+        }
+      ]
+    },
+    {
       "folder": "0117六感音祭増田さま（十三グランドサロン）（十三グランドサロン）",
       "clientName": "六感音祭",
       "deliveryAddress": "十三グランドサロン",
