@@ -3348,6 +3348,9 @@
     },
     {
       "folder": "1121森木さま（大正区社会福祉協議会　ふれあい福祉センター）",
+      "clientName": "森木　優",
+      "deliveryAddress": "大正区社会福祉協議会　ふれあい福祉センター",
+      "deliveryAddressDetail": " 大阪市大正区小林西1丁目１４番３号",
       "deliveryDate": "2026-11-21",
       "items": [
         {
@@ -3407,14 +3410,6 @@
           "duration": "24h"
         }
       ]
-    },
-    {
-      "folder": "1121森木さま",
-      "clientName": "森木　優",
-      "deliveryAddress": "大正区社会福祉協議会　ふれあい福祉センター",
-      "deliveryAddressDetail": " 大阪市大正区小林西1丁目１４番３号",
-      "deliveryDate": "2026-11-21",
-      "items": []
     },
     {
       "folder": "1121脇田さま（ノートルダム大阪）（披露宴：）",

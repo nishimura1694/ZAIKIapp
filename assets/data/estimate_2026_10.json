@@ -731,72 +731,6 @@
       ]
     },
     {
-      "folder": "1009-10宮本さま（アニヴェルセル江坂）",
-      "clientName": "宮本　将弥",
-      "deliveryAddress": "アニヴェルセル江坂",
-      "deliveryDate": "2026-10-09",
-      "time": "16:00",
-      "returnTime": "18:00",
-      "items": [
-        {
-          "category": "セットプラン",
-          "name": "楽々PAセット",
-          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "スピーカー類",
-          "name": "モニタースピーカー",
-          "memo": "パワーアンプ込み",
-          "qty": 2,
-          "duration": "1.5日"
-        },
-        {
-          "category": "ドラムset",
-          "name": "ドラムセット",
-          "memo": "YAMAHA Stage Custom\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "ギターアンプ系",
-          "name": "ギターアンプ",
-          "memo": "Marshall DSL100H + 1960A",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "ベースアンプ系",
-          "name": "ベースアンプコンボ",
-          "memo": "Ampeg BA115-V2",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "ギターアンプ系",
-          "name": "ギタースタンド",
-          "memo": "アンプ台数分サービス",
-          "qty": 2,
-          "duration": "1.5日"
-        },
-        {
-          "category": "ギターアンプ系",
-          "name": "再設営費",
-          "memo": "作業人件費・移動費・待機費含む",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "運搬サービス",
-          "name": "トランスポート＿エリア2",
-          "memo": "運搬・設営・撤収_2",
-          "qty": 1,
-          "duration": "1.5日"
-        }
-      ]
-    },
-    {
       "folder": "1009ヨウジヤマモト（東京　配送）（LIMI Feu 青山店）",
       "clientName": "株式会社ヨウジヤマモト",
       "deliveryAddress": "LIMI Feu 青山店",
@@ -1943,8 +1877,8 @@
       "clientName": "杉本",
       "deliveryAddress": "ガレージ",
       "deliveryDate": "2026-10-11",
-      "time": "未定",
-      "returnTime": "未定",
+      "time": "12:00",
+      "returnTime": "15:00",
       "items": [
         {
           "category": "カラオケ・簡易ステージ",
@@ -3015,11 +2949,10 @@
       ]
     },
     {
-      "folder": "1017-18清水さま（クリエイティブセンター大阪 赤鉄骨エリア）",
+      "folder": "1017-18清水さま（株式会社LYFT）（クリエイティブセンター大阪 赤鉄骨エリア）",
       "clientName": "株式会社LYFT",
       "deliveryAddress": "クリエイティブセンター大阪 赤鉄骨エリア",
       "deliveryDate": "2026-10-17",
-      "time": "08:00",
       "returnTime": "20:00",
       "items": [
         {
@@ -3030,10 +2963,24 @@
           "duration": "1.5日"
         },
         {
+          "category": "照明",
+          "name": "LEDパーライト",
+          "memo": "e-lite 64J-RGBW V2",
+          "qty": 16,
+          "duration": "12h"
+        },
+        {
+          "category": "照明",
+          "name": "照明スタンド",
+          "memo": "SHB-10(床置きスタンド)",
+          "qty": 16,
+          "duration": "12h"
+        },
+        {
           "category": "運搬サービス",
           "name": "トランスポート＿エリア1",
           "memo": "運搬・設営・撤収",
-          "qty": 1,
+          "qty": 2,
           "duration": "1.5日"
         }
       ]
