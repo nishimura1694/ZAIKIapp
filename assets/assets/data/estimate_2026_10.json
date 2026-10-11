@@ -2950,10 +2950,7 @@
     },
     {
       "folder": "1017-18清水さま（株式会社LYFT）（クリエイティブセンター大阪 赤鉄骨エリア）",
-      "clientName": "株式会社LYFT",
-      "deliveryAddress": "クリエイティブセンター大阪 赤鉄骨エリア",
       "deliveryDate": "2026-10-17",
-      "returnTime": "20:00",
       "items": [
         {
           "category": "DJ",
@@ -2984,6 +2981,14 @@
           "duration": "1.5日"
         }
       ]
+    },
+    {
+      "folder": "1017-18清水さま（株式会社LYFT）",
+      "clientName": "株式会社LYFT",
+      "deliveryAddress": "クリエイティブセンター大阪 赤鉄骨エリア",
+      "deliveryDate": "2026-10-17",
+      "returnTime": "20:00",
+      "items": []
     },
     {
       "folder": "1017-18瀬島さまウォンバット（五月山動物園）（池田市五月山体育館）",
