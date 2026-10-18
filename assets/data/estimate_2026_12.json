@@ -1096,10 +1096,69 @@
       ]
     },
     {
-      "folder": "1213西原さま",
+      "folder": "1213西原さま（ホテルアベストグランデ高槻）",
+      "clientName": "西原　伸美",
+      "deliveryAddress": "ホテルアベストグランデ高槻",
+      "deliveryAddressDetail": "〒569-1123 大阪府高槻市芥川町１丁目１４−１",
       "deliveryDate": "2026-12-13",
-      "note": "見積ファイルなし（資料のみ）",
-      "items": []
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "スタンダードPAセット",
+          "memo": "・デジタルミキサー16ch\n・パワーアンプ（メイン用）\n・メインスピーカー\n・マイク*必要分\n必要スタンド、ケーブル付属",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "追加スピーカー",
+          "memo": "EV SX300",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "YAMAHA CHR12M",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "パワーアンプ・プロセッサー",
+          "name": "パワーアンプ〔4ch〕",
+          "memo": "QSC PLD4.5",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプキャビネット",
+          "memo": "Marshall 1960A",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "オペレーター人員",
+          "memo": "1P",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "アシスタント人員A",
+          "memo": "1P_A",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "オペレーター併用プラン_2",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
     },
     {
       "folder": "1215川上さま（株式会社アスコ）（ホテルモントレ グラスミア大阪23階\n「ウィンダミア ホール」）",
