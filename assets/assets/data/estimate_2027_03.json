@@ -416,6 +416,199 @@
       ]
     },
     {
+      "folder": "0318シンクファンズ(豊中市)（豊中つばさ公園『ma-zika』）",
+      "clientName": "シンク・ファンズ株式会社",
+      "deliveryAddress": "豊中つばさ公園『ma-zika』",
+      "deliveryAddressDetail": "〒561-0807 大阪府豊中市原田中２丁目２番",
+      "deliveryDate": "2027-03-18",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "スタンダードPAセット",
+          "memo": "・デジタルミキサー16ch\n・パワーアンプ2ch分\n・Martin AUDIO X15B*2\n・マイク*4\n必要スタンド、ケーブル付属",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ミキサー",
+          "name": "ステージボックス",
+          "memo": "MIDAS DL153",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "パワーアンプ込み",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "専用帯ワイヤレスマイク",
+          "memo": "ハンドマイク×2\n受信機×2\n申請費　　　　　含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "プレスボックス",
+          "memo": "WHIRLWIND PB12",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "再生機一式",
+          "memo": "BGM・CDプレイヤー含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "発電機",
+          "memo": "YAMAHA EF2000IS",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "ガソリン",
+          "memo": "1ℓ",
+          "qty": 6,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "オペレーター併用プラン_2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "オペレーター人員",
+          "memo": "1P",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "アシスタント人員A",
+          "memo": "1P_A",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0320シンクファンズ(豊中市)（豊中つばさ公園『ma-zika』）",
+      "clientName": "シンク・ファンズ株式会社",
+      "deliveryAddress": "豊中つばさ公園『ma-zika』",
+      "deliveryAddressDetail": "〒561-0807 大阪府豊中市原田中２丁目２番",
+      "deliveryDate": "2027-03-20",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "スタンダードPAセット",
+          "memo": "・デジタルミキサー16ch\n・パワーアンプ2ch分\n・Martin AUDIO X15B*2\n・マイク*4\n必要スタンド、ケーブル付属",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "追加サブウーハー",
+          "memo": "Martin AUDIO X118",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "パワーアンプ・プロセッサー",
+          "name": "チャンネルディバイダー",
+          "memo": "dbx 223xs",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "パワーアンプ・プロセッサー",
+          "name": "パワーアンプ",
+          "memo": "YAMAHA PX10",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ミキサー",
+          "name": "ステージボックス",
+          "memo": "MIDAS DL153",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "パワーアンプ込み",
+          "qty": 4,
+          "duration": "12h"
+        },
+        {
+          "category": "マイク",
+          "name": "コンデンサーマイク",
+          "memo": "DPA 4099-DC-1-P",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "マイク",
+          "name": "専用帯ワイヤレスマイク",
+          "memo": "ハンドマイク×8\n受信機×8\n申請費　　　　　\n予備B帯WL　　　　　含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "マイク",
+          "name": "再生機一式",
+          "memo": "BGM・CDプレイヤー含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "発電機",
+          "memo": "YAMAHA EF2000IS",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "ガソリン",
+          "memo": "1ℓ",
+          "qty": 12,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "オペレーター併用プラン_2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "オペレーター人員",
+          "memo": "1P",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "アシスタント人員A",
+          "memo": "1P_A",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
       "folder": "0321田中さま(大阪城野音)（大阪城音楽堂）",
       "clientName": "日本ダウン症協会大阪支部",
       "deliveryAddress": "大阪城音楽堂",
