@@ -3481,9 +3481,35 @@
       ]
     },
     {
-      "folder": "1022-23中本さま",
+      "folder": "1022-23中本さま（クリエイティブセンター大阪）",
+      "clientName": "中本 尚樹",
+      "deliveryAddress": "クリエイティブセンター大阪",
+      "deliveryAddressDetail": "〒559-0011 大阪府大阪市住之江区北加賀屋４丁目１−５５",
       "deliveryDate": "2026-10-22",
-      "items": []
+      "time": "午後中",
+      "items": [
+        {
+          "category": "DJ",
+          "name": "DJプレイヤー",
+          "memo": "AlphaTheta CDJ-3000X",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "DJ",
+          "name": "DJミキサー",
+          "memo": "Pioneer DJM-900nxs2",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "1日"
+        }
+      ]
     },
     {
       "folder": "1022-26佐々木様（大阪市北区茶屋町5-2）",
