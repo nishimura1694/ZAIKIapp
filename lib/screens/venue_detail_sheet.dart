@@ -303,16 +303,16 @@ class _VenueDetailSheetState extends State<VenueDetailSheet> {
                       ),
                     ),
                     const SizedBox(height: 8),
-                    SizedBox(
-                      height: 180,
-                      child: StreamBuilder<QuerySnapshot>(
-                        stream: FirebaseFirestore.instance
-                            .collection('bookings')
-                            .where('venueId', isEqualTo: widget.docId)
-                            .snapshots(),
-                        builder: (context, snap) {
-                          if (snap.hasError) {
-                            return Center(
+                    StreamBuilder<QuerySnapshot>(
+                      stream: FirebaseFirestore.instance
+                          .collection('bookings')
+                          .where('venueId', isEqualTo: widget.docId)
+                          .snapshots(),
+                      builder: (context, snap) {
+                        if (snap.hasError) {
+                          return SizedBox(
+                            height: 120,
+                            child: Center(
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
@@ -330,109 +330,112 @@ class _VenueDetailSheetState extends State<VenueDetailSheet> {
                                   ),
                                 ],
                               ),
-                            );
-                          }
-                          if (snap.connectionState == ConnectionState.waiting) {
-                            return const LoadingView();
-                          }
-                          var docs = snap.data?.docs ?? [];
-                          docs.sort((a, b) {
-                            final aDate =
-                                (a.data() as Map)['bookingDate']?.toString() ??
-                                '';
-                            final bDate =
-                                (b.data() as Map)['bookingDate']?.toString() ??
-                                '';
-                            return bDate.compareTo(aDate);
-                          });
-                          if (docs.isEmpty) {
-                            return const EmptyStateView(
+                            ),
+                          );
+                        }
+                        if (snap.connectionState == ConnectionState.waiting) {
+                          return const SizedBox(
+                            height: 120,
+                            child: LoadingView(),
+                          );
+                        }
+                        var docs = snap.data?.docs ?? [];
+                        docs.sort((a, b) {
+                          final aDate =
+                              (a.data() as Map)['bookingDate']?.toString() ??
+                              '';
+                          final bDate =
+                              (b.data() as Map)['bookingDate']?.toString() ??
+                              '';
+                          return bDate.compareTo(aDate);
+                        });
+                        if (docs.isEmpty) {
+                          return const SizedBox(
+                            height: 120,
+                            child: EmptyStateView(
                               icon: Icons.history,
                               message: '履歴がありません',
-                            );
-                          }
-                          return ListView.separated(
-                            itemCount: docs.length,
-                            padding: EdgeInsets.zero,
-                            separatorBuilder: (_, _) =>
-                                const SizedBox(height: 8),
-                            itemBuilder: (context, i) {
-                              final b = docs[i].data() as Map<String, dynamic>;
-                              final List urls = b['imageUrls'] ?? [];
-                              final bookingTags = _extractBookingTagsFromData(
-                                b,
-                              );
-                              return InkWell(
-                                onTap: () {
-                                  showAppBottomSheet(
-                                    context: context,
-                                    builder: (_) => BookingDetailSheet(
-                                      data: b,
-                                      docId: docs[i].id,
-                                    ),
-                                  );
-                                },
-                                child: ListTile(
-                                  contentPadding: EdgeInsets.zero,
-                                  leading: urls.isNotEmpty
-                                      ? ClipRRect(
+                            ),
+                          );
+                        }
+                        return ListView.separated(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: docs.length,
+                          padding: EdgeInsets.zero,
+                          separatorBuilder: (_, _) => const SizedBox(height: 8),
+                          itemBuilder: (context, i) {
+                            final b = docs[i].data() as Map<String, dynamic>;
+                            final List urls = b['imageUrls'] ?? [];
+                            final bookingTags = _extractBookingTagsFromData(b);
+                            return InkWell(
+                              onTap: () {
+                                showAppBottomSheet(
+                                  context: context,
+                                  builder: (_) => BookingDetailSheet(
+                                    data: b,
+                                    docId: docs[i].id,
+                                  ),
+                                );
+                              },
+                              child: ListTile(
+                                contentPadding: EdgeInsets.zero,
+                                leading: urls.isNotEmpty
+                                    ? ClipRRect(
+                                        borderRadius: BorderRadius.circular(6),
+                                        child: Image.network(
+                                          urls[0],
+                                          width: 50,
+                                          height: 50,
+                                          fit: BoxFit.cover,
+                                          cacheWidth: 120,
+                                          cacheHeight: 120,
+                                          filterQuality: FilterQuality.medium,
+                                        ),
+                                      )
+                                    : Container(
+                                        width: 50,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                          color: AppColors.subtleFill,
                                           borderRadius: BorderRadius.circular(
                                             6,
                                           ),
-                                          child: Image.network(
-                                            urls[0],
-                                            width: 50,
-                                            height: 50,
-                                            fit: BoxFit.cover,
-                                            cacheWidth: 120,
-                                            cacheHeight: 120,
-                                            filterQuality: FilterQuality.medium,
-                                          ),
-                                        )
-                                      : Container(
-                                          width: 50,
-                                          height: 50,
-                                          decoration: BoxDecoration(
-                                            color: AppColors.subtleFill,
-                                            borderRadius: BorderRadius.circular(
-                                              6,
-                                            ),
-                                          ),
-                                          child: const Icon(
-                                            Icons.image_outlined,
-                                            color: Colors.grey,
-                                          ),
                                         ),
-                                  title: Row(
-                                    children: [
-                                      Expanded(
-                                        child: Text(
-                                          b['customerName'] ?? '',
-                                          style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                          overflow: TextOverflow.ellipsis,
+                                        child: const Icon(
+                                          Icons.image_outlined,
+                                          color: Colors.grey,
                                         ),
                                       ),
-                                      if (bookingTags.isNotEmpty) ...[
-                                        const SizedBox(width: 8),
-                                        Wrap(
-                                          spacing: 4,
-                                          runSpacing: 4,
-                                          children: bookingTags
-                                              .map(_buildBookingTagChip)
-                                              .toList(growable: false),
+                                title: Row(
+                                  children: [
+                                    Expanded(
+                                      child: Text(
+                                        b['customerName'] ?? '',
+                                        style: const TextStyle(
+                                          fontWeight: FontWeight.bold,
                                         ),
-                                      ],
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                    if (bookingTags.isNotEmpty) ...[
+                                      const SizedBox(width: 8),
+                                      Wrap(
+                                        spacing: 4,
+                                        runSpacing: 4,
+                                        children: bookingTags
+                                            .map(_buildBookingTagChip)
+                                            .toList(growable: false),
+                                      ),
                                     ],
-                                  ),
-                                  subtitle: Text(b['bookingDate'] ?? '-'),
+                                  ],
                                 ),
-                              );
-                            },
-                          );
-                        },
-                      ),
+                                subtitle: Text(b['bookingDate'] ?? '-'),
+                              ),
+                            );
+                          },
+                        );
+                      },
                     ),
                     const Divider(height: 40, color: AppColors.dividerGrey),
                     const Text(
