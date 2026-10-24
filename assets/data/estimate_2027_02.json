@@ -511,6 +511,52 @@
       ]
     },
     {
+      "folder": "0227なかつかさ様（吹田メイシアター）",
+      "clientName": "なかつかさ　ひろみち",
+      "deliveryAddress": "吹田メイシアター",
+      "deliveryAddressDetail": "〒564-0041 大阪府吹田市泉町２丁目２９−１ \n吹田市文化会館 2階",
+      "deliveryDate": "2027-02-27",
+      "time": "09:00",
+      "returnTime": "16:30",
+      "items": [
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット",
+          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Marshall DSL100H + 1960A",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "Ampeg BA115-V2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
       "folder": "0227田中さま(国際くらしの医療館・神戸)（国際くらしの医療館・神戸\n5F セミナールーム）",
       "clientName": "日本ダウン症協会大阪支部",
       "deliveryAddress": "国際くらしの医療館・神戸\n5F セミナールーム",

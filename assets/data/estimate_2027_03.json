@@ -430,6 +430,20 @@
           "duration": "12h"
         },
         {
+          "category": "スピーカー類",
+          "name": "追加スピーカー",
+          "memo": "[in fill]EV SX300",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "パワーアンプ・プロセッサー",
+          "name": "パワーアンプ",
+          "memo": "YAMAHA P5000s",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
           "category": "ミキサー",
           "name": "ステージボックス",
           "memo": "MIDAS DL153",
@@ -537,6 +551,20 @@
           "duration": "12h"
         },
         {
+          "category": "スピーカー類",
+          "name": "追加スピーカー",
+          "memo": "[in fill]EV SX300",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "パワーアンプ・プロセッサー",
+          "name": "パワーアンプ",
+          "memo": "YAMAHA P5000s",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
           "category": "ミキサー",
           "name": "ステージボックス",
           "memo": "MIDAS DL153",
@@ -560,7 +588,7 @@
         {
           "category": "マイク",
           "name": "専用帯ワイヤレスマイク",
-          "memo": "ハンドマイク×8\n受信機×8\n申請費　　　　　\n予備B帯WL　　　　　含む",
+          "memo": "ハンドマイク×8\n受信機×8\n申請費　　　　　　含む",
           "qty": 1,
           "duration": "12h"
         },
@@ -603,7 +631,7 @@
           "category": "オペレート",
           "name": "アシスタント人員A",
           "memo": "1P_A",
-          "qty": 1,
+          "qty": 2,
           "duration": "12h"
         }
       ]
