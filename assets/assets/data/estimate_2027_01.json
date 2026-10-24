@@ -4,24 +4,63 @@
   "note": "金額・単価・小計等の金銭情報は含みません",
   "jobs": [
     {
-      "folder": "0115伊藤さま（JACリクルートメント）（ヒルトン大阪）",
-      "clientName": "伊藤　香純",
-      "deliveryAddress": "ヒルトン大阪",
-      "deliveryDate": "2027-01-15",
-      "time": "未定",
-      "returnTime": "未定",
+      "folder": "0103衣笠さま(グレースバリなんば道頓堀店)（グレースバリなんば道頓堀店）",
+      "clientName": "衣笠　亨",
+      "deliveryAddress": "グレースバリなんば道頓堀店",
+      "deliveryAddressDetail": "〒542-0071 大阪府中央区道頓堀１丁目４−２７\nベニスビル 1",
+      "deliveryDate": "2027-01-03",
+      "time": "11:00",
       "items": [
-        {
-          "category": "マイク",
-          "name": "ダイナミックマイク",
-          "memo": "SHURE SM58\n[付属：マイクホルダー、マイクケーブル10ｍ]",
-          "qty": 1,
-          "duration": "24h"
-        },
         {
           "category": "ギターアンプ系",
           "name": "ギターアンプ",
-          "memo": "Marshall DSL100H",
+          "memo": "Roland JC-120",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "MARKBASS MB58R CMD102PUR",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "アンプ台数分サービス",
+          "qty": 3,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "搬入出諸経費",
+          "memo": "繁華街のため",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0115伊藤さま（JACリクルートメント）（ヒルトン大阪）",
+      "clientName": "伊藤 香純",
+      "deliveryAddress": "ヒルトン大阪",
+      "deliveryAddressDetail": "〒530-0001 大阪府大阪市北区梅田１丁目８−８",
+      "deliveryDate": "2027-01-15",
+      "time": "07:30",
+      "returnTime": "21:30",
+      "items": [
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
           "qty": 1,
           "duration": "24h"
         },
@@ -41,6 +80,13 @@
         },
         {
           "category": "キーボード関連",
+          "name": "キーボードスタンド",
+          "memo": "コの字型",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "キーボード関連",
           "name": "スローン",
           "memo": "キーボード用椅子",
           "qty": 1,
@@ -49,28 +95,21 @@
         {
           "category": "ドラムset",
           "name": "ドラムセット",
-          "memo": "PEARL vision\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
           "qty": 1,
           "duration": "24h"
         },
         {
-          "category": "ダイレクトボックス",
-          "name": "D.I.",
-          "memo": "Boss DI-1",
-          "qty": 1,
-          "duration": "24h"
-        },
-        {
-          "category": "スピーカー類",
-          "name": "モニタースピーカー",
-          "memo": "EV TX1122FM",
-          "qty": 1,
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "アンプ台数分サービス",
+          "qty": 2,
           "duration": "24h"
         },
         {
           "category": "運搬サービス",
           "name": "トランスポート＿エリア1",
-          "memo": "車上渡しプラン",
+          "memo": "運搬・設営・撤収",
           "qty": 1,
           "duration": "24h"
         }

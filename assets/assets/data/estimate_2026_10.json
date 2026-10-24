@@ -3481,37 +3481,6 @@
       ]
     },
     {
-      "folder": "1022-23中本さま（クリエイティブセンター大阪）",
-      "clientName": "中本 尚樹",
-      "deliveryAddress": "クリエイティブセンター大阪",
-      "deliveryAddressDetail": "〒559-0011 大阪府大阪市住之江区北加賀屋４丁目１−５５",
-      "deliveryDate": "2026-10-22",
-      "time": "午後中",
-      "items": [
-        {
-          "category": "DJ",
-          "name": "DJプレイヤー",
-          "memo": "AlphaTheta CDJ-3000X",
-          "qty": 2,
-          "duration": "1日"
-        },
-        {
-          "category": "DJ",
-          "name": "DJミキサー",
-          "memo": "Pioneer DJM-900nxs2",
-          "qty": 1,
-          "duration": "1日"
-        },
-        {
-          "category": "運搬サービス",
-          "name": "トランスポート＿エリア1",
-          "memo": "運搬・設営・撤収",
-          "qty": 1,
-          "duration": "1日"
-        }
-      ]
-    },
-    {
       "folder": "1022-26佐々木様（大阪市北区茶屋町5-2）",
       "clientName": "佐々木　翼",
       "deliveryAddress": "大阪市北区茶屋町5-2",
@@ -3560,6 +3529,36 @@
           "category": "運搬サービス",
           "name": "トランスポート＿エリア3",
           "memo": "車上渡しプラン_3",
+          "qty": 1,
+          "duration": "1.5日"
+        }
+      ]
+    },
+    {
+      "folder": "1023あおき様",
+      "clientName": "あおき　しんと",
+      "deliveryDate": "2026-10-23",
+      "time": "15:00",
+      "returnTime": "20:00",
+      "items": [
+        {
+          "category": "ワイヤレス",
+          "name": "ワイヤレスイヤモニ送信機〔B帯〕",
+          "memo": "SHURE PSM300 P3T",
+          "qty": 1,
+          "duration": "1.5日"
+        },
+        {
+          "category": "ワイヤレス",
+          "name": "ワイヤレスイヤモニ受信機〔B帯〕",
+          "memo": "SHURE PSM300 P3R",
+          "qty": 1,
+          "duration": "1.5日"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "搬出のみ_1",
           "qty": 1,
           "duration": "1.5日"
         }
@@ -4139,16 +4138,16 @@
           "duration": 1
         },
         {
-          "category": "ワイヤレス",
-          "name": "ワイヤレスマイク〔B帯〕",
-          "memo": "サービス",
-          "qty": 1,
+          "category": "DJ・カラオケ・簡易ステージ",
+          "name": "DJプレイヤー",
+          "memo": "Alpha Theta CDJ-3000X",
+          "qty": 2,
           "duration": "1日"
         },
         {
-          "category": "ワイヤレス",
-          "name": "ワイヤレスインイヤーモニター",
-          "memo": "サービス",
+          "category": "DJ・カラオケ・簡易ステージ",
+          "name": "DJミキサー",
+          "memo": "Pioneer DJM-900nxs2",
           "qty": 1,
           "duration": "1日"
         },
@@ -4549,67 +4548,96 @@
       ]
     },
     {
-      "folder": "1027伊勢さま(北新地 CLUB REIMS)（CLUB RAISE）",
+      "folder": "1027-28伊勢さま(北新地 CLUB REIMS)（CLUB RAISE）",
       "clientName": "伊勢　翔太",
       "deliveryAddress": "CLUB RAISE",
       "deliveryAddressDetail": "〒530-0003 大阪府大阪市北区堂島１丁目２−７ \nパーマリィ・イン 6F",
       "deliveryDate": "2026-10-27",
+      "time": "10:00",
+      "returnTime": "12:00予定",
       "items": [
         {
-          "category": "セットプラン",
-          "name": "楽々PAセット",
-          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "category": "ミキサー",
+          "name": "パワードミキサー",
+          "memo": "YAMAHA EMX5016CF",
           "qty": 1,
-          "duration": "12h"
+          "duration": "24h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "メインスピーカー",
+          "memo": "EV zx1-90B",
+          "qty": 2,
+          "duration": "24h"
         },
         {
           "category": "スピーカー類",
           "name": "サブウーハー",
           "memo": "EV sb122",
-          "qty": 2,
-          "duration": "12h"
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "パワーアンプ・プロセッサー",
+          "name": "パワーアンプ",
+          "memo": "YAMAHA P5000s",
+          "qty": 1,
+          "duration": "24h"
         },
         {
           "category": "スピーカー類",
           "name": "モニタースピーカー",
-          "memo": "パワーアンプ込み",
-          "qty": 2,
-          "duration": "12h"
+          "memo": "12\"パワードスピーカー",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "ミキサー",
+          "name": "ミニミキサー　(会場音響接続用)",
+          "memo": "YAMAHA MG10XU",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "ミキサー",
+          "name": "変換プラグ ",
+          "memo": "3.5mm to 6.35mm TRS",
+          "qty": 1,
+          "duration": "24h"
         },
         {
           "category": "DJ",
           "name": "DJプレイヤー",
           "memo": "AlphaTheta CDJ-3000X",
           "qty": 2,
-          "duration": "12h"
+          "duration": "24h"
         },
         {
           "category": "DJ",
           "name": "DJミキサー",
           "memo": "Pioneer DJM-900nxs2",
           "qty": 1,
-          "duration": "12h"
+          "duration": "24h"
         },
         {
           "category": "DJ",
           "name": "DJテーブル",
           "memo": "QUIK LOK DJ233\nサイズ：高さ64～97cm 幅100cm 奥行き49cm",
           "qty": 1,
-          "duration": "12h"
+          "duration": "24h"
+        },
+        {
+          "category": "DJ",
+          "name": "線材費・ケーブル養生",
+          "qty": 1,
+          "duration": "24h"
         },
         {
           "category": "運搬サービス",
           "name": "トランスポート＿エリア1",
           "memo": "運搬・設営・撤収",
           "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "運搬サービス",
-          "name": "搬入出増員",
-          "memo": "1P",
-          "qty": 1,
-          "duration": "12h"
+          "duration": "24h"
         }
       ]
     },
@@ -4620,7 +4648,7 @@
       "deliveryAddressDetail": "〒557-0014 大阪市西成区天下茶屋3-18-27",
       "deliveryDate": "2026-10-28",
       "time": "14:00",
-      "returnTime": "20:00",
+      "returnTime": "22:00",
       "items": [
         {
           "category": "セットプラン",
@@ -4788,21 +4816,21 @@
           "category": "ギターアンプ系",
           "name": "ギタースタンド",
           "memo": "アンプ台数分サービス",
-          "qty": 2,
+          "qty": 3,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "電池駆動アンプ",
+          "memo": "Roland cube street EX",
+          "qty": 1,
           "duration": "12h"
         },
         {
           "category": "その他",
           "name": "譜面台",
           "memo": "空白",
-          "qty": 5,
-          "duration": "12h"
-        },
-        {
-          "category": "ケーブル類",
-          "name": "シールド",
-          "memo": "7m",
-          "qty": 1,
+          "qty": 3,
           "duration": "12h"
         },
         {
@@ -4839,15 +4867,86 @@
       "folder": "1030-1101たけだ様（羽衣国際大学）",
       "clientName": "CASTIA",
       "deliveryAddress": "羽衣国際大学",
-      "deliveryAddressDetail": "〒592-8344 大阪府堺市西区浜寺南町１丁目８９−１",
       "deliveryDate": "2026-10-30",
+      "returnTime": "17:00",
       "items": [
         {
+          "category": "セットプラン",
+          "name": "スタンダードPAセット〔S〕",
+          "memo": "・デジタルミキサー16ch\n・パワーアンプ2ch分\n・EV sx300*2\n・マイク*4\n必要スタンド、ケーブル付属",
+          "qty": 1,
+          "duration": "1.5日"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "追加スピーカー",
+          "memo": "EV SX300",
+          "qty": 2,
+          "duration": "1.5日"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "パワーアンプ込み",
+          "qty": 2,
+          "duration": "1.5日"
+        },
+        {
+          "category": "ワイヤレス",
+          "name": "ワイヤレスピンマイク〔B帯〕",
+          "memo": "SHENNHEISER MKE2 Pin mic",
+          "qty": 4,
+          "duration": "1.5日"
+        },
+        {
+          "category": "ワイヤレス",
+          "name": "無指向性アンテナ",
+          "memo": "SENNHEISER　A1031-U",
+          "qty": 2,
+          "duration": "1.5日"
+        },
+        {
+          "category": "<10/31(土)～>",
+          "name": "漫才マイク",
+          "memo": "SONY C-38B",
+          "qty": 1,
+          "duration": "1.5日"
+        },
+        {
+          "category": "<10/31(土)～>",
+          "name": "漫才用ストレートマイクスタンド",
+          "qty": 1,
+          "duration": "1.5日"
+        },
+        {
+          "category": "<10/31(土)～>",
+          "name": "トランスポート＿エリア2",
+          "memo": "オペレーター併用プラン_2",
+          "qty": 1,
+          "duration": "1.5日"
+        },
+        {
+          "category": "<10/31(土)～>",
+          "name": "オペレーター人員",
+          "memo": "1P",
+          "qty": 2,
+          "duration": "1.5日"
+        },
+        {
+          "category": "<10/31(土)～>",
+          "name": "アシスタント人員A",
+          "memo": "1P_A",
+          "qty": 2,
+          "duration": "1.5日"
+        },
+        {
+          "category": "<11/30前日仕込み 追加分>",
           "name": "機材代",
           "memo": "(漫才マイク、マイクスタンド\nを除く機材の+1日差額分)",
           "qty": 1
         },
         {
+          "category": "<11/30前日仕込み 追加分>",
           "name": "人件費",
           "memo": "前日仕込み特別料金",
           "qty": 1
