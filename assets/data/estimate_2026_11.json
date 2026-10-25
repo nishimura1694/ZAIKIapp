@@ -1017,7 +1017,7 @@
       "clientName": "安井　聖",
       "deliveryAddress": "大阪星光学院中学校・高等学校",
       "deliveryDate": "2026-11-06",
-      "time": "夕方",
+      "time": "16:00",
       "returnTime": "17:00",
       "items": [
         {
@@ -1031,7 +1031,7 @@
           "category": "スピーカー類",
           "name": "モニタースピーカー",
           "memo": "パワーアンプ込み",
-          "qty": 2,
+          "qty": 3,
           "duration": "1.5日"
         },
         {
@@ -1231,6 +1231,8 @@
       "deliveryAddress": "ホテル ラ・スイート神戸ハーバーランド",
       "deliveryAddressDetail": "〒650-0042 兵庫県神戸市中央区波止場町７−２",
       "deliveryDate": "2026-11-07",
+      "time": "09:30",
+      "returnTime": "16:00",
       "items": [
         {
           "category": "セットプラン",
@@ -2180,17 +2182,16 @@
           "duration": "1.5日"
         },
         {
-          "category": "ワイヤレス",
-          "name": "ワイヤレスピンマイク〔B帯〕",
-          "memo": "SHENNHEISER MKE2 Pin mic",
-          "qty": 5,
+          "category": "マイク",
+          "name": "漫才マイク",
+          "memo": "SONY C-38B",
+          "qty": 1,
           "duration": "1.5日"
         },
         {
-          "category": "ワイヤレス",
-          "name": "指向性アンテナ",
-          "memo": "SENNHEISER　ADP-UHF",
-          "qty": 2,
+          "category": "スタンド類",
+          "name": "漫才用ストレートマイクスタンド",
+          "qty": 1,
           "duration": "1.5日"
         },
         {
@@ -2238,30 +2239,9 @@
         {
           "category": "マイクスタンド",
           "name": "トランスポート＿エリア3",
-          "memo": "オペレーター併用プラン_3",
+          "memo": "運搬・設営・撤収_3",
           "qty": 1,
           "duration": "1.5日"
-        },
-        {
-          "category": "マイクスタンド",
-          "name": "オペレーター人員",
-          "memo": "1P",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "マイクスタンド",
-          "name": "アシスタント人員A",
-          "memo": "1P_A",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "マイクスタンド",
-          "name": "前日仕込み・リハ",
-          "memo": "特別料金",
-          "qty": 1,
-          "duration": 1
         }
       ]
     },
