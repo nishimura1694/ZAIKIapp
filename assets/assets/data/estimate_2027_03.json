@@ -749,6 +749,61 @@
       "folder": "_scripts",
       "note": "見積ファイルなし（資料のみ）",
       "items": []
+    },
+    {
+      "folder": "日程未定 伊佐治さま（株式会社sann）（-）",
+      "clientName": "株式会社sann 伊佐治亜美",
+      "deliveryDate": "46447",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "パワーアンプ込み",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "カラオケ・簡易ステージ",
+          "name": "簡易ステージ",
+          "memo": "INTELLI STAGE\nサイズ：幅100cm×長さ100cm\nライザー：高さ20cm",
+          "qty": 8,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア4",
+          "memo": "運搬・設営・撤収_4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "オペレーター人員",
+          "memo": "1P",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "アシスタント人員A",
+          "memo": "1P_A",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "会場移動・再設営費",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
     }
   ]
 }
