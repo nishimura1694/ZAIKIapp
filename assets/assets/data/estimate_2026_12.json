@@ -1176,10 +1176,10 @@
       ]
     },
     {
-      "folder": "1212原池さま（ホテルロイヤルクラシック大阪\n　宴会場 壽・麗）",
-      "clientName": "原池　未来",
-      "deliveryAddress": "ホテルロイヤルクラシック大阪\n　宴会場 壽・麗",
-      "deliveryAddressDetail": "〒542-0076 大阪府大阪市中央区難波４丁目３−３",
+      "folder": "1212イベント21（神大学祭）（神戸大学 鶴甲第二キャンパス 体育館）",
+      "clientName": "株式会社イベント21　リン",
+      "deliveryAddress": "神戸大学 鶴甲第二キャンパス 体育館",
+      "deliveryAddressDetail": "〒657-0013 兵庫県神戸市灘区六甲台町１−１",
       "deliveryDate": "2026-12-12",
       "items": [
         {
@@ -1187,132 +1187,223 @@
           "name": "デジタルミキサー",
           "memo": "MIDAS M32R",
           "qty": 1,
-          "duration": "12h"
+          "duration": "1日"
         },
         {
           "category": "音響",
           "name": "ステージボックス",
           "memo": "MIDAS DL32",
           "qty": 1,
-          "duration": "12h"
+          "duration": "1日"
         },
         {
           "category": "音響",
           "name": "スピーカー",
           "memo": "MARTIN AUDIO X15B",
           "qty": 2,
-          "duration": "12h"
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "サブウーハー",
+          "memo": "Martin AUDIO X118",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "チャンネルディバイダー",
+          "memo": "dbx 223xs",
+          "qty": 1,
+          "duration": "1日"
         },
         {
           "category": "音響",
           "name": "パワーアンプ〔4ch〕",
           "memo": "QSC PLD4.5",
           "qty": 1,
-          "duration": "12h"
+          "duration": "1日"
         },
         {
           "category": "音響",
           "name": "モニタースピーカー",
-          "memo": "[Side Fill]EV SX300",
-          "qty": 2,
-          "duration": "12h"
+          "memo": "[Foot]12インチスピーカー",
+          "qty": 4,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "パワーアンプ〔4ch〕",
+          "memo": "QSC PLD4.5",
+          "qty": 1,
+          "duration": "1日"
         },
         {
           "category": "音響",
           "name": "マイク・DI",
           "memo": "基本セット（有線）",
           "qty": 1,
-          "duration": "12h"
+          "duration": "1日"
         },
         {
           "category": "音響",
           "name": "スタンド",
           "memo": "一式",
           "qty": 1,
-          "duration": "12h"
+          "duration": "1日"
         },
         {
           "category": "音響",
           "name": "線材費",
           "memo": "電源/スピーカー/マイク\n上記ケーブルを含む",
           "qty": 1,
-          "duration": "12h"
+          "duration": "1日"
         },
         {
           "category": "楽器",
           "name": "ドラムセット",
           "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
           "qty": 1,
-          "duration": "12h"
+          "duration": "1日"
         },
         {
           "category": "楽器",
           "name": "ベースアンプコンボ",
-          "memo": "MARKBASS MB58R CMD102PUR",
+          "memo": "Ampeg BA115-V2",
           "qty": 1,
-          "duration": "12h"
+          "duration": "1日"
         },
         {
           "category": "楽器",
           "name": "ギターアンプ",
           "memo": "Roland JC-120",
           "qty": 1,
-          "duration": "12h"
+          "duration": "1日"
         },
         {
           "category": "楽器",
           "name": "ギターアンプ",
-          "memo": "Marshall DSL100H",
+          "memo": "Marshall JCM2000",
           "qty": 1,
-          "duration": "12h"
+          "duration": "1日"
         },
         {
           "category": "楽器",
           "name": "ギターアンプキャビネット",
           "memo": "Marshall 1960A",
           "qty": 1,
-          "duration": "12h"
+          "duration": "1日"
         },
         {
           "category": "楽器",
           "name": "ギタースタンド",
           "memo": "アンプ台数分サービス",
           "qty": 3,
-          "duration": "12h"
+          "duration": "1日"
         },
         {
           "category": "楽器",
-          "name": "電子ピアノ",
-          "memo": "YAMAHA CP-40\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
-          "duration": "12h"
+          "name": "シンセサイザー",
+          "memo": "Roland JUNO-DS\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
+          "duration": "1日"
         },
         {
           "category": "人件費・運搬費・諸経費",
           "name": "オペレーター人員",
           "memo": "1P",
           "qty": 1,
-          "duration": "12h"
+          "duration": 1
         },
         {
           "category": "人件費・運搬費・諸経費",
           "name": "アシスタント人員A",
           "memo": "1P_A",
           "qty": 1,
-          "duration": "12h"
+          "duration": 1
         },
         {
           "category": "人件費・運搬費・諸経費",
-          "name": "搬入出アシスタント",
+          "name": "トランスポート＿エリア3",
+          "memo": "オペレーター併用プラン_3",
+          "qty": 1,
+          "duration": 1
+        }
+      ]
+    },
+    {
+      "folder": "1212パナ山口さま(オペ)（髙島屋大阪店）",
+      "clientName": "株式会社パナ 山口 泰央",
+      "deliveryAddress": "髙島屋大阪店",
+      "deliveryAddressDetail": "〒542-8510 大阪府大阪市中央区難波５丁目１−５",
+      "deliveryDate": "2026-12-12",
+      "items": [
+        {
+          "category": "【会場①】",
+          "name": "スタンダードPAセット〔S〕",
+          "memo": "・デジタルミキサー16ch\n・パワーアンプ2ch分\n・EV sx300*2\n・マイク*4\n必要スタンド、ケーブル付属",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "【会場①】",
+          "name": "モニタースピーカー",
+          "memo": "Foot 12\"",
+          "qty": 3,
+          "duration": "1日"
+        },
+        {
+          "category": "【会場①】",
+          "name": "必要ケーブル・DI",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "【会場①】",
+          "name": "オペレーター人員",
           "memo": "1P",
           "qty": 1,
-          "duration": "12h"
+          "duration": "1日"
         },
         {
-          "category": "人件費・運搬費・諸経費",
+          "category": "【会場②】",
+          "name": "スタンダードPAセット〔S〕",
+          "memo": "・デジタルミキサー16ch\n・パワーアンプ2ch分\n・EV sx300*2\n・マイク*4\n必要スタンド、ケーブル付属",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "【会場②】",
+          "name": "モニタースピーカー",
+          "memo": "Foot 12\"",
+          "qty": 3,
+          "duration": "1日"
+        },
+        {
+          "category": "【会場②】",
+          "name": "必要ケーブル・DI",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "【会場②】",
+          "name": "オペレーター人員",
+          "memo": "1P",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "人件費・運搬費",
           "name": "トランスポート＿エリア1",
           "memo": "オペレーター併用プラン",
           "qty": 2,
-          "duration": "12h"
+          "duration": "1日"
+        },
+        {
+          "category": "人件費・運搬費",
+          "name": "搬入出アシスタント",
+          "memo": "1P",
+          "qty": 2,
+          "duration": "1日"
         }
       ]
     },
@@ -1337,13 +1428,6 @@
           "name": "スローン",
           "memo": "キーボード用椅子",
           "qty": 2,
-          "duration": "12h"
-        },
-        {
-          "category": "ドラム関連",
-          "name": "シンバルスタンド",
-          "memo": "空白6",
-          "qty": 1,
           "duration": "12h"
         },
         {
@@ -2074,6 +2158,38 @@
           "category": "オペレート",
           "name": "アシスタント人員A",
           "memo": "1P_A",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "1220久保田さま（Mia Via）",
+      "clientName": "久保田 展弘",
+      "deliveryAddress": "Mia Via",
+      "deliveryAddressDetail": "〒564-0054 大阪府吹田市芳野町１３−８",
+      "deliveryDate": "2026-12-20",
+      "time": "15:00",
+      "returnTime": "20:00",
+      "items": [
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "MARKBASS MB58R CMD102PUR",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "アンプ台数分サービス",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
           "qty": 1,
           "duration": "12h"
         }
