@@ -648,6 +648,50 @@
       ]
     },
     {
+      "folder": "0228交河さま（RISTORANTE～翔21）",
+      "clientName": "交河　佑樹",
+      "deliveryAddress": "RISTORANTE～翔21",
+      "deliveryAddressDetail": "〒530-8568 大阪府大阪市北区茶屋町１−４５ \nOit梅田タワー 21F",
+      "deliveryDate": "2027-02-28",
+      "items": [
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット",
+          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "MARKBASS MB58R CMD102PUR",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "アンプ台数分サービス",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
       "folder": "0228橋中さま(株大阪音研)（フェスティバルホール）",
       "clientName": "株式会社大阪音研",
       "deliveryAddress": "フェスティバルホール",
