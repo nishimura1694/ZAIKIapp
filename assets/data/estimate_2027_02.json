@@ -648,7 +648,7 @@
       ]
     },
     {
-      "folder": "0228交河さま（RISTORANTE～翔21）",
+      "folder": "0228交河さま（リストランテ翔21）（RISTORANTE～翔21）",
       "clientName": "交河　佑樹",
       "deliveryAddress": "RISTORANTE～翔21",
       "deliveryAddressDetail": "〒530-8568 大阪府大阪市北区茶屋町１−４５ \nOit梅田タワー 21F",
@@ -680,6 +680,34 @@
           "name": "ギタースタンド",
           "memo": "アンプ台数分サービス",
           "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "パワーアンプ込み",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "マイク",
+          "name": "ダイナミックマイク",
+          "memo": "SENNHEISER e906",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スタンド類",
+          "name": "マイクスタンド",
+          "memo": "ショートブーム<259>(ホルダー付属)",
+          "qty": 1,
           "duration": "12h"
         },
         {
