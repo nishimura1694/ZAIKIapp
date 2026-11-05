@@ -1121,7 +1121,7 @@
       "clientName": "有限会社HEADLINE",
       "deliveryAddress": "万博記念公園　もみじ川芝生広場",
       "deliveryDate": "2026-11-07",
-      "time": "未定",
+      "time": "14:00(18時まで）",
       "returnTime": "18：00　仮",
       "items": [
         {
@@ -1687,7 +1687,14 @@
           "category": "スタンド類",
           "name": "マイクスタンド",
           "memo": "ロングブーム<210>",
-          "qty": 4,
+          "qty": 3,
+          "duration": "12h"
+        },
+        {
+          "category": "スタンド類",
+          "name": "マイクスタンド",
+          "memo": "ロングストレート<200>",
+          "qty": 1,
           "duration": "12h"
         },
         {
@@ -1877,6 +1884,13 @@
           "category": "キーボード関連",
           "name": "電子ピアノ",
           "memo": "YAMAHA CP-40\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "スローン",
+          "memo": "キーボード用椅子",
           "qty": 1,
           "duration": "12h"
         },
@@ -2108,7 +2122,9 @@
       ]
     },
     {
-      "folder": "1111秦さん（リッツ葉加瀬太郎）",
+      "folder": "1111秦さん（リッツ葉加瀬太郎）（リッツカールトンホテル）",
+      "clientName": "秦　正視",
+      "deliveryAddress": "リッツカールトンホテル",
       "deliveryDate": "2026-11-11",
       "items": [
         {
@@ -2285,6 +2301,13 @@
           "name": "マイク置き（WL用）",
           "memo": "サービス",
           "qty": 3,
+          "duration": "1日"
+        },
+        {
+          "category": "その他",
+          "name": "ワイヤレスマイク〔B帯〕",
+          "memo": "SHENNHEISER EW500 G4-935-JB",
+          "qty": 8,
           "duration": "1日"
         },
         {
@@ -2877,8 +2900,8 @@
       "deliveryAddress": "豊中市立克明小学校 グラウンド",
       "deliveryAddressDetail": "〒561-0884 大阪府豊中市岡町北3-4-1",
       "deliveryDate": "2026-11-14",
-      "time": "6:00-7:00",
-      "returnTime": "11:30-12:30",
+      "time": "06:00",
+      "returnTime": "12:00",
       "items": [
         {
           "category": "セットプラン",
