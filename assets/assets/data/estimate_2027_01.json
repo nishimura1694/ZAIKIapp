@@ -368,6 +368,29 @@
       ]
     },
     {
+      "folder": "0123-24船井さま（株式会社COMPASS）（-）",
+      "clientName": "船井",
+      "deliveryDate": "2027-01-23",
+      "time": "08:00",
+      "returnTime": "21:00",
+      "items": [
+        {
+          "category": "カラオケ・簡易ステージ",
+          "name": "簡易ステージ",
+          "memo": "INTELLI STAGE\nサイズ：幅100cm×長さ100cm\nライザー：高さ20cm",
+          "qty": 10,
+          "duration": "1.5日"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "1.5日"
+        }
+      ]
+    },
+    {
       "folder": "2027年1月_見積データ抽出.xlsx",
       "note": "見積ファイルなし（資料のみ）",
       "items": []

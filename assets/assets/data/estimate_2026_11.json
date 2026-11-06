@@ -1758,6 +1758,20 @@
           "duration": "12h"
         },
         {
+          "category": "マイク",
+          "name": "ダイナミックマイク",
+          "memo": "SHURE SM58S\n[付属：マイクホルダー、マイクケーブル10ｍ]",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "スタンド類",
+          "name": "マイクスタンド",
+          "memo": "ロングストレート<200>",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
           "category": "その他",
           "name": "CDプレーヤー ",
           "memo": "TASCAM CD-500B",
@@ -1933,14 +1947,14 @@
           "category": "その他",
           "name": "譜面台",
           "memo": "空白",
-          "qty": 8,
+          "qty": 14,
           "duration": "12h"
         },
         {
           "category": "その他",
           "name": "譜面台",
           "memo": "K&M 11870",
-          "qty": 6,
+          "qty": 0,
           "duration": "12h"
         },
         {
@@ -3707,14 +3721,14 @@
           "category": "B1F",
           "name": "音源再生機",
           "memo": "CDデッキ、タブレットなど",
-          "qty": 3,
+          "qty": 4,
           "duration": "1.5日"
         },
         {
           "category": "B1F",
           "name": "バッテリー式スピーカー",
           "memo": "・Marshall Middleton\n・置台",
-          "qty": 2,
+          "qty": 3,
           "duration": "1.5日"
         },
         {
@@ -3743,27 +3757,6 @@
           "name": "音源再生機",
           "memo": "CDデッキ、タブレットなど",
           "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "B1F　アンダーウェアーショー",
-          "name": "LEDブラインダーライト",
-          "memo": "EK PRO Blinder2 IP",
-          "qty": 2,
-          "duration": "1.5日"
-        },
-        {
-          "category": "B1F　アンダーウェアーショー",
-          "name": "照明スタンド",
-          "memo": "KUPO　195PNJ",
-          "qty": 2,
-          "duration": "1.5日"
-        },
-        {
-          "category": "B1F　アンダーウェアーショー",
-          "name": "照明用ウェイト",
-          "memo": "サービス",
-          "qty": 2,
           "duration": "1.5日"
         },
         {
@@ -4856,12 +4849,14 @@
       "deliveryAddress": "服部緑地陸上競技場",
       "deliveryAddressDetail": "〒561-0873 大阪府豊中市服部緑地１−１",
       "deliveryDate": "2026-11-22",
+      "time": "09:00",
+      "returnTime": "17:00",
       "items": [
         {
           "category": "ワイヤレス",
           "name": "ワイヤレスハンドマイク〔B帯〕",
           "memo": "SHENNHEISER EW500 G4-935-JB",
-          "qty": 7,
+          "qty": 6,
           "duration": "12h"
         },
         {
@@ -5679,14 +5674,14 @@
           "category": "<その他>",
           "name": "折り畳み丸椅子",
           "memo": "H460",
-          "qty": 4,
+          "qty": 0,
           "duration": "12h"
         },
         {
           "category": "<その他>",
           "name": "アウトドア用折り畳みチェア",
           "memo": "大小混在 10脚セット",
-          "qty": 1,
+          "qty": 0,
           "duration": "12h"
         },
         {
