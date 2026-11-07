@@ -274,34 +274,6 @@
       ]
     },
     {
-      "folder": "1204上村さま",
-      "clientName": "上村　和輝",
-      "deliveryDate": "2026-12-04",
-      "time": "21:00",
-      "returnTime": "21:00",
-      "items": [
-        {
-          "category": "キーボード関連",
-          "name": "シンセサイザー",
-          "memo": "Roland JUNO-DS\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
-          "qty": 1,
-          "duration": "24h"
-        },
-        {
-          "category": "キーボード関連",
-          "name": "運搬手数料",
-          "duration": "24h"
-        },
-        {
-          "category": "運搬サービス",
-          "name": "トランスポート＿エリア2",
-          "memo": "車上渡しプラン_2",
-          "qty": 1,
-          "duration": "24h"
-        }
-      ]
-    },
-    {
       "folder": "1204嶽本さま（株式会社DENZ）（大和屋本店）",
       "clientName": "嶽本　大空",
       "deliveryAddress": "大和屋本店",
@@ -1761,6 +1733,20 @@
           "name": "スローン",
           "memo": "キーボード用椅子",
           "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "ワイヤレス",
+          "name": "ワイヤレスピンマイク〔B帯〕",
+          "memo": "SHURE BLX14/W85\n◆付属物\n・マイクケーブル5ｍ×1\n・専用ACケーブル×1、単三電池",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "マイク",
+          "name": "クリップ型マイク",
+          "memo": "audio-technica ATM35",
+          "qty": 1,
           "duration": "12h"
         },
         {
