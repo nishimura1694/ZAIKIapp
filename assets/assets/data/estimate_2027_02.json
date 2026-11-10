@@ -262,7 +262,9 @@
       ]
     },
     {
-      "folder": "0213-14ESP協賛（ディプロマ）",
+      "folder": "0213-14ESP協賛（ディプロマ）（下記）",
+      "clientName": "ESP DIPLOMA CIRCUIT 2027 実行委員会",
+      "deliveryAddress": "下記",
       "deliveryDate": "2027-02-13",
       "items": [
         {
@@ -605,7 +607,7 @@
           "category": "運搬サービス",
           "name": "トランスポート＿エリア1",
           "memo": "運搬・設営・撤収",
-          "qty": 1,
+          "qty": 2,
           "duration": "1.5日"
         }
       ]

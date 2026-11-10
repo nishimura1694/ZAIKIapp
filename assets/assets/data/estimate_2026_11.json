@@ -261,10 +261,17 @@
           "duration": "12h"
         },
         {
-          "category": "パワーアンプ・プロセッサー",
-          "name": "専用帯ワイヤレスマイク",
-          "memo": "ハンドマイク×5\n受信機×5\n申請費　　　　　含む",
-          "qty": 1,
+          "category": "ワイヤレス",
+          "name": "ワイヤレスハンドマイク〔B帯〕",
+          "memo": "SHENNHEISER EW500 G4-935-JB",
+          "qty": 5,
+          "duration": "12h"
+        },
+        {
+          "category": "ワイヤレス",
+          "name": "指向性アンテナ",
+          "memo": "SENNHEISER　ADP-UHF\n◆付属物\n・BNCケーブル10m×1\n・マイクスタンド×1",
+          "qty": 2,
           "duration": "12h"
         },
         {
@@ -2602,7 +2609,7 @@
         {
           "category": "音響",
           "name": "モニタースピーカー",
-          "memo": "d&b　M4",
+          "memo": "YAMAHA CHR12M",
           "qty": 9,
           "duration": "2日"
         },
@@ -2616,7 +2623,7 @@
         {
           "category": "音響",
           "name": "パワーアンプ〔4ch〕",
-          "memo": "d&b D40",
+          "memo": "Wharfedale Pro DP-4065N",
           "qty": 2,
           "duration": "2日"
         },
@@ -2707,7 +2714,7 @@
           "category": "人件費・運搬費・諸経費",
           "name": "トランスポート＿エリア5",
           "memo": "空白5",
-          "qty": 3,
+          "qty": 2,
           "duration": 1
         },
         {
@@ -2967,7 +2974,7 @@
           "category": "スピーカー類",
           "name": "モニタースピーカー",
           "memo": "パワーアンプ込み",
-          "qty": 1,
+          "qty": 3,
           "duration": "12h"
         },
         {
@@ -3022,7 +3029,7 @@
         {
           "category": "キーボード関連",
           "name": "シンセサイザー",
-          "memo": "Roland JUNO-DS",
+          "memo": "KORG PS60",
           "qty": 1,
           "duration": "12h"
         },
@@ -3041,13 +3048,21 @@
           "duration": "12h"
         },
         {
-          "category": "オペレート",
-          "name": "オペレーター人員",
-          "memo": "1P",
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "サービス",
+          "qty": 3,
           "duration": "12h"
         },
         {
-          "category": "オペレート",
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "空白",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
           "name": "搬入出増員",
           "memo": "1P",
           "qty": 1,
@@ -5787,30 +5802,19 @@
       ]
     },
     {
-      "folder": "1129花尾さま（-）",
+      "folder": "1129花尾さま（ヒルトン大阪）",
       "clientName": "花尾　末乃",
+      "deliveryAddress": "ヒルトン大阪",
+      "deliveryAddressDetail": "〒530-0001 大阪府大阪市北区梅田１丁目８−８",
       "deliveryDate": "2026-11-29",
-      "returnTime": "18:30",
+      "time": "14:00",
+      "returnTime": "19:00",
       "items": [
         {
           "category": "セットプラン",
           "name": "楽々PAセット",
           "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
           "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "マイク",
-          "name": "ダイナミックマイク",
-          "memo": "SHURE SM58　",
-          "qty": 2,
-          "duration": "12h"
-        },
-        {
-          "category": "スタンド類",
-          "name": "マイクスタンド",
-          "memo": "ロングブーム<210>",
-          "qty": 2,
           "duration": "12h"
         },
         {
@@ -5828,30 +5832,9 @@
           "duration": "12h"
         },
         {
-          "category": "キーボード関連",
-          "name": "電子ピアノ",
-          "memo": "YAMAHA CP-40",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
           "category": "運搬サービス",
           "name": "トランスポート＿エリア1",
           "memo": "運搬・設営・撤収",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "オペレート",
-          "name": "オペレーター人員",
-          "memo": "1P",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "オペレート",
-          "name": "アシスタント人員A",
-          "memo": "1P_A",
           "qty": 1,
           "duration": "12h"
         }
