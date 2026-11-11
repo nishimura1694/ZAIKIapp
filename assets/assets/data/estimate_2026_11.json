@@ -2615,23 +2615,9 @@
         },
         {
           "category": "音響",
-          "name": "モニタースピーカー",
-          "memo": "[Side Fill]EV SX300",
-          "qty": 2,
-          "duration": "2日"
-        },
-        {
-          "category": "音響",
           "name": "パワーアンプ〔4ch〕",
           "memo": "Wharfedale Pro DP-4065N",
           "qty": 2,
-          "duration": "2日"
-        },
-        {
-          "category": "音響",
-          "name": "パワーアンプ",
-          "memo": "YAMAHA P5000s",
-          "qty": 1,
           "duration": "2日"
         },
         {
@@ -3234,7 +3220,7 @@
     },
     {
       "folder": "1114黒田さま（大阪セントバース教会）",
-      "clientName": "黒田",
+      "clientName": "黒田　将矢",
       "deliveryAddress": "大阪セントバース教会",
       "deliveryAddressDetail": "〒542-0081 大阪府大阪市中央区南船場３丁目３−１０",
       "deliveryDate": "2026-11-14",
@@ -4782,11 +4768,6 @@
       ]
     },
     {
-      "folder": "1122-23高田様（大阪保健福祉専門学校）",
-      "deliveryDate": "2026-11-22",
-      "items": []
-    },
-    {
       "folder": "1122保田さま（ウォルドーフ）（ウォルドーフ・アストリア大阪）",
       "clientName": "保田 慎之亮",
       "deliveryAddress": "ウォルドーフ・アストリア大阪",
@@ -5818,17 +5799,24 @@
           "duration": "12h"
         },
         {
+          "category": "マイク",
+          "name": "ダイナミックマイク",
+          "memo": "SHURE SM58\n[付属：マイクホルダー、マイクケーブル10ｍ]",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スタンド類",
+          "name": "マイクスタンド",
+          "memo": "ロングブーム<210>",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
           "category": "スピーカー類",
           "name": "モニタースピーカー",
           "memo": "パワーアンプ込み",
           "qty": 2,
-          "duration": "12h"
-        },
-        {
-          "category": "ワイヤレス",
-          "name": "ワイヤレスハンドマイク〔B帯〕",
-          "memo": "SHURE BLX24/BETA58",
-          "qty": 1,
           "duration": "12h"
         },
         {
