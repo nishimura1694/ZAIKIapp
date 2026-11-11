@@ -4,7 +4,10 @@
   "note": "金額・単価・小計等の金銭情報は含みません",
   "jobs": [
     {
-      "folder": "1203古川さま（京都）",
+      "folder": "1203古川さま（京都）（京都市立大淀中学校）",
+      "clientName": "古川　秀明",
+      "deliveryAddress": "京都市立大淀中学校",
+      "deliveryAddressDetail": "〒613-0905 京都府京都市伏見区淀下津町２５７−７",
       "deliveryDate": "2026-12-03",
       "items": [
         {
@@ -1944,7 +1947,7 @@
         {
           "category": "ドラムset",
           "name": "ドラムセット小口径",
-          "memo": "DW Collector's Maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "memo": "CANOPUS NV60-M1EX\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
           "qty": 1,
           "duration": "12h"
         },
@@ -2754,12 +2757,12 @@
       ]
     },
     {
-      "folder": "1219林さま（大阪市内）",
+      "folder": "1219林さま（西梅田）",
       "clientName": "林　春芳",
-      "deliveryAddress": "大阪市内",
+      "deliveryAddress": "西梅田",
       "deliveryDate": "2026-12-19",
-      "time": "17:00",
-      "returnTime": "21:00",
+      "time": "16:30",
+      "returnTime": "21:30",
       "items": [
         {
           "category": "スピーカー類",

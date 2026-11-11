@@ -49,10 +49,73 @@
       ]
     },
     {
-      "folder": "0104大阪信用金庫",
+      "folder": "0104綛谷さま（大阪信用金庫）（大阪信用金庫本店8階　Dホール）",
+      "clientName": "大阪信用金庫　綛谷",
+      "deliveryAddress": "大阪信用金庫本店8階　Dホール",
+      "deliveryAddressDetail": "〒543-0001 大阪府大阪市天王寺区上本町８丁目９−１４",
       "deliveryDate": "2027-01-04",
-      "note": "見積ファイルなし（資料のみ）",
-      "items": []
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "パワーアンプ込み",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "電子ピアノ",
+          "memo": "YAMAHA CP-40\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "照明",
+          "name": "LEDブラインダーライト",
+          "memo": "EK BlinderⅡIP",
+          "duration": "1日"
+        },
+        {
+          "category": "照明",
+          "name": "照明スタンド",
+          "memo": "KUPO 195PN-J",
+          "duration": "1日"
+        },
+        {
+          "category": "照明",
+          "name": "DMXコントローラー ",
+          "memo": "LITEPUTER CX-804",
+          "duration": "1日"
+        },
+        {
+          "category": "オペレート",
+          "name": "オペレーター人員",
+          "memo": "1P",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "オペレート",
+          "name": "アシスタント人員A",
+          "memo": "1P_A",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "オペレーター併用プラン",
+          "qty": 1,
+          "duration": "1日"
+        }
+      ]
     },
     {
       "folder": "0109-10えびす講社（高浜神社）",
