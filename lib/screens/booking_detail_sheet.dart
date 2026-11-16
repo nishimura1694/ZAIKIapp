@@ -378,6 +378,28 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
     }
   }
 
+  Future<void> _setThumbnail(String url) async {
+    if ((_currentData['thumbnailUrl'] ?? '').toString() == url) return;
+    HapticFeedback.selectionClick();
+    final previous = _currentData['thumbnailUrl'];
+    setState(() => _currentData['thumbnailUrl'] = url);
+    try {
+      await FirebaseFirestore.instance
+          .collection('bookings')
+          .doc(widget.docId)
+          .update({
+            'thumbnailUrl': url,
+            'updatedAt': FieldValue.serverTimestamp(),
+          });
+    } catch (e) {
+      if (!mounted) return;
+      setState(() => _currentData['thumbnailUrl'] = previous);
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('サムネイルの設定に失敗しました: $e')));
+    }
+  }
+
   Future<void> _reloadBooking() async {
     final snap = await FirebaseFirestore.instance
         .collection('bookings')
@@ -880,24 +902,63 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
                               childAspectRatio: 1,
                             ),
                         itemCount: urls.length,
-                        itemBuilder: (context, i) => GestureDetector(
-                          onTap: () => _showImageGallery(context, urls, i),
-                          child: AspectRatio(
-                            aspectRatio: 1,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: SizedBox.expand(
-                                child: Image.network(
-                                  urls[i],
-                                  fit: BoxFit.cover,
-                                  cacheWidth: 640,
-                                  cacheHeight: 640,
-                                  filterQuality: FilterQuality.medium,
-                                ),
+                        itemBuilder: (context, i) {
+                          final url = urls[i].toString();
+                          final storedThumbnail = (data['thumbnailUrl'] ?? '')
+                              .toString();
+                          final isThumbnail = storedThumbnail.isEmpty
+                              ? i == 0
+                              : storedThumbnail == url;
+                          return GestureDetector(
+                            onTap: () => _showImageGallery(context, urls, i),
+                            child: AspectRatio(
+                              aspectRatio: 1,
+                              child: Stack(
+                                children: [
+                                  Positioned.fill(
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.network(
+                                        url,
+                                        fit: BoxFit.cover,
+                                        cacheWidth: 640,
+                                        cacheHeight: 640,
+                                        filterQuality: FilterQuality.medium,
+                                      ),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    top: 6,
+                                    right: 6,
+                                    child: Material(
+                                      color: Colors.black45,
+                                      shape: const CircleBorder(),
+                                      child: InkWell(
+                                        customBorder: const CircleBorder(),
+                                        onTap: () => _setThumbnail(url),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Tooltip(
+                                            message: '一覧のサムネイルに設定',
+                                            child: Icon(
+                                              isThumbnail
+                                                  ? Icons.star
+                                                  : Icons.star_border,
+                                              size: 18,
+                                              color: isThumbnail
+                                                  ? AppColors.brandOrange
+                                                  : Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                          ),
-                        ),
+                          );
+                        },
                       ),
                     if (urls.isEmpty && pdfUrls.isEmpty) const Text('なし'),
                     if (pdfUrls.isNotEmpty) ...[

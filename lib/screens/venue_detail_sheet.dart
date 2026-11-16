@@ -367,6 +367,11 @@ class _VenueDetailSheetState extends State<VenueDetailSheet> {
                           itemBuilder: (context, i) {
                             final b = docs[i].data() as Map<String, dynamic>;
                             final List urls = b['imageUrls'] ?? [];
+                            final thumbnailUrl = (b['thumbnailUrl'] ?? '')
+                                .toString();
+                            final displayThumbnailUrl = thumbnailUrl.isNotEmpty
+                                ? thumbnailUrl
+                                : (urls.isNotEmpty ? urls[0].toString() : null);
                             final bookingTags = _extractBookingTagsFromData(b);
                             return InkWell(
                               onTap: () {
@@ -380,17 +385,35 @@ class _VenueDetailSheetState extends State<VenueDetailSheet> {
                               },
                               child: ListTile(
                                 contentPadding: EdgeInsets.zero,
-                                leading: urls.isNotEmpty
+                                leading: displayThumbnailUrl != null
                                     ? ClipRRect(
                                         borderRadius: BorderRadius.circular(6),
                                         child: Image.network(
-                                          urls[0],
+                                          displayThumbnailUrl,
                                           width: 50,
                                           height: 50,
                                           fit: BoxFit.cover,
                                           cacheWidth: 120,
                                           cacheHeight: 120,
                                           filterQuality: FilterQuality.medium,
+                                          errorBuilder:
+                                              (
+                                                context,
+                                                error,
+                                                stack,
+                                              ) => Container(
+                                                width: 50,
+                                                height: 50,
+                                                decoration: BoxDecoration(
+                                                  color: AppColors.subtleFill,
+                                                  borderRadius:
+                                                      BorderRadius.circular(6),
+                                                ),
+                                                child: const Icon(
+                                                  Icons.image_outlined,
+                                                  color: Colors.grey,
+                                                ),
+                                              ),
                                         ),
                                       )
                                     : Container(

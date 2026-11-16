@@ -264,10 +264,7 @@ class _BookingListScreenState extends State<BookingListScreen>
         hintText: '顧客・会場名で検索...',
         onChanged: (_) => _onSearchChanged(),
         suffixIcon: isSearching
-            ? IconButton(
-                icon: const Icon(Icons.clear),
-                onPressed: clearSearch,
-              )
+            ? IconButton(icon: const Icon(Icons.clear), onPressed: clearSearch)
             : null,
         actions: [
           IconButton(
@@ -447,165 +444,200 @@ class _BookingListScreenState extends State<BookingListScreen>
                         ),
                       )
                     : RefreshIndicator(
-                  onRefresh: _refreshBookings,
-                  triggerMode: RefreshIndicatorTriggerMode.anywhere,
-                  child: ListView.separated(
-                    controller: _listScrollController,
-                    physics: const AlwaysScrollableScrollPhysics(),
-                    padding: const EdgeInsets.fromLTRB(16, 16, 16, 100),
-                    itemCount: docs.length + (canLoadMore ? 1 : 0),
-                    separatorBuilder: (_, index) {
-                      if (index >= docs.length - 1) {
-                        return const SizedBox(height: 0);
-                      }
-                      return const SizedBox(height: 12);
-                    },
-                    itemBuilder: (context, index) {
-                      if (index >= docs.length) {
-                        return Padding(
-                          padding: const EdgeInsets.only(top: 16),
-                          child: Center(
-                            child: OutlinedButton.icon(
-                              onPressed: _loadMoreBookings,
-                              icon: const Icon(Icons.expand_more),
-                              label: const Text('さらに表示'),
-                            ),
-                          ),
-                        );
-                      }
-                      final booking = docs[index];
-                      final data = booking.data;
-                      final bookingTags = _extractBookingTagsFromData(data);
-                      final fallbackRetrospectiveChecked =
-                          _isRetrospectiveChecked(data);
-                      final isRetrospectiveChecked =
-                          _retrospectiveCheckedOverrides[booking.id] ??
-                          fallbackRetrospectiveChecked;
-                      final List urls = data['imageUrls'] ?? [];
-
-                      return SectionCard(
-                        onTap: () => showAppBottomSheet(
-                          context: context,
-                          builder: (_) => BookingDetailSheet(
-                            data: data,
-                            docId: booking.id,
-                          ),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 10,
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  SizedBox(
-                                    width: 56,
-                                    height: 56,
-                                    child: urls.isNotEmpty
-                                        ? ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                            child: Image.network(
-                                              urls[0],
-                                              fit: BoxFit.cover,
-                                              cacheWidth: 112,
-                                              cacheHeight: 112,
-                                              filterQuality:
-                                                  FilterQuality.medium,
-                                            ),
-                                          )
-                                        : Container(
-                                            decoration: BoxDecoration(
-                                              color: AppColors.subtleFill,
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                            ),
-                                            child: const Icon(
-                                              Icons.image_outlined,
-                                              color: Colors.grey,
-                                              size: 22,
-                                            ),
-                                          ),
+                        onRefresh: _refreshBookings,
+                        triggerMode: RefreshIndicatorTriggerMode.anywhere,
+                        child: ListView.separated(
+                          controller: _listScrollController,
+                          physics: const AlwaysScrollableScrollPhysics(),
+                          padding: const EdgeInsets.fromLTRB(16, 16, 16, 100),
+                          itemCount: docs.length + (canLoadMore ? 1 : 0),
+                          separatorBuilder: (_, index) {
+                            if (index >= docs.length - 1) {
+                              return const SizedBox(height: 0);
+                            }
+                            return const SizedBox(height: 12);
+                          },
+                          itemBuilder: (context, index) {
+                            if (index >= docs.length) {
+                              return Padding(
+                                padding: const EdgeInsets.only(top: 16),
+                                child: Center(
+                                  child: OutlinedButton.icon(
+                                    onPressed: _loadMoreBookings,
+                                    icon: const Icon(Icons.expand_more),
+                                    label: const Text('さらに表示'),
                                   ),
-                                  const SizedBox(width: 12),
-                                  Expanded(
-                                    child: Column(
+                                ),
+                              );
+                            }
+                            final booking = docs[index];
+                            final data = booking.data;
+                            final bookingTags = _extractBookingTagsFromData(
+                              data,
+                            );
+                            final fallbackRetrospectiveChecked =
+                                _isRetrospectiveChecked(data);
+                            final isRetrospectiveChecked =
+                                _retrospectiveCheckedOverrides[booking.id] ??
+                                fallbackRetrospectiveChecked;
+                            final List urls = data['imageUrls'] ?? [];
+                            final thumbnailUrl = (data['thumbnailUrl'] ?? '')
+                                .toString();
+                            final displayThumbnailUrl = thumbnailUrl.isNotEmpty
+                                ? thumbnailUrl
+                                : (urls.isNotEmpty ? urls[0].toString() : null);
+
+                            return SectionCard(
+                              onTap: () => showAppBottomSheet(
+                                context: context,
+                                builder: (_) => BookingDetailSheet(
+                                  data: data,
+                                  docId: booking.id,
+                                ),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 12,
+                                  vertical: 10,
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisSize: MainAxisSize.min,
+                                          CrossAxisAlignment.center,
                                       children: [
-                                        Text(
-                                          data['customerName'] ?? '',
-                                          style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 17,
-                                          ),
-                                          maxLines: 2,
-                                          overflow: TextOverflow.ellipsis,
+                                        SizedBox(
+                                          width: 56,
+                                          height: 56,
+                                          child: displayThumbnailUrl != null
+                                              ? ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(8),
+                                                  child: Image.network(
+                                                    displayThumbnailUrl,
+                                                    fit: BoxFit.cover,
+                                                    cacheWidth: 112,
+                                                    cacheHeight: 112,
+                                                    filterQuality:
+                                                        FilterQuality.medium,
+                                                    errorBuilder:
+                                                        (
+                                                          context,
+                                                          error,
+                                                          stack,
+                                                        ) => Container(
+                                                          decoration: BoxDecoration(
+                                                            color: AppColors
+                                                                .subtleFill,
+                                                            borderRadius:
+                                                                BorderRadius.circular(
+                                                                  8,
+                                                                ),
+                                                          ),
+                                                          child: const Icon(
+                                                            Icons
+                                                                .image_outlined,
+                                                            color: Colors.grey,
+                                                            size: 22,
+                                                          ),
+                                                        ),
+                                                  ),
+                                                )
+                                              : Container(
+                                                  decoration: BoxDecoration(
+                                                    color: AppColors.subtleFill,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                          8,
+                                                        ),
+                                                  ),
+                                                  child: const Icon(
+                                                    Icons.image_outlined,
+                                                    color: Colors.grey,
+                                                    size: 22,
+                                                  ),
+                                                ),
                                         ),
-                                        const SizedBox(height: 2),
-                                        Text(
-                                          "${data['bookingDate']} / ${data['venueName']}",
-                                          maxLines: 2,
-                                          overflow: TextOverflow.ellipsis,
-                                          style: const TextStyle(
-                                            fontSize: 17,
+                                        const SizedBox(width: 12),
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Text(
+                                                data['customerName'] ?? '',
+                                                style: const TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 17,
+                                                ),
+                                                maxLines: 2,
+                                                overflow: TextOverflow.ellipsis,
+                                              ),
+                                              const SizedBox(height: 2),
+                                              Text(
+                                                "${data['bookingDate']} / ${data['venueName']}",
+                                                maxLines: 2,
+                                                overflow: TextOverflow.ellipsis,
+                                                style: const TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ],
                                     ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 6),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  const Text(
-                                    '振',
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w700,
-                                      color: Colors.black54,
+                                    const SizedBox(height: 6),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        const Text(
+                                          '振',
+                                          style: TextStyle(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w700,
+                                            color: Colors.black54,
+                                          ),
+                                        ),
+                                        const SizedBox(width: 1),
+                                        SizedBox(
+                                          width: 24,
+                                          child: Checkbox(
+                                            value: isRetrospectiveChecked,
+                                            visualDensity:
+                                                VisualDensity.compact,
+                                            onChanged: (value) {
+                                              if (value == null) return;
+                                              HapticFeedback.selectionClick();
+                                              _setRetrospectiveChecked(
+                                                bookingId: booking.id,
+                                                nextValue: value,
+                                                previousValue:
+                                                    isRetrospectiveChecked,
+                                              );
+                                            },
+                                          ),
+                                        ),
+                                        const SizedBox(width: 2),
+                                        if (bookingTags.isNotEmpty) ...[
+                                          for (final tag in bookingTags) ...[
+                                            _buildBookingTagChip(tag),
+                                            const SizedBox(width: 4),
+                                          ],
+                                        ],
+                                        _buildBookingLocationButton(data),
+                                        _buildBookingEstimateButton(data),
+                                      ],
                                     ),
-                                  ),
-                                  const SizedBox(width: 1),
-                                  SizedBox(
-                                    width: 24,
-                                    child: Checkbox(
-                                      value: isRetrospectiveChecked,
-                                      visualDensity: VisualDensity.compact,
-                                      onChanged: (value) {
-                                        if (value == null) return;
-                                        HapticFeedback.selectionClick();
-                                        _setRetrospectiveChecked(
-                                          bookingId: booking.id,
-                                          nextValue: value,
-                                          previousValue: isRetrospectiveChecked,
-                                        );
-                                      },
-                                    ),
-                                  ),
-                                  const SizedBox(width: 2),
-                                  if (bookingTags.isNotEmpty) ...[
-                                    ...bookingTags.map(_buildBookingTagChip),
-                                    const SizedBox(width: 4),
                                   ],
-                                  _buildBookingLocationButton(data),
-                                  _buildBookingEstimateButton(data),
-                                ],
+                                ),
                               ),
-                            ],
-                          ),
+                            );
+                          },
                         ),
-                      );
-                    },
-                  ),
-                ),
+                      ),
               ),
             ],
           );
