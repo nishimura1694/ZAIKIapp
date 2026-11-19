@@ -493,21 +493,35 @@
           "duration": "12h"
         },
         {
-          "category": "運搬サービス",
+          "category": "BBQ会場",
+          "name": "パワードスピーカー",
+          "memo": "JBL PartyBox Stage320\n(スタンド付属)",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "※PAセット内の有線マイク×2本使用",
+          "name": "マイク用変換ケーブル",
+          "memo": "メス-フォン",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "※PAセット内の有線マイク×2本使用",
           "name": "トランスポート＿エリア2",
           "memo": "オペレーター併用プラン_2",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "オペレート",
+          "category": "※PAセット内の有線マイク×2本使用",
           "name": "オペレーター人員",
           "memo": "1P",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "オペレート",
+          "category": "※PAセット内の有線マイク×2本使用",
           "name": "アシスタント人員A",
           "memo": "1P_A",
           "qty": 1,

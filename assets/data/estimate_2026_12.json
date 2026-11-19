@@ -341,6 +341,12 @@
       ]
     },
     {
+      "folder": "1204-06四天王寺（和光館）",
+      "deliveryDate": "2026-12-04",
+      "note": "見積ファイルなし（資料のみ）",
+      "items": []
+    },
+    {
       "folder": "1204ヨウジヤマモト（心斎橋WILDSIDE）（心斎橋WILD SIDE）",
       "clientName": "株式会社ヨウジヤマモト",
       "deliveryAddress": "心斎橋WILD SIDE",
@@ -871,6 +877,66 @@
           "category": "運搬サービス",
           "name": "トランスポート＿エリア1",
           "memo": "車上渡しプラン",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "1206サウクリ織田さま（YES THEATER）",
+      "clientName": "株式会社サウンドクリエーター　織田",
+      "deliveryAddress": "YES THEATER",
+      "deliveryAddressDetail": "〒542-0075 大阪府大阪市中央区難波千日前１１−６",
+      "deliveryDate": "2026-12-06",
+      "time": "09:00",
+      "returnTime": "18：30～19：00",
+      "items": [
+        {
+          "category": "DJ",
+          "name": "ターンテーブル",
+          "memo": "Technics SL-1200MK5",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "DJ",
+          "name": "カートリッジ",
+          "memo": "ORTOFON Concorde Mk2",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "DJ",
+          "name": "DJミキサー",
+          "memo": "Pioneer DJM-900nxs2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "DJ",
+          "name": "PC台",
+          "memo": "HERCULES STANDS DG400BB",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "DJ",
+          "name": "DJテーブル",
+          "memo": "SEELETON SDJT \nサイズ：高さ96cm 幅149cm 奥行き50cm",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "or",
+          "name": "DJテーブル",
+          "memo": "QUIK LOK DJ233\nサイズ：高さ64～97cm 幅100cm 奥行き49cm",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "or",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
           "qty": 1,
           "duration": "12h"
         }
@@ -3497,7 +3563,13 @@
         {
           "category": "ベースアンプ系",
           "name": "ベースアンプコンボ",
-          "memo": "Ampeg BA115-V2",
+          "memo": "MARKBASS MB58R CMD102PUR",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "運搬手数料",
           "qty": 1,
           "duration": "12h"
         },
