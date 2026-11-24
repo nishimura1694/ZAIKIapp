@@ -239,6 +239,20 @@
           "duration": "12h"
         },
         {
+          "category": "ドラムset",
+          "name": "電子ドラム",
+          "memo": "ROLAND TD-1KPX2 V-Drums\nペダル、スローン、マット付属",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ドラムset",
+          "name": "電子ドラム用DI（ステレオパッシブ）",
+          "memo": "サービス",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
           "category": "オペレート",
           "name": "オペレーター人員",
           "memo": "1P",
@@ -826,7 +840,10 @@
       ]
     },
     {
-      "folder": "0221にしむら様(オセイリュウ)",
+      "folder": "0221にしむら様(オセイリュウ)（O SEIRYU）",
+      "clientName": "株式会社オセイリュウ",
+      "deliveryAddress": "O SEIRYU",
+      "deliveryAddressDetail": "〒542-0083 大阪府大阪市中央区東心斎橋１丁目７−１２",
       "deliveryDate": "2027-02-21",
       "items": [
         {
@@ -844,16 +861,16 @@
           "duration": "12h"
         },
         {
-          "category": "運搬サービス",
-          "name": "トランスポート＿エリア1",
-          "memo": "運搬・設営・撤収",
+          "category": "スピーカー類",
+          "name": "パワードスピーカー",
+          "memo": "EV ZLX-12P(スタンド付属)",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "スピーカー類",
-          "name": "パワードスピーカー",
-          "memo": "EV ZLX-12P(スタンド付属)",
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
           "qty": 1,
           "duration": "12h"
         }

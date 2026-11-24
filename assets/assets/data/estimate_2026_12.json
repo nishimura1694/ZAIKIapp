@@ -954,14 +954,13 @@
           "category": "DJ",
           "name": "DJテーブル",
           "memo": "SEELETON SDJT \nサイズ：高さ96cm 幅149cm 奥行き50cm",
-          "qty": 1,
           "duration": "12h"
         },
         {
           "category": "or",
           "name": "DJテーブル",
           "memo": "QUIK LOK DJ233\nサイズ：高さ64～97cm 幅100cm 奥行き49cm",
-          "qty": 1,
+          "qty": 2,
           "duration": "12h"
         },
         {
@@ -2344,49 +2343,6 @@
       ]
     },
     {
-      "folder": "1213先山さま",
-      "clientName": "先山 壮一郎",
-      "deliveryAddressDetail": "〒531-0061 大阪市北区長柄西2丁目10-9",
-      "deliveryDate": "2026-12-13",
-      "items": [
-        {
-          "category": "ギターアンプ系",
-          "name": "電池駆動アンプ",
-          "memo": "Roland cube street EX",
-          "qty": 2,
-          "duration": "12h"
-        },
-        {
-          "category": "キーボード関連",
-          "name": "キーボードモニター",
-          "memo": "Roland KC-350",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "マイク",
-          "name": "ダイナミックマイク",
-          "memo": "SHURE SM58\n[付属：マイクホルダー、マイクケーブル10ｍ]",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "スタンド類",
-          "name": "マイクスタンド",
-          "memo": "ロングブーム<210>",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "ケーブル類",
-          "name": "シールド",
-          "memo": "10m(スピーカーリンク用)",
-          "qty": 1,
-          "duration": "12h"
-        }
-      ]
-    },
-    {
       "folder": "1213宮崎さま（アルモニーアンブラッセ⼤阪）（アルモニーアンブラッセ大阪）",
       "clientName": "宮崎 智成",
       "deliveryAddress": "アルモニーアンブラッセ大阪",
@@ -3706,6 +3662,36 @@
           "category": "オペレート",
           "name": "本番立ち合い・機材管理",
           "memo": "1P",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "1226サトウさま（PUB SHOCKS）（PUB SHOCKS）",
+      "clientName": "さとう　もとき",
+      "deliveryAddress": "PUB SHOCKS",
+      "deliveryAddressDetail": "〒553-0003 大阪府大阪市福島区福島５丁目６−３\n SWAGビル 2F",
+      "deliveryDate": "2026-12-26",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "オペレーター人員",
+          "memo": "1P",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "オペレーター併用プラン",
           "qty": 1,
           "duration": "12h"
         }
