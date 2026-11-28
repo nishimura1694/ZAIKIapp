@@ -175,6 +175,27 @@
       ]
     },
     {
+      "folder": "0111byun(yogiboMETAVALLEY)",
+      "clientName": "Byun",
+      "deliveryAddressDetail": "〒556-0011 大阪府大阪市浪速区難波中２丁目１１−１",
+      "deliveryDate": "2027-01-11",
+      "items": [
+        {
+          "category": "オペレート",
+          "name": "PAエンジニア派遣",
+          "memo": "空白8",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "オペレート",
+          "name": "移動費",
+          "qty": 1,
+          "duration": "1日"
+        }
+      ]
+    },
+    {
       "folder": "0115伊藤さま（JACリクルートメント）（ヒルトン大阪）",
       "clientName": "伊藤 香純",
       "deliveryAddress": "ヒルトン大阪",
