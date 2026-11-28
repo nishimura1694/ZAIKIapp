@@ -5581,73 +5581,25 @@
       "deliveryDate": "2026-11-26",
       "items": [
         {
-          "category": "ミキサー",
-          "name": "デジタルミキサー",
-          "memo": "MIDAS M32R",
-          "qty": 1,
-          "duration": "1日"
-        },
-        {
-          "category": "ワイヤレス",
-          "name": "ワイヤレスハンドマイク〔B帯〕",
-          "memo": "SHENNHEISER EW500 G4-935-JB\n◆付属物\n・マイクケーブル5ｍ×1\n・ホルダー×1\n・専用ACケーブル×1、単三電池",
-          "qty": 1,
-          "duration": "1日"
-        },
-        {
-          "category": "マイク",
-          "name": "ダイナミックマイク",
-          "memo": "SHURE SM58S\n[付属：マイクホルダー、マイクケーブル10ｍ]",
-          "qty": 3,
-          "duration": "1日"
-        },
-        {
-          "category": "スタンド類",
-          "name": "マイクスタンド",
-          "memo": "ロングブーム<210>",
-          "qty": 1,
-          "duration": "1日"
-        },
-        {
-          "category": "スタンド類",
-          "name": "卓上マイクスタンド",
-          "memo": "空白",
-          "qty": 3,
-          "duration": "1日"
-        },
-        {
-          "category": "スタンド類",
-          "name": "マイクケーブル",
-          "memo": "20m*3, 10m*7, 5m*2, 3m*2\n(在庫数の兼ね合いで\n30m*2→10m*6になります)",
-          "qty": 14,
-          "duration": "1日"
-        },
-        {
-          "category": "ケーブル類",
-          "name": "マルチケーブルシステム",
-          "memo": "16chマルチ一式",
-          "qty": 1,
-          "duration": "1日"
-        },
-        {
-          "category": "ケーブル類",
-          "name": "ケーブルプロテクター",
-          "memo": "大*3 小*2",
-          "qty": 5,
-          "duration": "1日"
-        },
-        {
-          "category": "ケーブル類",
-          "name": "小物置き",
+          "category": "スピーカー類",
+          "name": "スピーカー",
+          "memo": "MARTIN AUDIO X15B",
           "qty": 2,
-          "duration": "1日"
+          "duration": "12h"
         },
         {
-          "category": "ケーブル類",
-          "name": "オペレーター",
-          "memo": "1P",
+          "category": "スタンド類",
+          "name": "スピーカースタンド",
+          "memo": "空白",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "パワーアンプ・プロセッサー",
+          "name": "パワーアンプ",
+          "memo": "YAMAHA PX10",
           "qty": 1,
-          "duration": 2
+          "duration": "12h"
         }
       ]
     },
@@ -5777,6 +5729,36 @@
           "memo": "1P",
           "qty": 1,
           "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "1127さとう様",
+      "clientName": "さとう",
+      "deliveryDate": "2026-11-27",
+      "time": "17:00",
+      "returnTime": "お昼ごろ",
+      "items": [
+        {
+          "category": "DJ",
+          "name": "ターンテーブル",
+          "memo": "Technics SL-1200MK5",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "DJ",
+          "name": "カートリッジ",
+          "memo": "ORTOFON Concorde Mk2",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "1日"
         }
       ]
     },
@@ -5923,6 +5905,20 @@
           "name": "必要ケーブル一式",
           "memo": "サービス",
           "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "マイク",
+          "name": "ダイナミックマイク",
+          "memo": "SHURE SM58",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "スタンド類",
+          "name": "マイクスタンド",
+          "memo": "ロングブーム<210>",
+          "qty": 2,
           "duration": "12h"
         },
         {
@@ -6074,12 +6070,12 @@
     },
     {
       "folder": "1130イワサ様（YESシアター）（YES THEATER）",
-      "clientName": "イワサ",
+      "clientName": "岩佐　彩加",
       "deliveryAddress": "YES THEATER",
       "deliveryAddressDetail": "〒542-0075 大阪府大阪市中央区難波千日前１１−６",
       "deliveryDate": "2026-11-30",
-      "time": "9:00ごろ",
-      "returnTime": "19:00-20:00ごろ",
+      "time": "9:00～9:30",
+      "returnTime": "18:30～19:00",
       "items": [
         {
           "category": "セットプラン",
